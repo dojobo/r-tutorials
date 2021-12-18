@@ -1,0 +1,65 @@
+---
+title: "Getting Started in R and RStudio"
+output: 
+  html_notebook:
+    toc: true
+editor_options: 
+  chunk_output_type: inline
+---
+
+## What is R? What is RStudio?
+
+[**R**](https://www.r-project.org/) is:
+
+-   a statistical analysis and visualization software package
+-   a programming language
+-   a command-line executable
+-   in version 4.1.2 (12/2021)
+-   multi-platform, free, open-source
+
+[**RStudio**](https://www.rstudio.com/) is:
+
+-   an integrated development environment (IDE) with graphical interface for R and related tools
+-   in version 2021.09 (12/2021)
+
+------------------------------------------------------------------------
+
+## RStudio orientation
+
+### Panes
+
+### RMarkdown
+
+### Configuration
+
+------------------------------------------------------------------------
+
+## Some things you can do with R
+
+### Clean up and transform data
+
+### Generate statistical models
+
+### Visualize data
+
+### Use R Notebooks for reproducible preprints and visually appealing reports
+
+### Program in R
+
+------------------------------------------------------------------------
+
+## Where to go next
+
+-   [R for Data Science](https://r4ds.had.co.nz/)
+-   [LinkedIn Learning](https://www.technology.pitt.edu/services/ondemand-training-linkedin-learning)
+-   [PittCat ebooks](https://pitt.primo.exlibrisgroup.com/discovery/search?query=any,contains,r%20statistics&tab=Everything&search_scope=MyInst_and_CI&vid=01PITT_INST:01PITT_INST&lang=en&offset=0)
+-   [exercism R track](https://exercism.org/tracks/r)
+-   Pitt students: STAT 1621 Principles of Data Science
+
+### Where to get answers
+
+-   [StackOverflow (questions tagged R)](https://stackoverflow.com/questions/tagged/r)
+-   [rstats community on reddit](https://www.reddit.com/r/rstats/)
+-   [RStudio Community](https://community.rstudio.com/) (forums)
+-   Pitt ULS [AskUs](https://library.pitt.edu/ask-us): email responses for simple questions and/or book an appointment for in-person or Zoom help
+-   Weekly Open Office Hour: Mondays 5--6pm (this semester, subject to change; check [library.pitt.edu](https://library.pitt.edu/))
