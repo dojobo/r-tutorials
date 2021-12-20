@@ -135,6 +135,13 @@ head(mtcars)
 mtcars$mpg
 ```
 
+R's core functionality can be extended with many community-authored **packages**. Once a package is installed, you can use its code in your current environment with the library() function. (Most packages are useful, but the example below is just for fun.)
+
+```{r}
+library(cowsay)
+
+```
+
 ### Clean up and transform data
 
 ### Generate statistical models
