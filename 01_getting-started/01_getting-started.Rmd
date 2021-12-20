@@ -84,6 +84,8 @@ You need R installed in order to use RStudio. They work together, but are separa
 
 ## Some things you can do with R
 
+### Basics: variables, functions, data structures
+
 R uses **variables** to store and work with values:
 
 ```{r}
@@ -124,6 +126,13 @@ my_vector
 
 # add 100 to each item in the vector:
 my_vector + 100
+
+# some functions operate on the data structure in aggregate, not just itemwise:
+min(my_vector)
+mean(my_vector)
+median(my_vector)
+sd(my_vector)
+max(my_vector)
 ```
 
 A data frame is like a table or spreadsheet. Each column of information is a vector. The example below uses a built-in dataset called mtcars.
