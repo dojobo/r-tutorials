@@ -7,7 +7,25 @@ editor_options:
   chunk_output_type: inline
 ---
 
-## Notes on presentation format
+## Agenda
+
+1.  Introductory stuff
+
+2.  What are R and RStudio?; RStudio orientation
+
+3.  Some things you can do in R(Studio)
+
+    1.  Clean up, transform, and analyze data; generate statistical models
+    2.  Visualize data
+    3.  Intermix code, output (plots), and narrative/explanatory text with R Notebooks
+
+4.  Where to go next; where to get answers
+
+## Introductory stuff
+
+### Learning goals
+
+### Notes on presentation format
 
 -   Feel free to follow along on your own computer, or simply watch
 
@@ -15,23 +33,32 @@ editor_options:
 
 -   Due to time constraints, this is more of a *guided tour* than a *lesson* in R
 
-    -   Less time for practice/synthesis, but greater number of topics covered
+### About the presenter
 
--   
+-   Dominic Bordelon, Research Data Librarian, University Library System at Pitt
+
+-   Previous experience:
+
+    -   programmer in library settings 2014-2019
+
+------------------------------------------------------------------------
 
 ## What is R? What is RStudio?
 
 [**R**](https://www.r-project.org/) is:
 
--   an application
+-   an application for working with data
 
-    -   a statistical analysis and visualization software package
+    -   "working with" = viewing, calculating, transforming, analyzing, visualizing
     -   a command-line executable
     -   in version 4.1.2 (12/2021)
+    -   also available as a server
 
--   a programming language
+-   a programming language (for extending functionality and/or creating web applications)
 
 -   multi-platform, free, open-source
+
+-   known formally as "[The R Project for Statistical Computing](https://www.r-project.org/about.html)," by [the R Foundation](https://www.r-project.org/foundation/)
 
 [**RStudio**](https://www.rstudio.com/) is:
 
@@ -52,25 +79,27 @@ You need R installed in order to use RStudio. They work together, but are separa
 -   Bottom left: Console
 
     -   Run commands instantly in R $\rightarrow$ see command-line output
+    -   Tab code completion; command history
 
 -   Top left: Editor
 
     -   Where you open files (tabbed); syntax highlighting
     -   Write a script (multiple lines of R code), which you can *Run* ( = RStudio sends each line of the script to the console pane)
-    -   Can also be used to write documents (*notebooks*) in the RMarkdown format
+    -   Can also be used to write documents in plain text or markdown, or *notebooks* in RMarkdown
 
--   Top right: Environment
+-   Top right: Environment, History
 
-    -   Session information
+    -   Environment = workspace of your current R session
 
--   Bottom right: Working Directory
+-   Bottom right: Help, Working Directory
+
+    -   The `?` command
 
 ### RMarkdown
 
 -   This document is written in RMarkdown!
--   Extends the popular Markdown format (seen on Wikipedia and GitHub) by enabling the author to include executable code *chunks* as well as $\LaTeX$ expressions (e.g., $H = -\sum^{S}_{i=1} p_i \ln p_i$)
--   So RMarkdown can be used to write reports or preprint manuscripts, combining narrative text with data analysis and visualization!
--   Output types: document (HTML, Word, PDF); slides (HTML, PDF)
+-   Extends the popular markdown format (seen on Wikipedia and GitHub) by enabling the author to include executable code *chunks* as well as $\LaTeX$ expressions (e.g., $H = -\sum^{S}_{i=1} p_i \ln p_i$)
+-   Switch between graphical and source editors
 
 ### Configuration
 
@@ -80,32 +109,46 @@ You need R installed in order to use RStudio. They work together, but are separa
 
 -   Many options can also be configured at project level
 
+### Files and file types
+
+-   [**R Projects**](https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects) (.Rproj) are the suggested way of organizing your work in RStudio. Benefits include dedicated [command history](https://support.rstudio.com/hc/en-us/articles/200526217-Command-History-in-the-RStudio-IDE) and settings.
+-   **R Notebooks** or RMarkdown documents (.Rmd) intermix R code and text formatted with markdown
+-   **R scripts** (.R) are plain-text files that can be executed by R directly. However, because the file must be parseable, this means that the only permitted "natural language" is in code comments.
+
 ------------------------------------------------------------------------
 
 ## Some things you can do with R
 
-### Basics: variables, functions, data structures
+### Prerequisite basics: objects, functions, data structures
 
-R uses **variables** to store and work with values:
+R uses **objects** to store and work with values. Numeric objects as well as raw values can interact via mathematical operators.
+
+*Directly below is our first **code chunk***. *You can insert one anywhere in an R Notebook. Whatever you type inside has to be valid R code, although comment. You can execute an individual line or the whole chunk.*
 
 ```{r}
 length <- 12
 width <- 8
 
+# operators:
+length + 2
+(2^2) / width
+1+2
+
+# calculating area:
 length * width
 ```
 
-If we wanted to save this value, we would create a third variable called area:
+If we wanted to save this value, we would create a third object called `area`:
 
 ```{r}
 area <- length * width
 area
 ```
 
-Mathematical operators and **functions** provide the basic ways of working with variables. Each function has a *signature* dictating which *arguments* (parameters) it accepts. For example, the `sqrt()` function, which calculates the square root of an integer, accepts (and requires) one argument, `x`:
+Beyond mathematical operators, **functions** provide the basic ways of working with objects. Each function has a *signature* dictating which *arguments* (parameters) it accepts. For example, the `sqrt()` function, which calculates the square root of an integer, accepts (and requires) one argument, `x`:
 
 ```{r}
-# will produce an error; remove # to try it:
+# next line will produce an error; remove # to try it:
 #sqrt()
 
 sqrt(x=16)
@@ -117,10 +160,11 @@ area <- 99
 sqrt(area)
 ```
 
-You can store more than one value in a variable by using a data structure such as a **vector**, matrix, or **data frame**. Itemwise operations/functions can work on vectors.
+You can store more than one value in a object by using a data structure such as a vector, a matrix, or a data frame. Itemwise operations/functions can work on vectors.
+
+A **vector** is a simple ordered collection, all items being of the same type (e.g., `num`). The **`c()`** function creates a vector.
 
 ```{r}
-# vectors are created with the c() function
 my_vector <- c(13, 11.2, 6^2, 4.31e2, 0, -7)
 my_vector
 
@@ -135,29 +179,72 @@ sd(my_vector)
 max(my_vector)
 ```
 
-A data frame is like a table or spreadsheet. Each column of information is a vector. The example below uses a built-in dataset called mtcars.
+A **data frame** is like a table or spreadsheet. Each column of information is a vector. Rows are called **observations** and columns are called **variables**. The example below uses a built-in dataset called `mtcars`. The **`head()`**, **`str()`** ("structure"), and **`View()`** functions give us a few ways to examine data frames. (`str()` is valuable for any type of object!)
 
 ```{r}
 head(mtcars)
+str(mtcars)
+View(mtcars)
 
 # to reference a named column, use a $:
 mtcars$mpg
 ```
 
-R's core functionality can be extended with many community-authored **packages**. Once a package is installed, you can use its code in your current environment with the library() function. (Most packages are useful, but the example below is just for fun.)
+```{r eval=FALSE, include=FALSE}
+# code that i used to install the tweetrmd package and fetch the tweet that appears below:
+#install.packages("devtools")
+#devtools::install_github("gadenbuie/tweetrmd")
+library(tweetrmd)
+tweet_screenshot(
+  tweet_url = "https://twitter.com/SScottGraham_/status/1475931340247810054",
+  file = "eyeball.png"
+)
+```
+
+[![Eyeball your data. 👁️](eyeball.png "tweet by @SScottGraham_"){width="400"}](https://twitter.com/SScottGraham_/status/1475931340247810054)
+
+R's core functionality ("**Base R**") can be extended with many community-authored **packages**. Once a package is installed, you can use its code in your current environment with the `library()` function. (Most packages are useful, but the example below is just for fun.)
 
 ```{r}
+install.packages("cowsay")
 library(cowsay)
 
 ```
 
+------------------------------------------------------------------------
+
 ### Clean up and transform data
+
+The R community has developed a set of packages called [**the tidyverse**](https://www.tidyverse.org/) to improve base R's experience for working with data. Using the tidyverse, below, we'll open a CSV file (spreadsheet) and perform a few transformations.
+
+A new syntax convention in the code below is the **pipe**, written as `%>%`. For `functionA() %>% functionB()`, you could read it as, "send the output of functionA to functionB."
+
+```{r}
+library(tidyverse)
+
+#read_csv
+#tibble
+#pipe
+#pivot?
+#missing values
+#filter
+#mutate
+#save_csv
+
+#group by, summarize
+#relational
+```
 
 ### Generate statistical models
 
 ### Visualize data
 
 ### Use R Notebooks for reproducible preprints and visually appealing reports
+
+-   The approach of mixing computer code with natural-language narrative is called "literate programming" (Knuth 1992)
+-   Reproducibility: if you share the data files and the notebook you use for analysis, a peer can easily rerun it
+-   Convenience: tweak data, code, and visualizations and see immediate feedback; display/edit all three inline in one application
+-   Incorporates conversion tool [pandoc](https://pandoc.org/) to generate a wealth of output formats (HTML notebook, Word doc, Powerpoint, HTML presentation, PDF, latex...)
 
 ### Program in R
 
