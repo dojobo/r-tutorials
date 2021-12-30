@@ -162,14 +162,18 @@ sqrt(area)
 
 You can store more than one value in a object by using a data structure such as a vector, a matrix, or a data frame. Itemwise operations/functions can work on vectors.
 
-A **vector** is a simple ordered collection, all items being of the same type (e.g., `num`). The **`c()`** function creates a vector.
+A **vector** is a simple ordered collection, all items being of the same type (e.g., `num`). The **`c()`** ("combine") function creates a vector.
 
 ```{r}
 my_vector <- c(13, 11.2, 6^2, 4.31e2, 0, -7)
 my_vector
 
-# add 100 to each item in the vector:
+length(my_vector) # how many items in the vector?
+typeof(my_vector) # what type are they?
+
+# doing math on each item in the vector:
 my_vector + 100
+my_vector^2
 
 # some functions operate on the data structure in aggregate, not just itemwise:
 min(my_vector)
@@ -217,7 +221,7 @@ library(cowsay)
 
 The R community has developed a set of packages called [**the tidyverse**](https://www.tidyverse.org/) to improve base R's experience for working with data. Using the tidyverse, below, we'll open a CSV file (spreadsheet) and perform a few transformations.
 
-A new syntax convention in the code below is the **pipe**, written as `%>%`. For `functionA() %>% functionB()`, you could read it as, "send the output of functionA to functionB."
+A new syntax convention in the code below is the **pipe**, written as `%>%`. For `functionA() %>% functionB()`, you could read it as, "do functionA then use its output to do functionB."
 
 ```{r}
 library(tidyverse)
@@ -239,14 +243,35 @@ library(tidyverse)
 
 ### Visualize data
 
-### Use R Notebooks for reproducible preprints and visually appealing reports
+### Intermix code, output, and narrative text with R Notebooks
 
--   The approach of mixing computer code with natural-language narrative is called "literate programming" (Knuth 1992)
--   Reproducibility: if you share the data files and the notebook you use for analysis, a peer can easily rerun it
+-   The approach of mixing computer code with natural-language narrative is called "literate programming" ([Knuth 1992](https://pitt.primo.exlibrisgroup.com/permalink/01PITT_INST/e8h8hp/alma9911528493406236))
+
 -   Convenience: tweak data, code, and visualizations and see immediate feedback; display/edit all three inline in one application
--   Incorporates conversion tool [pandoc](https://pandoc.org/) to generate a wealth of output formats (HTML notebook, Word doc, Powerpoint, HTML presentation, PDF, latex...)
+
+-   Reproducibility: if you share the data files and the notebook you use for analysis, a peer can easily rerun it
+
+-   Incorporates separate conversion tool [pandoc](https://pandoc.org/) to generate a wealth of [output formats](https://bookdown.org/yihui/rmarkdown/output-formats.html "R Markdown: The Definitive Guide") (HTML notebook, Word doc, Powerpoint, HTML presentation, PDF, latex...)
+
+-   Example papers/projects:
+
+    -   Chaudhry, Suparna, Marc Dotson, and Andrew Heiss. 2021. "Who Cares about Crackdowns? Exploring the Role of Trust in Individual Philanthropy." *Global Policy* 12 (S5): 45--58. <https://doi.org/10.1111/1758-5899.12984>. Analysis notebook: <https://stats.andrewheiss.com/who-cares-about-crackdowns/>
+
+    -   Kadauke, Stephan, Regina M. Myers, Yimei Li, Richard Aplenc, Diane Baniewicz, David M. Barrett, Allison Barz Leahy, et al. 2021. "Risk-Adapted Preemptive Tocilizumab to Prevent Severe Cytokine Release Syndrome After CTL019 for Pediatric B-Cell Acute Lymphoblastic Leukemia: A Prospective Clinical Trial." *Journal of Clinical Oncology* 39 (8): 920--30. <https://doi.org/10.1200/JCO.20.02477>. Reproducibility supplement: <https://skadauke.github.io/early-toci/>
+
+    -   NMFSReports package: [<https://github.com/EmilyMarkowitz-NOAA/NMFSReports/blob/main/presentations/2021-06-05NMFSReports-RCascadiaConf.pdf>](https://github.com/EmilyMarkowitz-NOAA/NMFSReports/blob/main/presentations/2021-06-05NMFSReports-RCascadiaConf.pdf) (templating for NOAA reports/tech memos, developed by a NOAA fisheries biologist)
+
+    -   Faylab Lab Manual: <https://thefaylab.github.io/lab-manual/> (manual for an ecology lab written in [bookdown](https://bookdown.org/), Rmd for books)
 
 ### Program in R
+
+-   Extracting code as functions follows "the DRY Principle" (Don't Repeat Yourself); easier maintenance
+-   Iteration (performing the same action many times)
+-   Packages for reusability by yourself and others
+
+```{r}
+
+```
 
 ------------------------------------------------------------------------
 
@@ -255,20 +280,25 @@ library(tidyverse)
 Here are some ways you can continue learning:
 
 -   [R for Data Science](https://r4ds.had.co.nz/), a free online book by community leader Hadley Wickham
--   [LinkedIn Learning](https://www.technology.pitt.edu/services/ondemand-training-linkedin-learning) offered via Pitt IT has video courses
+-   [LinkedIn Learning](https://www.technology.pitt.edu/services/ondemand-training-linkedin-learning), offered via Pitt IT, has video courses
 -   [PittCat ebooks](https://pitt.primo.exlibrisgroup.com/discovery/search?query=any,contains,r%20statistics&tab=Everything&search_scope=MyInst_and_CI&vid=01PITT_INST:01PITT_INST&lang=en&offset=0), access to thousands of online tech books
 -   [exercism R track](https://exercism.org/tracks/r), a platform for learning to code
 -   Pitt students: STAT 1621 Principles of Data Science
 -   We offer training for groups (labs, collaborations, etc.)
 
-### Where to get answers
+### Where to get answers; reference resources
 
 Here are resources for solving specific questions/problems you have in R:
 
--   Weekly Open Office Hour: Mondays 5--6pm (this semester, subject to change; check [library.pitt.edu](https://library.pitt.edu/))
+-   Weekly Open Office Hour: Mondays 5--6pm (see flier below)
 -   Pitt ULS [AskUs](https://library.pitt.edu/ask-us): email responses for simple questions and/or book an appointment for in-person or Zoom help
--   [StackOverflow (questions tagged R)](https://stackoverflow.com/questions/tagged/r)
+-   [StackOverflow (questions tagged R)](https://stackoverflow.com/questions/tagged/r) is a great place for tech questions (search before asking)
+
+Reference resources and ways to connect with the R user community:
+
+-   The [Big Book of R](https://www.bigbookofr.com/) collects many free resources in one place and organizes them by topic.
 -   [/r/rstats community on reddit](https://www.reddit.com/r/rstats/)
 -   [RStudio Community](https://community.rstudio.com/) (forums)
+-   [#rstats](https://twitter.com/hashtag/rstats) on Twitter
 
 [![R and RStudio Open Office Hour, Spring 2022](images/r-open-office-hour_202201.png "R and RStudio Open Office Hour, Spring 2022")](https://bit.ly/pitt-r-22)

@@ -1,0 +1,8 @@
+---
+title: "Data Wrangling with R"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+tweet: <https://twitter.com/jaimedatalatte/status/1473450860323684354?s=20>
