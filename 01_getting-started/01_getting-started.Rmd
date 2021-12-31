@@ -96,12 +96,10 @@ You need R installed in order to use RStudio. They work together, but are separa
 
 -   Bottom right: Help, Working Directory
 
-    -   The `?` command
-
 ### RMarkdown
 
 -   This document is written in RMarkdown!
--   Extends the popular markdown format (seen on Wikipedia and GitHub) by enabling the author to include executable code *chunks* as well as $\LaTeX$ expressions (e.g., $H = -\sum^{S}_{i=1} p_i \ln p_i$)
+-   Extends the popular markdown format (seen on Wikipedia and GitHub) by enabling the author to include executable code *chunks*
 -   Switch between graphical and source editors
 
 ### Configuration
@@ -111,6 +109,8 @@ You need R installed in order to use RStudio. They work together, but are separa
     -   Suggestion: General > Workspace > uncheck the .RData option and set the .RData dropdown to Never
 
 -   Many options can also be configured at project level
+
+-   Keyboard shortcuts are very handy! Tools > Keyboard Shortcuts Help
 
 ### Files and file types
 
@@ -122,28 +122,41 @@ You need R installed in order to use RStudio. They work together, but are separa
 
 ## Prerequisite R basics: objects, functions, data structures
 
-R uses **objects** to store and work with values. Numeric objects as well as raw values can interact via mathematical operators.
+At its most simple, we can use R as a calculator, with familiar mathematical operators:
 
-*Directly below is our first **code chunk***. *You can insert one anywhere in an R Notebook. Whatever you type inside has to be valid R code, although comment. You can execute an individual line or the whole chunk.*
+*Directly below is our first **code chunk***. *You can insert one anywhere in an R Notebook. Whatever you type inside it has to be valid R code, although comments can be preceded with `#`. You can execute an individual line or the whole chunk.*
 
 ```{r}
-length <- 12
-width <- 8
+7 + 2
 
-# operators:
-length + 2
-(2^2) / width
-1+2
-
-# calculating area:
-length * width
+# here is a comment!
+# order of operations (PEMDAS):
+2 * ((1 + 2) / (9 - 3))^2
 ```
 
-If we wanted to save this value, we would create a third object called `area`:
+R uses **objects** to store and work with values. Numeric objects as well as raw values can interact via mathematical operators. The **assignment operator**, written as **`<-`**, stores a value in an object.
 
 ```{r}
+# create object `length` and store the value 12 in it:
+length <- 10
+# typing just the object name tells us the value stored in it:
+length
+
+width <- 8
+
+# using objects with mathematical operators and numeric values:
+length + 2
+(2^2) / width
+
+# calculating area and storing it in a third object:
 area <- length * width
 area
+
+# assignment happens only once; changing length does not update area unless we reassign it.
+length <- 5 # length changes to 5
+area # area is still 80
+area <- length * width
+area # == 40
 ```
 
 Beyond mathematical operators, **functions** provide the basic ways of working with objects. Each function has a *signature* dictating which *arguments* (parameters) it accepts. For example, the `sqrt()` function, which calculates the square root of an integer, accepts (and requires) one argument, `x`:
@@ -161,7 +174,7 @@ area <- 99
 sqrt(area)
 ```
 
-You can store more than one value in a object by using a data structure such as a vector, a matrix, or a data frame. Itemwise operations/functions can work on vectors.
+For storing multiple values in one object, R has data structures like vectors, matrices, and data frames. Vectors and data frames, described below, are the most common types.
 
 A **vector** is a simple ordered collection, all items being of the same type (e.g., `num`). The **`c()`** ("combine") function creates a vector.
 
@@ -172,7 +185,7 @@ my_vector
 length(my_vector) # how many items in the vector?
 typeof(my_vector) # what type are they?
 
-# doing math on each item in the vector:
+# doing math on each item in the vector: ("itemwise")
 my_vector + 100
 my_vector^2
 
@@ -234,15 +247,19 @@ library(tidyverse)
 #missing values
 #filter
 #mutate
-#save_csv
 
-#group by, summarize
-#relational
+#relational data
+
+#save_csv
 ```
 
-------------------------------------------------------------------------
+### Summarize data
 
-## Generate statistical models
+We have a dataset we like; now we want to start understanding it. For a variable that interests us, we can apply statistical summary functions like `mean()` and `median()`. We can also use `group_by()` with categorical variables to easily summarize groups within the data.
+
+```{r}
+#group by, summarize
+```
 
 ------------------------------------------------------------------------
 
@@ -250,13 +267,44 @@ library(tidyverse)
 
 ### For exploratory data analysis (EDA)
 
+A next step in examining the data is to plot it. The most popular package for plotting in R is `ggplot2`, which is part of the tidyverse.
+
+```{r}
+# examining one variable (histograms, freq plots)
+# plotting 2 continuous variables
+# plotting continuous vs. categorical variables
+
+```
+
+### Generating and visualizing models
+
+Modelling is an extensive topic. For a quick and simple example, we will simply use `lm()` (part of base R's `stats` package) to fit a linear model.
+
+```{r}
+# lm()
+# str(lm)
+# ggplot + geom_point + geom_abline
+```
+
 ### For presentation and publication
+
+ggplot provides many facilities for enhancing the plots that you really want to focus on.
+
+```{r}
+# labels
+# emphasis
+# aesthetics
+# themes
+# saving plots
+```
 
 ------------------------------------------------------------------------
 
 ## Intermix code, output, and narrative text with R Notebooks
 
 -   The approach of mixing computer code with natural-language narrative is called "literate programming" ([Knuth 1992](https://pitt.primo.exlibrisgroup.com/permalink/01PITT_INST/e8h8hp/alma9911528493406236))
+
+-   In addition to code chunks, you can also use $\LaTeX$ expressions (e.g., $H = -\sum^{S}_{i=1} p_i \ln p_i$) and generate your bibliography with a bibtex file
 
 -   Convenience: tweak data, code, and visualizations and see immediate feedback; display/edit all three inline in one application
 
@@ -279,11 +327,13 @@ library(tidyverse)
 ### Program in R
 
 -   Extracting code as functions follows "the DRY Principle" (Don't Repeat Yourself); easier maintenance
+-   Functions are important for modeling
 -   Iteration (performing the same action many times)
 -   Packages for reusability by yourself and others
 
 ```{r}
-
+# writing functions
+# loops and maps
 ```
 
 ------------------------------------------------------------------------
