@@ -16,14 +16,12 @@ editor_options:
 3.  Some things you can do in R(Studio)
 
     1.  Clean up, transform, and analyze data; generate statistical models
-    2.  Visualize data
+    2.  Visualize data for exploration or presentation
     3.  Intermix code, output (plots), and narrative/explanatory text with R Notebooks
 
 4.  Where to go next; where to get answers
 
 ## Introductory stuff
-
-### Learning goals
 
 ### Notes on presentation format
 
@@ -47,23 +45,28 @@ editor_options:
 
 [**R**](https://www.r-project.org/) is:
 
--   an application for working with data
+-   an **application** for **working with data**
 
     -   "working with" = viewing, calculating, transforming, analyzing, visualizing
-    -   a command-line executable
+    -   "data" = tabular data is the usual, but there are tools for other kinds of data as well
+    -   accessible from the OS command line; commands are issued by typing code
     -   in version 4.1.2 (12/2021)
     -   also available as a server
 
--   a programming language (for extending functionality and/or creating web applications)
+-   a **programming language** (for extending functionality and/or creating web applications)
+
+    -   the R executable is an **interpreter** which understands and acts upon R code
+    -   a vibrant community has leveraged this feature to create many free, reusable **packages** (currently \~19k of them)
 
 -   multi-platform, free, open-source
 
--   known formally as "[The R Project for Statistical Computing](https://www.r-project.org/about.html)," by [the R Foundation](https://www.r-project.org/foundation/)
+-   known formally as "[The R Project for Statistical Computing](https://www.r-project.org/about.html)," managed by [the R Foundation](https://www.r-project.org/foundation/)
 
 [**RStudio**](https://www.rstudio.com/) is:
 
--   an integrated development environment (IDE) with graphical interface for R and related tools
+-   an **integrated development environment (IDE)** with graphical interface for R, with some related tools
 
+    -   a minimal IDE would be a specialized text editor for writing code + interpreter; RStudio offers much more
     -   in version 2021.09 (12/2021)
 
 -   a public benefit corporation that develops software (>50% free and open source) and provides related services
@@ -117,9 +120,7 @@ You need R installed in order to use RStudio. They work together, but are separa
 
 ------------------------------------------------------------------------
 
-## Some things you can do with R
-
-### Prerequisite basics: objects, functions, data structures
+## Prerequisite R basics: objects, functions, data structures
 
 R uses **objects** to store and work with values. Numeric objects as well as raw values can interact via mathematical operators.
 
@@ -217,9 +218,9 @@ library(cowsay)
 
 ------------------------------------------------------------------------
 
-### Clean up and transform data
+## Clean up and transform data
 
-The R community has developed a set of packages called [**the tidyverse**](https://www.tidyverse.org/) to improve base R's experience for working with data. Using the tidyverse, below, we'll open a CSV file (spreadsheet) and perform a few transformations.
+The R community has developed a set of packages called [**the tidyverse**](https://www.tidyverse.org/) to enhance base R's experience for working with data. Using the tidyverse, below, we'll open a CSV file (spreadsheet) and perform a few transformations.
 
 A new syntax convention in the code below is the **pipe**, written as `%>%`. For `functionA() %>% functionB()`, you could read it as, "do functionA then use its output to do functionB."
 
@@ -239,11 +240,21 @@ library(tidyverse)
 #relational
 ```
 
-### Generate statistical models
+------------------------------------------------------------------------
 
-### Visualize data
+## Generate statistical models
 
-### Intermix code, output, and narrative text with R Notebooks
+------------------------------------------------------------------------
+
+## Visualize data
+
+### For exploratory data analysis (EDA)
+
+### For presentation and publication
+
+------------------------------------------------------------------------
+
+## Intermix code, output, and narrative text with R Notebooks
 
 -   The approach of mixing computer code with natural-language narrative is called "literate programming" ([Knuth 1992](https://pitt.primo.exlibrisgroup.com/permalink/01PITT_INST/e8h8hp/alma9911528493406236))
 
@@ -259,9 +270,11 @@ library(tidyverse)
 
     -   Kadauke, Stephan, Regina M. Myers, Yimei Li, Richard Aplenc, Diane Baniewicz, David M. Barrett, Allison Barz Leahy, et al. 2021. "Risk-Adapted Preemptive Tocilizumab to Prevent Severe Cytokine Release Syndrome After CTL019 for Pediatric B-Cell Acute Lymphoblastic Leukemia: A Prospective Clinical Trial." *Journal of Clinical Oncology* 39 (8): 920--30. <https://doi.org/10.1200/JCO.20.02477>. Reproducibility supplement: <https://skadauke.github.io/early-toci/>
 
-    -   NMFSReports package: [<https://github.com/EmilyMarkowitz-NOAA/NMFSReports/blob/main/presentations/2021-06-05NMFSReports-RCascadiaConf.pdf>](https://github.com/EmilyMarkowitz-NOAA/NMFSReports/blob/main/presentations/2021-06-05NMFSReports-RCascadiaConf.pdf) (templating for NOAA reports/tech memos, developed by a NOAA fisheries biologist)
+    -   NMFSReports package: [\<https://github.com/EmilyMarkowitz-NOAA/NMFSReports/blob/main/presentations/2021-06-05NMFSReports-RCascadiaConf.pdf>](https://github.com/EmilyMarkowitz-NOAA/NMFSReports/blob/main/presentations/2021-06-05NMFSReports-RCascadiaConf.pdf) (templating for NOAA reports/tech memos, developed by a NOAA fisheries biologist)
 
     -   Faylab Lab Manual: <https://thefaylab.github.io/lab-manual/> (manual for an ecology lab written in [bookdown](https://bookdown.org/), Rmd for books)
+
+------------------------------------------------------------------------
 
 ### Program in R
 
@@ -279,10 +292,12 @@ library(tidyverse)
 
 Here are some ways you can continue learning:
 
+-   Upcoming 1-hour workshops for [data visualization](https://pitt.libcal.com/event/8671056) (2/2) and [data wrangling](https://pitt.libcal.com/event/8671368) (2/23)
 -   [R for Data Science](https://r4ds.had.co.nz/), a free online book by community leader Hadley Wickham
 -   [LinkedIn Learning](https://www.technology.pitt.edu/services/ondemand-training-linkedin-learning), offered via Pitt IT, has video courses
 -   [PittCat ebooks](https://pitt.primo.exlibrisgroup.com/discovery/search?query=any,contains,r%20statistics&tab=Everything&search_scope=MyInst_and_CI&vid=01PITT_INST:01PITT_INST&lang=en&offset=0), access to thousands of online tech books
 -   [exercism R track](https://exercism.org/tracks/r), a platform for learning to code
+-   Or dive into packages and resources specific to your field (see [Big Book of R](https://www.bigbookofr.com/) for ideas)
 -   Pitt students: STAT 1621 Principles of Data Science
 -   We offer training for groups (labs, collaborations, etc.)
 
@@ -296,7 +311,7 @@ Here are resources for solving specific questions/problems you have in R:
 
 Reference resources and ways to connect with the R user community:
 
--   The [Big Book of R](https://www.bigbookofr.com/) collects many free resources in one place and organizes them by topic.
+-   The [Big Book of R](https://www.bigbookofr.com/) is an annotated bibliography of R resources, especially \[e\]books (many of them free).
 -   [/r/rstats community on reddit](https://www.reddit.com/r/rstats/)
 -   [RStudio Community](https://community.rstudio.com/) (forums)
 -   [#rstats](https://twitter.com/hashtag/rstats) on Twitter
