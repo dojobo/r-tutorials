@@ -55,7 +55,7 @@ editor_options:
 
 -   a **programming language** (for extending functionality and/or creating web applications)
 
-    -   the R executable is an **interpreter** which understands and acts upon R code
+    -   the R application is an **interpreter** which understands and acts upon R code
     -   a vibrant community has leveraged this feature to create many free, reusable **packages** (currently \~19k of them)
 
 -   multi-platform, free, open-source
