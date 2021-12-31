@@ -99,7 +99,7 @@ You need R installed in order to use RStudio. They work together, but are separa
 ### RMarkdown
 
 -   This document is written in RMarkdown!
--   Extends the popular markdown format (seen on Wikipedia and GitHub) by enabling the author to include executable code *chunks*
+-   Extends the popular [markdown](https://daringfireball.net/projects/markdown/) format (seen on Wikipedia and GitHub) by enabling the author to include executable code *chunks*
 -   Switch between graphical and source editors
 
 ### Configuration
@@ -165,11 +165,17 @@ Beyond mathematical operators, **functions** provide the basic ways of working w
 # next line will produce an error; remove # to try it:
 #sqrt()
 
+# we can learn more about the sqrt() function in the Help system:
+?sqrt
+
 sqrt(x=16)
 # may also be written as:
 sqrt(16)
 
+# expressions are evaluated first:
 sqrt((2+1)^2)
+
+# using a function on an object:
 area <- 99
 sqrt(area)
 ```
@@ -221,12 +227,15 @@ tweet_screenshot(
 
 [![Eyeball your data. 👁️](eyeball.png "tweet by @SScottGraham_"){width="400"}](https://twitter.com/SScottGraham_/status/1475931340247810054)
 
-R's core functionality ("**Base R**") can be extended with many community-authored **packages**. Once a package is installed, you can use its code in your current environment with the `library()` function. (Most packages are useful, but the example below is just for fun.)
+R's core functionality ("**base R**") can be extended with many community-authored **packages**. Once a package is installed, you can use its code in your current environment with the `library()` function. (Most packages are useful, but the example below is just for fun.)
 
 ```{r}
 install.packages("cowsay")
 library(cowsay)
 
+# cowsay gives us a say() function
+say()
+# what arguments does say() accept? what are the defaults?
 ```
 
 ------------------------------------------------------------------------
