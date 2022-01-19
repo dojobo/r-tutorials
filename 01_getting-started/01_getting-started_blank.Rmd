@@ -128,36 +128,31 @@ At its most simple, we can use R as a calculator, with familiar mathematical ope
 *Directly below is our first **code chunk***. *You can insert one anywhere in an R Notebook. Whatever you type inside it has to be valid R code, although comments can be preceded with `#`. You can execute an individual line or the whole chunk.*
 
 ```{r}
-7 + 2
+
 
 # here is a comment!
 # order of operations (PEMDAS):
-2 * ((1 + 2) / (9 - 3))^2
+
 ```
 
 R uses **objects** to store and work with values. Numeric objects as well as raw values can interact via mathematical operators. The **assignment operator**, written as **`<-`**, stores a value in an object.
 
 ```{r}
 # create object `length` and store the value 12 in it:
-length <- 10
-# typing just the object name tells us the value stored in it:
-length
 
-width <- 8
+# typing just the object name tells us the value stored in it:
+
+
+
 
 # using objects with mathematical operators and numeric values:
-length + 2
-(2^2) / width
+
 
 # calculating area and storing it in a third object:
-area <- length * width
-area
+
 
 # assignment happens only once; changing length does not update area unless we reassign it.
-length <- 5 # length changes to 5
-area # area is still 80
-area <- length * width
-area # == 40
+
 ```
 
 Beyond mathematical operators, **functions** provide the basic ways of working with objects. Each function has a *signature* dictating which *arguments* (parameters) it accepts. For example, the `sqrt()` function, which calculates the square root of an integer, accepts (and requires) one argument, `x`:
@@ -167,18 +162,13 @@ Beyond mathematical operators, **functions** provide the basic ways of working w
 #sqrt()
 
 # we can learn more about the sqrt() function in the Help system:
-?sqrt
 
-sqrt(x=16)
 # may also be written as:
-sqrt(16)
 
 # expressions are evaluated first:
-sqrt((2+1)^2)
 
 # using a function on an object:
-area <- 99
-sqrt(area)
+
 ```
 
 For storing multiple values in one object, R has data structures like vectors, matrices, and data frames. Vectors and data frames, described below, are the most common types.
@@ -186,33 +176,22 @@ For storing multiple values in one object, R has data structures like vectors, m
 A **vector** is a simple ordered collection, all items being of the same type (e.g., `num`). The **`c()`** ("combine") function creates a vector.
 
 ```{r}
-my_vector <- c(13, 11.2, 6^2, 4.31e2, 0, -7)
-my_vector
 
-length(my_vector) # how many items in the vector?
-typeof(my_vector) # what type are they?
+ # how many items in the vector?
+ # what type are they?
 
 # doing math on each item in the vector: ("itemwise")
-my_vector + 100
-my_vector^2
 
 # some functions operate on the data structure in aggregate, not just itemwise:
-min(my_vector)
-mean(my_vector)
-median(my_vector)
-sd(my_vector)
-max(my_vector)
+
 ```
 
 A **data frame** is like a table or spreadsheet. Each column of information is a vector. Rows are called **observations** and columns are called **variables**. The example below uses a built-in dataset called `mtcars`. The **`head()`**, **`str()`** ("structure"), and **`View()`** functions give us a few ways to examine data frames. (`str()` is valuable for any type of object!)
 
 ```{r}
-head(mtcars)
-str(mtcars)
-View(mtcars)
 
 # to reference a named column, use a $:
-mtcars$mpg
+
 ```
 
 ```{r eval=FALSE, include=FALSE}
@@ -231,11 +210,8 @@ tweet_screenshot(
 R's core functionality ("**base R**") can be extended with many community-authored **packages**. Once a package is installed, you can use its code in your current environment with the `library()` function. (Most packages are useful, but the example below is just for fun.)
 
 ```{r}
-install.packages("cowsay")
-library(cowsay)
-
 # cowsay gives us a say() function
-say()
+
 # what arguments does say() accept? what are the defaults?
 ```
 
@@ -243,18 +219,15 @@ say()
 
 ## Clean up and transform data
 
-The R community has developed a set of packages called [**the tidyverse**](https://www.tidyverse.org/) to enhance base R's experience for working with data. Using the tidyverse, below, we'll open a CSV file (spreadsheet) and perform a few transformations.
+The R community has developed a set of packages called [**the tidyverse**](https://www.tidyverse.org/) to enhance base R's experience for working with data. Using the tidyverse, below, we'll use 2013 NYC flight data and perform a few transformations.
 
 A new syntax convention in the code below is the **pipe**, written as `%>%`. For `functionA() %>% functionB()`, you could read it as, "do functionA then use its output to do functionB."
 
 ```{r}
 library(tidyverse)
 
-#read_csv
-#tibble
-#pipe
-#pivot?
-#missing values
+#note tibble and pipe
+
 #filter
 #mutate
 
@@ -302,7 +275,6 @@ ggplot provides many facilities for enhancing the plots that you really want to 
 
 ```{r}
 # labels
-# emphasis
 # aesthetics
 # themes
 # saving plots
