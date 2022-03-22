@@ -52,6 +52,12 @@ library(tidyverse)
 
 <https://hsls.libguides.com/impactchallenge>
 
+Pitt CRC: **Overview of R for Data Work and Presentation\
+Wednesday, March 23, 1-4 pm**\
+R is both an open-source application for statistical analysis and a programming language, popular in academic research as well as industry. In this workshop, new users to R will learn how to effectively use the RStudio software and the basics of importing, cleaning, analyzing, and visualizing quantitative data. Presented by research data librarian Dominic Bordelon.
+
+<https://crc.pitt.edu/training/crc-online-workshops-spring-2022>
+
 ### License
 
 [![](images/by.png){width="91"}](https://creativecommons.org/licenses/by/4.0/ "CC BY license")\
