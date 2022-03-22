@@ -1,0 +1,1025 @@
+date,site,parameter,index_value,description,health_advisory,health_effects
+2021-12-08,Avalon,PM25T,43,Good,NA,NA
+2018-09-21,Harrison Township,OZONE,51,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2020-02-20,Lawrenceville 2,SO2,1,Good,NA,NA
+2020-05-17,Lincoln,PM10,10,Good,NA,NA
+2019-05-01,Flag Plaza,CO,0,Good,NA,NA
+2019-02-17,South Fayette,OZONE,27,Good,NA,NA
+2018-03-17,Flag Plaza,PM10,19,Good,NA,NA
+2020-01-12,Parkway East,NO2,9,Good,NA,NA
+2019-09-11,West Mifflin,SO2,4,Good,NA,NA
+2019-04-11,North Braddock,SO2,3,Good,NA,NA
+2021-10-16,Lawrenceville 2,SO2,2,Good,NA,NA
+2018-02-02,Lawrenceville 2,CO,2,Good,NA,NA
+2017-08-06,Lawrenceville 2,SO2,2,Good,NA,NA
+2019-09-20,Parkway East,NO2,13,Good,NA,NA
+2020-11-15,Harrison Township,OZONE,31,Good,NA,NA
+2019-07-22,Lawrenceville,PM25B,40,Good,NA,NA
+2021-10-20,Liberty,SO2,44,Good,NA,NA
+2018-06-02,Glassport High Street,PM10,19,Good,NA,NA
+2017-01-04,Avalon,SO2,0,Good,NA,NA
+2019-02-17,Liberty,SO2,4,Good,NA,NA
+2016-11-01,Avalon,PM25T,63,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-11-28,Liberty 2,PM25T,18,Good,NA,NA
+2020-05-28,Lawrenceville 2,SO2,1,Good,NA,NA
+2021-08-26,Pittsburgh,PM10_640,22,Good,NA,NA
+2019-02-01,Flag Plaza,PM10,20,Good,NA,NA
+2017-03-02,North Braddock,PM10B,14,Good,NA,NA
+2018-11-15,Liberty 2,PM10,6,Good,NA,NA
+2018-03-10,Avalon,SO2,3,Good,NA,NA
+2021-08-13,Parkway East,CO,8,Good,NA,NA
+2019-01-08,Flag Plaza,PM10,9,Good,NA,NA
+2017-12-04,North Braddock,PM10B,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-10-10,Glassport High Street,PM10,6,Good,NA,NA
+2017-04-27,Lawrenceville,PM25B,35,Good,NA,NA
+2017-04-09,Parkway East,CO,10,Good,NA,NA
+2019-05-18,North Braddock,PM10B,26,Good,NA,NA
+2019-02-20,Parkway East,PM25T,27,Good,NA,NA
+2021-09-09,Lawrenceville 2,CO,2,Good,NA,NA
+2020-02-05,Liberty 2,PM10,6,Good,NA,NA
+2020-05-22,Avalon,SO2,0,Good,NA,NA
+2021-01-06,Liberty,SO2,0,Good,NA,NA
+2021-12-16,North Braddock,CO,10,Good,NA,NA
+2020-12-15,North Braddock,PM10B,15,Good,NA,NA
+2018-01-11,Harrison Township,OZONE,27,Good,NA,NA
+2020-10-11,Lincoln,PM25,33,Good,NA,NA
+2020-11-17,Liberty 2,PM25T,27,Good,NA,NA
+2020-12-03,Lincoln,PM25,32,Good,NA,NA
+2019-05-06,South Fayette,SO2,1,Good,NA,NA
+2019-03-31,Lawrenceville 2,CO,2,Good,NA,NA
+2016-01-05,North Braddock,PM10B,24,Good,NA,NA
+2018-01-27,Avalon,PM25T,38,Good,NA,NA
+2020-11-04,Lawrenceville 2,SO2,3,Good,NA,NA
+2020-09-23,Flag Plaza,PM10,23,Good,NA,NA
+2021-03-11,Parkway East,NO2,25,Good,NA,NA
+2017-12-14,Avalon,PM25T,34,Good,NA,NA
+2018-04-13,Flag Plaza,CO,0,Good,NA,NA
+2021-03-09,Liberty 2,PM10,41,Good,NA,NA
+2021-05-25,South Fayette,SO2,3,Good,NA,NA
+2020-03-15,Harrison Township,OZONE,35,Good,NA,NA
+2017-02-17,Parkway East,PM25T,64,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-08-25,Glassport High Street,PM10,19,Good,NA,NA
+2021-11-26,South Fayette,OZONE,30,Good,NA,NA
+2020-03-11,South Fayette,SO2,1,Good,NA,NA
+2019-08-26,Lawrenceville,OZONE,31,Good,NA,NA
+2019-12-09,Lincoln,PM25,40,Good,NA,NA
+2016-07-28,North Braddock,SO2,9,Good,NA,NA
+2019-09-16,Harrison Township,NO2,10,Good,NA,NA
+2017-01-01,Flag Plaza,CO,0,Good,NA,NA
+2018-08-05,Parkway East,CO,20,Good,NA,NA
+2020-06-18,Liberty 2,PM10,11,Good,NA,NA
+2021-07-08,South Fayette,OZONE,26,Good,NA,NA
+2018-08-19,Lincoln,PM10,19,Good,NA,NA
+2019-08-31,Lawrenceville,PM25B,39,Good,NA,NA
+2019-10-17,Harrison Township,OZONE,20,Good,NA,NA
+2016-11-09,Harrison Township,OZONE,21,Good,NA,NA
+2016-08-12,Parkway East,PM25T,43,Good,NA,NA
+2016-08-28,South Fayette,OZONE,46,Good,NA,NA
+2017-11-04,Lawrenceville 2,SO2,4,Good,NA,NA
+2016-02-25,Lawrenceville,PM25B,17,Good,NA,NA
+2020-02-16,Lawrenceville,OZONE,26,Good,NA,NA
+2016-12-08,Harrison Township,OZONE,19,Good,NA,NA
+2017-07-13,Lawrenceville,OZONE,31,Good,NA,NA
+2016-07-08,Glassport High Street,PM10,15,Good,NA,NA
+2016-08-29,Liberty 2,PM10,24,Good,NA,NA
+2017-03-25,Liberty 2,PM25(2),73,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-05-30,Liberty,SO2,7,Good,NA,NA
+2020-08-29,Avalon,PM25T,19,Good,NA,NA
+2020-02-02,Lawrenceville 2,CO,2,Good,NA,NA
+2016-06-27,Lawrenceville 2,SO2,4,Good,NA,NA
+2018-12-07,Avalon,SO2,0,Good,NA,NA
+2020-07-08,Lawrenceville 2,SO2,7,Good,NA,NA
+2019-09-13,Flag Plaza,CO,3,Good,NA,NA
+2019-12-21,Parkway East,PM25T,81,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-10-24,South Fayette,OZONE,38,Good,NA,NA
+2017-10-09,South Fayette,SO2,1,Good,NA,NA
+2017-12-18,Parkway East,NO2,21,Good,NA,NA
+2018-11-02,North Braddock,PM10B,23,Good,NA,NA
+2017-08-24,South Fayette,SO2,4,Good,NA,NA
+2018-06-22,Harrison Township,NO2,3,Good,NA,NA
+2016-07-04,North Braddock,PM10B,19,Good,NA,NA
+2016-09-30,Parkway East,CO,8,Good,NA,NA
+2019-08-16,Lawrenceville 2,SO2,3,Good,NA,NA
+2020-05-10,Avalon,PM25T,20,Good,NA,NA
+2018-03-20,Avalon,PM25T,28,Good,NA,NA
+2020-01-28,Parkway East,PM25T,36,Good,NA,NA
+2016-03-03,South Fayette,OZONE,31,Good,NA,NA
+2018-03-07,Flag Plaza,CO,0,Good,NA,NA
+2016-06-05,Lawrenceville 2,CO,3,Good,NA,NA
+2017-07-22,Lawrenceville 2,SO2,2,Good,NA,NA
+2019-03-10,Lawrenceville 2,CO,3,Good,NA,NA
+2017-06-13,Lawrenceville 2,CO,3,Good,NA,NA
+2021-12-22,North Braddock,SO2,4,Good,NA,NA
+2016-05-13,Flag Plaza,PM10,20,Good,NA,NA
+2018-06-02,Lawrenceville,PM25B,52,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-03-24,Parkway East,CO,6,Good,NA,NA
+2021-03-20,South Fayette,OZONE,44,Good,NA,NA
+2017-09-20,Flag Plaza,CO,0,Good,NA,NA
+2016-04-13,Lawrenceville 2,SO2,10,Good,NA,NA
+2017-12-08,Avalon,PM25T,42,Good,NA,NA
+2016-12-23,Harrison Township,NO2,23,Good,NA,NA
+2018-08-27,Lincoln,PM25,70,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-05-30,Harrison Township,NO2,11,Good,NA,NA
+2020-06-27,Lincoln,PM25,55,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2021-01-14,Glassport High Street,PM10,9,Good,NA,NA
+2016-07-24,Lawrenceville 2,SO2,3,Good,NA,NA
+2021-05-26,Glassport High Street,PM10,31,Good,NA,NA
+2016-07-31,Lawrenceville,OZONE,40,Good,NA,NA
+2022-02-20,Parkway East,CO,7,Good,NA,NA
+2021-12-05,South Fayette,SO2,4,Good,NA,NA
+2019-04-15,South Fayette,OZONE,44,Good,NA,NA
+2018-06-12,Parkway East,PM25T,23,Good,NA,NA
+2016-11-18,Lawrenceville,PM25B,71,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2021-08-18,Lawrenceville,OZONE,13,Good,NA,NA
+2017-07-23,Lawrenceville 2,SO2,2,Good,NA,NA
+2020-04-20,Liberty 2,PM25T,38,Good,NA,NA
+2018-09-20,Lawrenceville 2,SO2,4,Good,NA,NA
+2019-02-16,Lincoln,PM25,20,Good,NA,NA
+2020-10-25,Parkway East,CO,9,Good,NA,NA
+2016-06-03,South Fayette,OZONE,64,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2017-04-09,Avalon,PM25T,54,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-10-29,Harrison Township,NO2,15,Good,NA,NA
+2019-06-26,Flag Plaza,CO,3,Good,NA,NA
+2022-01-18,South Fayette,SO2,3,Good,NA,NA
+2019-03-14,North Braddock,PM10B,48,Good,NA,NA
+2021-07-06,South Fayette,SO2,6,Good,NA,NA
+2020-12-11,Flag Plaza,PM10,38,Good,NA,NA
+2020-03-17,South Fayette,SO2,0,Good,NA,NA
+2020-07-06,Lincoln,PM10,32,Good,NA,NA
+2019-07-15,South Fayette,SO2,4,Good,NA,NA
+2016-12-31,Lawrenceville 2,CO,2,Good,NA,NA
+2020-10-27,Avalon,SO2,0,Good,NA,NA
+2019-02-10,Flag Plaza,CO,0,Good,NA,NA
+2018-07-10,Lawrenceville 2,CO,3,Good,NA,NA
+2016-11-03,Liberty 2,PM25(2),44,Good,NA,NA
+2019-09-18,Glassport High Street,PM10,9,Good,NA,NA
+2018-03-10,Avalon,PM25T,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-02-11,Parkway East,CO,7,Good,NA,NA
+2018-03-11,North Braddock,PM10B,24,Good,NA,NA
+2017-01-19,Avalon,SO2,0,Good,NA,NA
+2018-02-21,Lawrenceville 2,CO,4,Good,NA,NA
+2018-12-03,North Braddock,SO2,3,Good,NA,NA
+2016-09-01,Lincoln,PM10,38,Good,NA,NA
+2019-08-17,Lawrenceville 2,SO2,3,Good,NA,NA
+2021-10-06,Avalon,PM25T,25,Good,NA,NA
+2020-08-27,Lawrenceville 2,SO2,3,Good,NA,NA
+2017-04-13,Lawrenceville 2,SO2,1,Good,NA,NA
+2021-11-11,Harrison Township,OZONE,47,Good,NA,NA
+2021-07-12,Glassport High Street,PM10,16,Good,NA,NA
+2017-12-14,Parkway East,NO2,28,Good,NA,NA
+2018-12-21,Glassport High Street,PM10,11,Good,NA,NA
+2018-02-17,Glassport High Street,PM10,6,Good,NA,NA
+2019-07-07,North Braddock,PM10B,30,Good,NA,NA
+2019-06-09,Harrison Township,OZONE,42,Good,NA,NA
+2018-12-07,South Fayette,SO2,3,Good,NA,NA
+2018-11-01,North Braddock,PM10B,30,Good,NA,NA
+2016-10-20,Flag Plaza,CO,0,Good,NA,NA
+2018-08-31,Avalon,PM25T,46,Good,NA,NA
+2017-09-05,Parkway East,PM25T,75,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-12-04,South Fayette,SO2,0,Good,NA,NA
+2022-01-02,North Braddock,SO2,1,Good,NA,NA
+2020-02-16,Parkway East,CO,8,Good,NA,NA
+2020-08-22,Lincoln,PM25,55,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-07-23,Lawrenceville,PM25B,42,Good,NA,NA
+2019-07-18,Harrison Township,OZONE,42,Good,NA,NA
+2020-08-04,Lawrenceville,OZONE,39,Good,NA,NA
+2020-02-09,Lincoln,PM25,29,Good,NA,NA
+2016-11-10,Flag Plaza,PM10,9,Good,NA,NA
+2022-02-13,North Braddock,PM25_640,32,Good,NA,NA
+2018-04-29,Liberty 2,PM10,21,Good,NA,NA
+2016-07-01,North Braddock,SO2,13,Good,NA,NA
+2020-07-16,Lincoln,PM10,19,Good,NA,NA
+2020-06-19,South Fayette,SO2,4,Good,NA,NA
+2021-06-05,Flag Plaza,PM10,23,Good,NA,NA
+2021-07-02,Lawrenceville 2,CO,2,Good,NA,NA
+2017-04-12,South Fayette,SO2,4,Good,NA,NA
+2021-07-02,Harrison Township,OZONE,32,Good,NA,NA
+2018-03-08,Liberty 2,PM10,5,Good,NA,NA
+2018-04-05,Liberty 2,PM10,7,Good,NA,NA
+2019-01-25,Lawrenceville 2,CO,2,Good,NA,NA
+2019-05-29,West Mifflin,SO2,1,Good,NA,NA
+2017-06-16,Lawrenceville,PM25B,32,Good,NA,NA
+2018-09-02,Flag Plaza,CO,0,Good,NA,NA
+2016-08-05,Parkway East,NO2,12,Good,NA,NA
+2017-05-16,Lawrenceville,OZONE,97,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2021-08-08,Avalon,PM25T,66,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-11-23,South Fayette,SO2,3,Good,NA,NA
+2019-03-04,Flag Plaza,CO,0,Good,NA,NA
+2019-11-29,Liberty,SO2,0,Good,NA,NA
+2021-08-07,Liberty 2,PM25T,68,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-12-23,Harrison Township,NO2,12,Good,NA,NA
+2017-10-21,Flag Plaza,PM10,26,Good,NA,NA
+2017-08-08,North Braddock,SO2,4,Good,NA,NA
+2019-09-04,Harrison Township,NO2,9,Good,NA,NA
+2016-10-20,North Braddock,SO2,9,Good,NA,NA
+2017-09-20,Liberty,SO2,23,Good,NA,NA
+2017-02-09,Liberty 2,PM10,6,Good,NA,NA
+2019-10-19,Flag Plaza,PM10,13,Good,NA,NA
+2017-07-10,Harrison Township,NO2,19,Good,NA,NA
+2016-04-20,Flag Plaza,PM10,28,Good,NA,NA
+2018-01-14,South Fayette,SO2,3,Good,NA,NA
+2016-09-25,Parkway East,PM25T,23,Good,NA,NA
+2021-06-05,Pittsburgh,PM10_640,26,Good,NA,NA
+2019-02-18,Lincoln,PM25,53,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-09-20,Lincoln,PM25,27,Good,NA,NA
+2017-02-08,Liberty 2,PM25(2),28,Good,NA,NA
+2016-07-09,Flag Plaza,CO,0,Good,NA,NA
+2016-09-21,North Braddock,PM10B,29,Good,NA,NA
+2018-06-06,South Fayette,SO2,0,Good,NA,NA
+2020-09-08,Lincoln,PM25,54,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-12-11,Glassport High Street,PM10,6,Good,NA,NA
+2017-05-29,South Fayette,OZONE,50,Good,NA,NA
+2021-10-29,Harrison Township,OZONE,26,Good,NA,NA
+2016-11-18,Lincoln,PM25,112,Unhealthy for Sensitive Groups,"People with heart or lung disease, older adults, and children should reduce prolonged or heavy exertion.","Increasing likelihood of respiratory symptoms in sensitive individuals, aggravation of heart or lung disease and premature mortality in people with cardiopulmonary disease and older adults."
+2020-05-24,Liberty,SO2,4,Good,NA,NA
+2019-12-21,Lincoln,PM25,76,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-06-23,Liberty 2,PM10,19,Good,NA,NA
+2020-05-19,South Fayette,SO2,0,Good,NA,NA
+2017-02-23,South Fayette,OZONE,41,Good,NA,NA
+2016-12-29,Flag Plaza,PM10,13,Good,NA,NA
+2020-01-25,Lawrenceville,OZONE,19,Good,NA,NA
+2020-02-07,Lincoln,PM25,19,Good,NA,NA
+2020-12-04,Parkway East,NO2,21,Good,NA,NA
+2018-09-16,Liberty 2,PM10,13,Good,NA,NA
+2018-01-03,Lincoln,PM10,42,Good,NA,NA
+2022-01-09,North Braddock,PM10B,24,Good,NA,NA
+2016-04-15,Liberty 2,PM25(2),28,Good,NA,NA
+2022-02-22,Pittsburgh,PM10_640,22,Good,NA,NA
+2019-10-19,Liberty,SO2,7,Good,NA,NA
+2021-05-10,Glassport High Street,PM10,6,Good,NA,NA
+2019-09-12,Parkway East,NO2,21,Good,NA,NA
+2020-03-21,Parkway East,CO,6,Good,NA,NA
+2019-11-20,Lincoln,PM25,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-09-27,Glassport High Street,PM10,20,Good,NA,NA
+2021-07-23,Harrison Township,NO2,11,Good,NA,NA
+2018-10-31,Flag Plaza,PM10,17,Good,NA,NA
+2021-07-26,Pittsburgh,PM10_640,26,Good,NA,NA
+2020-12-11,South Fayette,SO2,3,Good,NA,NA
+2016-09-29,Lawrenceville 2,CO,2,Good,NA,NA
+2019-12-31,Liberty,SO2,10,Good,NA,NA
+2020-05-04,Parkway East,NO2,8,Good,NA,NA
+2021-02-08,Parkway East,NO2,30,Good,NA,NA
+2019-12-20,Liberty 2,PM25T,96,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-08-18,Parkway East,PM25T,36,Good,NA,NA
+2017-11-15,Avalon,SO2,1,Good,NA,NA
+2019-12-26,Harrison Township,OZONE,9,Good,NA,NA
+2017-02-27,Glassport High Street,PM10,12,Good,NA,NA
+2019-08-09,South Fayette,OZONE,42,Good,NA,NA
+2019-10-20,Parkway East,PM25T,34,Good,NA,NA
+2018-01-19,Flag Plaza,PM10,18,Good,NA,NA
+2019-06-16,Parkway East,CO,4,Good,NA,NA
+2019-12-03,Lawrenceville,OZONE,21,Good,NA,NA
+2018-11-01,Liberty 2,PM25T,57,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2021-05-23,Pittsburgh,PM25_640,51,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2022-01-04,Avalon,PM25T,46,Good,NA,NA
+2019-04-29,Flag Plaza,PM10,12,Good,NA,NA
+2021-12-09,Glassport High Street,PM10,14,Good,NA,NA
+2020-06-22,Liberty 2,PM10,21,Good,NA,NA
+2021-10-09,Pittsburgh,PM10_640,14,Good,NA,NA
+2018-07-27,North Braddock,PM10B,34,Good,NA,NA
+2018-12-22,Liberty 2,PM25T,26,Good,NA,NA
+2021-11-08,Harrison Township,NO2,33,Good,NA,NA
+2017-08-08,Flag Plaza,PM10,12,Good,NA,NA
+2018-12-02,Parkway East,PM25T,27,Good,NA,NA
+2019-05-24,West Mifflin,SO2,6,Good,NA,NA
+2020-04-29,Harrison Township,NO2,5,Good,NA,NA
+2020-03-18,Lawrenceville,OZONE,28,Good,NA,NA
+2019-12-28,Harrison Township,OZONE,17,Good,NA,NA
+2017-05-05,South Fayette,OZONE,43,Good,NA,NA
+2017-03-07,Liberty 2,PM25(2),49,Good,NA,NA
+2019-11-18,Lawrenceville 2,CO,6,Good,NA,NA
+2019-01-28,Lincoln,PM10,18,Good,NA,NA
+2016-01-07,South Fayette,SO2,9,Good,NA,NA
+2017-12-17,Liberty 2,PM25T,134,Unhealthy for Sensitive Groups,"People with heart or lung disease, older adults, and children should reduce prolonged or heavy exertion.","Increasing likelihood of respiratory symptoms in sensitive individuals, aggravation of heart or lung disease and premature mortality in people with cardiopulmonary disease and older adults."
+2018-09-24,Flag Plaza,CO,0,Good,NA,NA
+2016-05-03,North Braddock,SO2,3,Good,NA,NA
+2017-10-01,Liberty,SO2,0,Good,NA,NA
+2019-02-06,Parkway East,CO,8,Good,NA,NA
+2018-07-03,South Fayette,SO2,3,Good,NA,NA
+2021-03-02,Parkway East,PM25T,23,Good,NA,NA
+2020-05-13,Liberty 2,PM10,19,Good,NA,NA
+2017-04-10,South Fayette,SO2,3,Good,NA,NA
+2016-09-13,Lawrenceville 2,SO2,2,Good,NA,NA
+2019-04-06,Liberty 2,PM10,9,Good,NA,NA
+2021-06-20,Lawrenceville,OZONE,40,Good,NA,NA
+2021-09-10,South Fayette,OZONE,39,Good,NA,NA
+2020-04-09,Avalon,PM25T,22,Good,NA,NA
+2019-03-05,Lawrenceville,PM25B,53,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2017-05-29,South Fayette,SO2,3,Good,NA,NA
+2018-12-26,Liberty 2,PM25T,112,Unhealthy for Sensitive Groups,"People with heart or lung disease, older adults, and children should reduce prolonged or heavy exertion.","Increasing likelihood of respiratory symptoms in sensitive individuals, aggravation of heart or lung disease and premature mortality in people with cardiopulmonary disease and older adults."
+2018-04-02,Parkway East,PM25T,36,Good,NA,NA
+2019-05-14,Liberty,SO2,27,Good,NA,NA
+2019-05-27,Lincoln,PM25,28,Good,NA,NA
+2020-01-28,Parkway East,CO,6,Good,NA,NA
+2019-06-12,Glassport High Street,PM10,10,Good,NA,NA
+2017-11-27,Parkway East,PM25T,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-07-06,North Braddock,PM10B,40,Good,NA,NA
+2016-02-02,Liberty 2,PM10,9,Good,NA,NA
+2017-02-08,Flag Plaza,CO,0,Good,NA,NA
+2021-06-21,North Braddock,SO2,4,Good,NA,NA
+2019-08-14,South Fayette,OZONE,41,Good,NA,NA
+2019-07-12,Flag Plaza,PM10,14,Good,NA,NA
+2019-09-30,North Braddock,SO2,1,Good,NA,NA
+2021-11-25,North Braddock,PM10B,51,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2017-08-09,North Braddock,SO2,4,Good,NA,NA
+2021-09-03,Harrison Township,NO2,11,Good,NA,NA
+2019-01-28,North Braddock,PM10B,26,Good,NA,NA
+2021-10-16,Flag Plaza,PM10,18,Good,NA,NA
+2018-09-18,Lincoln,PM25,40,Good,NA,NA
+2021-07-22,North Braddock,PM10B,30,Good,NA,NA
+2016-05-11,Glassport High Street,PM10,12,Good,NA,NA
+2020-09-19,Parkway East,NO2,13,Good,NA,NA
+2021-11-20,Harrison Township,NO2,21,Good,NA,NA
+2021-07-30,North Braddock,CO,4,Good,NA,NA
+2018-12-11,Glassport High Street,PM10,13,Good,NA,NA
+2018-11-11,Flag Plaza,CO,0,Good,NA,NA
+2017-12-15,North Braddock,SO2,3,Good,NA,NA
+2016-10-02,Avalon,SO2,0,Good,NA,NA
+2017-05-10,Flag Plaza,CO,0,Good,NA,NA
+2018-04-04,Liberty 2,PM25T,23,Good,NA,NA
+2018-07-21,Lawrenceville 2,CO,2,Good,NA,NA
+2016-12-03,Parkway East,CO,7,Good,NA,NA
+2017-07-10,Harrison Township,OZONE,10,Good,NA,NA
+2018-01-11,Lawrenceville,OZONE,19,Good,NA,NA
+2017-06-19,Flag Plaza,CO,0,Good,NA,NA
+2017-04-07,Harrison Township,NO2,3,Good,NA,NA
+2020-11-03,Avalon,PM25T,37,Good,NA,NA
+2019-08-08,Glassport High Street,PM10,15,Good,NA,NA
+2018-09-18,Harrison Township,OZONE,34,Good,NA,NA
+2016-07-24,Avalon,SO2,0,Good,NA,NA
+2017-10-28,North Braddock,PM10B,27,Good,NA,NA
+2020-12-27,North Braddock,SO2,14,Good,NA,NA
+2019-08-28,Parkway East,CO,8,Good,NA,NA
+2020-02-23,Liberty 2,PM25T,102,Unhealthy for Sensitive Groups,"People with heart or lung disease, older adults, and children should reduce prolonged or heavy exertion.","Increasing likelihood of respiratory symptoms in sensitive individuals, aggravation of heart or lung disease and premature mortality in people with cardiopulmonary disease and older adults."
+2018-06-26,Liberty,SO2,1,Good,NA,NA
+2017-08-29,Harrison Township,OZONE,33,Good,NA,NA
+2017-08-21,Liberty 2,PM25(2),73,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-05-14,Avalon,SO2,0,Good,NA,NA
+2016-01-16,Liberty,SO2,1,Good,NA,NA
+2018-02-08,Parkway East,PM25T,62,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-05-23,Avalon,PM25T,37,Good,NA,NA
+2017-01-26,North Braddock,SO2,3,Good,NA,NA
+2021-04-05,South Fayette,SO2,6,Good,NA,NA
+2019-04-25,Avalon,PM25T,51,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2021-09-18,Pittsburgh,PM10_640,19,Good,NA,NA
+2016-06-29,Parkway East,CO,10,Good,NA,NA
+2016-05-09,Flag Plaza,CO,0,Good,NA,NA
+2019-05-11,Glassport High Street,PM10,10,Good,NA,NA
+2020-05-10,North Braddock,PM10B,17,Good,NA,NA
+2016-06-08,Avalon,SO2,1,Good,NA,NA
+2017-09-13,North Braddock,SO2,6,Good,NA,NA
+2016-08-24,South Fayette,SO2,1,Good,NA,NA
+2019-08-31,Glassport High Street,PM10,17,Good,NA,NA
+2019-03-16,North Braddock,SO2,1,Good,NA,NA
+2017-09-19,Lincoln,PM25,70,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-06-12,Parkway East,NO2,19,Good,NA,NA
+2020-05-26,Avalon,PM25T,36,Good,NA,NA
+2016-08-14,Avalon,PM25T,27,Good,NA,NA
+2018-02-15,North Braddock,SO2,1,Good,NA,NA
+2020-08-26,Avalon,PM25T,43,Good,NA,NA
+2022-01-04,South Fayette,OZONE,31,Good,NA,NA
+2019-11-20,Glassport High Street,PM10,19,Good,NA,NA
+2016-11-25,Avalon,SO2,0,Good,NA,NA
+2022-02-03,South Fayette,SO2,0,Good,NA,NA
+2019-10-23,Liberty,SO2,52,Moderate,NA,NA
+2017-04-15,Glassport High Street,PM10,34,Good,NA,NA
+2019-11-02,South Fayette,SO2,4,Good,NA,NA
+2021-07-15,South Fayette,OZONE,45,Good,NA,NA
+2018-04-17,Harrison Township,NO2,4,Good,NA,NA
+2020-03-24,Lincoln,PM10,7,Good,NA,NA
+2020-12-20,Harrison Township,NO2,19,Good,NA,NA
+2019-08-15,West Mifflin,SO2,7,Good,NA,NA
+2017-11-24,Harrison Township,OZONE,24,Good,NA,NA
+2022-02-20,North Braddock,PM10_640,20,Good,NA,NA
+2016-05-15,Harrison Township,OZONE,31,Good,NA,NA
+2018-01-20,Harrison Township,OZONE,38,Good,NA,NA
+2018-08-12,North Braddock,PM10B,18,Good,NA,NA
+2016-08-17,South Fayette,OZONE,24,Good,NA,NA
+2019-04-12,West Mifflin,SO2,6,Good,NA,NA
+2016-01-04,Harrison Township,NO2,4,Good,NA,NA
+2018-01-01,Lincoln,PM10,24,Good,NA,NA
+2020-05-30,Parkway East,NO2,7,Good,NA,NA
+2020-09-09,Lawrenceville 2,CO,4,Good,NA,NA
+2017-03-24,Harrison Township,OZONE,50,Good,NA,NA
+2018-05-16,Liberty 2,PM25T,40,Good,NA,NA
+2016-05-24,Glassport High Street,PM10,24,Good,NA,NA
+2018-08-29,Lawrenceville 2,CO,2,Good,NA,NA
+2016-10-20,Harrison Township,OZONE,39,Good,NA,NA
+2020-11-29,Avalon,PM25T,54,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-10-06,Lawrenceville,PM25B,49,Good,NA,NA
+2021-09-06,Harrison Township,OZONE,41,Good,NA,NA
+2018-03-01,Lawrenceville 2,SO2,2,Good,NA,NA
+2021-10-25,Pittsburgh,PM10_640,14,Good,NA,NA
+2017-07-16,Flag Plaza,CO,0,Good,NA,NA
+2020-10-31,Liberty 2,PM25T,47,Good,NA,NA
+2016-01-14,Glassport High Street,PM10,10,Good,NA,NA
+2017-06-01,Lincoln,PM10,27,Good,NA,NA
+2019-06-07,Parkway East,NO2,18,Good,NA,NA
+2019-02-12,Glassport High Street,PM10,10,Good,NA,NA
+2018-01-28,North Braddock,PM10B,27,Good,NA,NA
+2021-04-25,Pittsburgh,PM10_640,19,Good,NA,NA
+2016-11-17,Avalon,SO2,1,Good,NA,NA
+2020-10-27,Parkway East,CO,9,Good,NA,NA
+2021-09-01,North Braddock,SO2,1,Good,NA,NA
+2017-02-20,Flag Plaza,CO,0,Good,NA,NA
+2018-11-28,Lawrenceville 2,SO2,0,Good,NA,NA
+2022-02-14,Lawrenceville 2,CO,2,Good,NA,NA
+2017-12-10,Glassport High Street,PM10,9,Good,NA,NA
+2017-03-04,Lincoln,PM25,28,Good,NA,NA
+2016-11-24,Parkway East,CO,8,Good,NA,NA
+2016-02-15,South Fayette,SO2,4,Good,NA,NA
+2021-12-24,Glassport High Street,PM10,10,Good,NA,NA
+2016-06-20,North Braddock,SO2,19,Good,NA,NA
+2018-07-14,Lawrenceville 2,SO2,3,Good,NA,NA
+2020-09-02,Harrison Township,OZONE,23,Good,NA,NA
+2019-02-26,Parkway East,NO2,18,Good,NA,NA
+2021-11-21,Harrison Township,OZONE,22,Good,NA,NA
+2020-04-24,Lincoln,PM10,13,Good,NA,NA
+2016-04-27,North Braddock,PM10B,23,Good,NA,NA
+2019-05-17,Lawrenceville 2,SO2,1,Good,NA,NA
+2019-04-26,Flag Plaza,PM10,16,Good,NA,NA
+2022-01-22,Parkway East,CO,6,Good,NA,NA
+2018-09-20,Harrison Township,NO2,16,Good,NA,NA
+2016-11-27,Harrison Township,NO2,24,Good,NA,NA
+2017-08-22,Harrison Township,OZONE,42,Good,NA,NA
+2017-04-20,North Braddock,SO2,3,Good,NA,NA
+2021-01-01,Glassport High Street,PM10,6,Good,NA,NA
+2021-09-11,Harrison Township,OZONE,43,Good,NA,NA
+2018-05-08,Liberty,SO2,16,Good,NA,NA
+2021-05-01,Harrison Township,OZONE,44,Good,NA,NA
+2020-09-12,South Fayette,OZONE,34,Good,NA,NA
+2019-10-01,Clairton,SO2,3,Good,NA,NA
+2021-06-22,South Fayette,SO2,0,Good,NA,NA
+2020-07-17,Lawrenceville,OZONE,61,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2020-03-09,Lawrenceville 2,CO,9,Good,NA,NA
+2019-10-19,Clairton,SO2,7,Good,NA,NA
+2020-11-28,Liberty,SO2,27,Good,NA,NA
+2019-04-11,Lawrenceville,OZONE,41,Good,NA,NA
+2017-12-23,Flag Plaza,CO,0,Good,NA,NA
+2019-12-17,Liberty 2,PM10,6,Good,NA,NA
+2018-03-09,Liberty 2,PM25T,33,Good,NA,NA
+2017-08-02,Liberty 2,PM10,49,Good,NA,NA
+2020-12-13,Liberty,SO2,7,Good,NA,NA
+2018-04-25,North Braddock,PM10B,8,Good,NA,NA
+2019-04-04,Avalon,SO2,4,Good,NA,NA
+2018-06-04,Avalon,PM25T,35,Good,NA,NA
+2019-02-06,Lincoln,PM25,45,Good,NA,NA
+2020-09-25,Lawrenceville 2,SO2,5,Good,NA,NA
+2017-05-12,Parkway East,CO,6,Good,NA,NA
+2018-08-23,Liberty 2,PM10,23,Good,NA,NA
+2019-02-26,Lawrenceville 2,CO,2,Good,NA,NA
+2016-01-31,Harrison Township,OZONE,41,Good,NA,NA
+2021-02-26,Parkway East,CO,7,Good,NA,NA
+2021-11-27,Parkway East,CO,4,Good,NA,NA
+2017-11-18,Parkway East,PM25T,44,Good,NA,NA
+2019-09-21,Avalon,SO2,0,Good,NA,NA
+2019-02-01,Lawrenceville,PM25B,61,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-06-09,Lawrenceville,OZONE,42,Good,NA,NA
+2019-10-02,Glassport High Street,PM10,35,Good,NA,NA
+2021-12-15,North Braddock,CO,10,Good,NA,NA
+2018-07-31,Lawrenceville,OZONE,30,Good,NA,NA
+2018-01-24,Liberty,SO2,1,Good,NA,NA
+2018-07-23,Avalon,PM25T,26,Good,NA,NA
+2019-02-16,Liberty 2,PM25T,32,Good,NA,NA
+2017-03-04,North Braddock,PM10B,11,Good,NA,NA
+2018-08-06,Lincoln,PM25,66,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-10-07,Harrison Township,OZONE,41,Good,NA,NA
+2016-05-22,Liberty 2,PM10,6,Good,NA,NA
+2016-02-19,Parkway East,PM25T,29,Good,NA,NA
+2017-09-06,Parkway East,CO,9,Good,NA,NA
+2017-08-07,Liberty 2,PM25(2),31,Good,NA,NA
+2020-10-13,North Braddock,SO2,24,Good,NA,NA
+2017-12-09,Liberty 2,PM25T,48,Good,NA,NA
+2017-04-28,Harrison Township,NO2,13,Good,NA,NA
+2018-11-12,Lincoln,PM25,73,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-08-14,Avalon,SO2,0,Good,NA,NA
+2016-04-16,Flag Plaza,CO,0,Good,NA,NA
+2018-12-19,Harrison Township,NO2,28,Good,NA,NA
+2017-12-15,Avalon,SO2,1,Good,NA,NA
+2021-02-25,North Braddock,PM10B,38,Good,NA,NA
+2019-05-26,Lawrenceville 2,SO2,1,Good,NA,NA
+2016-12-14,Lawrenceville 2,SO2,8,Good,NA,NA
+2021-06-11,Lawrenceville 2,SO2,8,Good,NA,NA
+2016-12-25,North Braddock,SO2,0,Good,NA,NA
+2020-04-14,South Fayette,OZONE,43,Good,NA,NA
+2017-11-04,Liberty,SO2,0,Good,NA,NA
+2017-11-13,North Braddock,SO2,0,Good,NA,NA
+2018-03-22,Parkway East,CO,7,Good,NA,NA
+2016-09-03,Parkway East,NO2,15,Good,NA,NA
+2019-01-30,Harrison Township,OZONE,35,Good,NA,NA
+2019-12-03,Avalon,SO2,0,Good,NA,NA
+2016-03-10,Glassport High Street,PM10,28,Good,NA,NA
+2018-05-07,Flag Plaza,PM10,20,Good,NA,NA
+2017-12-24,Liberty 2,PM10,5,Good,NA,NA
+2016-07-06,North Braddock,SO2,7,Good,NA,NA
+2017-10-18,Lawrenceville,OZONE,31,Good,NA,NA
+2018-09-11,Parkway East,PM25T,23,Good,NA,NA
+2020-04-04,Harrison Township,OZONE,38,Good,NA,NA
+2017-03-27,Avalon,SO2,1,Good,NA,NA
+2016-07-21,Parkway East,NO2,35,Good,NA,NA
+2017-02-22,Liberty,SO2,61,Moderate,NA,NA
+2020-11-12,North Braddock,SO2,0,Good,NA,NA
+2018-12-23,Lawrenceville 2,CO,2,Good,NA,NA
+2019-04-09,Glassport High Street,PM10,11,Good,NA,NA
+2018-12-22,Lawrenceville 2,SO2,0,Good,NA,NA
+2019-11-29,Parkway East,PM25T,23,Good,NA,NA
+2018-05-17,Lawrenceville 2,CO,3,Good,NA,NA
+2018-11-13,Parkway East,CO,8,Good,NA,NA
+2019-01-21,Liberty 2,PM10,8,Good,NA,NA
+2018-05-29,Lincoln,PM25,55,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-11-13,Harrison Township,NO2,33,Good,NA,NA
+2017-03-17,Liberty 2,PM25(2),62,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-09-28,Harrison Township,OZONE,35,Good,NA,NA
+2022-01-03,Liberty,SO2,0,Good,NA,NA
+2019-12-19,Parkway East,NO2,27,Good,NA,NA
+2019-04-18,Parkway East,PM25T,51,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2017-11-11,Lawrenceville 2,CO,5,Good,NA,NA
+2022-02-16,North Braddock,PM25_640,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-07-12,Flag Plaza,CO,4,Good,NA,NA
+2017-07-21,Liberty,SO2,14,Good,NA,NA
+2020-05-14,Harrison Township,NO2,21,Good,NA,NA
+2020-06-06,Glassport High Street,PM10,22,Good,NA,NA
+2017-03-01,Harrison Township,OZONE,37,Good,NA,NA
+2016-12-25,Parkway East,PM25T,48,Good,NA,NA
+2018-07-30,Liberty 2,PM10,19,Good,NA,NA
+2017-03-02,Harrison Township,OZONE,37,Good,NA,NA
+2021-07-17,Parkway East,PM25T,25,Good,NA,NA
+2018-09-18,Avalon,PM25T,24,Good,NA,NA
+2018-03-08,South Fayette,SO2,0,Good,NA,NA
+2020-04-23,Parkway East,CO,3,Good,NA,NA
+2021-12-05,Parkway East,CO,14,Good,NA,NA
+2020-09-16,Lawrenceville 2,SO2,3,Good,NA,NA
+2019-05-21,Lawrenceville 2,SO2,0,Good,NA,NA
+2018-05-09,Harrison Township,OZONE,74,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2017-01-12,Liberty 2,PM10,13,Good,NA,NA
+2022-01-15,South Fayette,SO2,3,Good,NA,NA
+2020-12-20,Lawrenceville 2,SO2,2,Good,NA,NA
+2021-02-12,South Fayette,OZONE,31,Good,NA,NA
+2017-01-08,Parkway East,NO2,26,Good,NA,NA
+2016-03-03,Lawrenceville,OZONE,29,Good,NA,NA
+2019-05-19,Lawrenceville,PM25B,63,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-01-14,Avalon,SO2,1,Good,NA,NA
+2019-07-09,Harrison Township,OZONE,49,Good,NA,NA
+2018-08-25,Lawrenceville,PM25B,51,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-05-06,Lincoln,PM25,26,Good,NA,NA
+2018-12-12,Avalon,SO2,6,Good,NA,NA
+2020-09-21,Lawrenceville,OZONE,35,Good,NA,NA
+2017-08-08,Lawrenceville 2,SO2,0,Good,NA,NA
+2020-02-08,Liberty,SO2,3,Good,NA,NA
+2020-03-15,Glassport High Street,PM10,6,Good,NA,NA
+2019-11-25,South Fayette,SO2,1,Good,NA,NA
+2019-05-23,North Braddock,PM10B,23,Good,NA,NA
+2020-12-01,Liberty,SO2,0,Good,NA,NA
+2020-09-16,Lincoln,PM10,36,Good,NA,NA
+2017-03-11,Flag Plaza,PM10,6,Good,NA,NA
+2021-07-18,Harrison Township,OZONE,26,Good,NA,NA
+2021-01-29,Glassport High Street,PM10,7,Good,NA,NA
+2018-09-29,North Braddock,SO2,3,Good,NA,NA
+2017-06-09,Parkway East,CO,11,Good,NA,NA
+2019-01-10,Lawrenceville 2,CO,2,Good,NA,NA
+2016-02-01,Lincoln,PM25,44,Good,NA,NA
+2020-04-17,Lawrenceville,PM25B,44,Good,NA,NA
+2017-02-05,Flag Plaza,PM10,16,Good,NA,NA
+2018-03-11,Liberty,SO2,7,Good,NA,NA
+2016-08-21,Parkway East,PM25T,27,Good,NA,NA
+2018-05-21,Liberty,SO2,17,Good,NA,NA
+2022-01-16,Flag Plaza,PM10,6,Good,NA,NA
+2020-05-24,Liberty 2,PM10,16,Good,NA,NA
+2018-01-22,Avalon,SO2,1,Good,NA,NA
+2019-05-14,North Braddock,SO2,3,Good,NA,NA
+2019-01-19,Harrison Township,OZONE,19,Good,NA,NA
+2017-01-20,South Fayette,SO2,6,Good,NA,NA
+2019-09-05,Liberty 2,PM25T,23,Good,NA,NA
+2017-05-22,Parkway East,CO,8,Good,NA,NA
+2019-09-24,Avalon,SO2,0,Good,NA,NA
+2018-04-06,Parkway East,PM25T,27,Good,NA,NA
+2019-03-20,Glassport High Street,PM10,28,Good,NA,NA
+2022-01-22,Pittsburgh,PM25_640,8,Good,NA,NA
+2018-05-01,South Fayette,SO2,3,Good,NA,NA
+2017-12-16,Lawrenceville 2,CO,8,Good,NA,NA
+2021-09-28,Parkway East,NO2,15,Good,NA,NA
+2019-11-27,South Fayette,OZONE,31,Good,NA,NA
+2020-01-14,Flag Plaza,PM10,19,Good,NA,NA
+2021-04-24,Lawrenceville,OZONE,45,Good,NA,NA
+2020-02-08,Flag Plaza,PM10,6,Good,NA,NA
+2017-04-04,Harrison Township,NO2,9,Good,NA,NA
+2020-04-13,Lincoln,PM25,25,Good,NA,NA
+2019-03-22,Liberty 2,PM10,15,Good,NA,NA
+2021-07-21,Lawrenceville 2,CO,5,Good,NA,NA
+2016-02-11,Avalon,SO2,4,Good,NA,NA
+2018-12-23,Harrison Township,OZONE,16,Good,NA,NA
+2020-03-30,Liberty 2,PM10,10,Good,NA,NA
+2018-12-26,Liberty,SO2,103,Unhealthy for Sensitive Groups,People with asthma should consider limiting outdoor exertion.,"Increasing likelihood of respiratory symptoms, such as chest tightness and breathing discomfort, in people with asthma."
+2021-04-26,South Fayette,SO2,0,Good,NA,NA
+2018-02-20,Liberty,SO2,84,Moderate,NA,NA
+2019-01-07,Lawrenceville,OZONE,22,Good,NA,NA
+2016-01-21,Lincoln,PM10,15,Good,NA,NA
+2021-12-11,Harrison Township,NO2,8,Good,NA,NA
+2018-11-29,North Braddock,PM10B,21,Good,NA,NA
+2021-09-11,South Fayette,SO2,6,Good,NA,NA
+2020-11-05,South Fayette,OZONE,46,Good,NA,NA
+2021-09-03,Liberty 2,PM25T,43,Good,NA,NA
+2021-06-24,Lawrenceville 2,SO2,3,Good,NA,NA
+2016-06-19,Flag Plaza,PM10,19,Good,NA,NA
+2018-01-19,Parkway East,CO,2,Good,NA,NA
+2021-07-17,Avalon,PM25T,26,Good,NA,NA
+2019-11-04,Lawrenceville,OZONE,24,Good,NA,NA
+2021-09-27,Liberty,SO2,34,Good,NA,NA
+2020-09-20,Parkway East,PM25T,22,Good,NA,NA
+2018-10-29,Lawrenceville,PM25B,27,Good,NA,NA
+2018-01-13,South Fayette,OZONE,37,Good,NA,NA
+2018-11-22,Liberty 2,PM10,6,Good,NA,NA
+2017-04-23,North Braddock,SO2,0,Good,NA,NA
+2016-03-02,Lincoln,PM25,23,Good,NA,NA
+2022-01-14,South Fayette,SO2,0,Good,NA,NA
+2018-03-22,Flag Plaza,CO,0,Good,NA,NA
+2020-07-25,Parkway East,CO,9,Good,NA,NA
+2018-05-24,North Braddock,SO2,4,Good,NA,NA
+2018-11-09,Parkway East,PM25T,29,Good,NA,NA
+2018-04-28,Avalon,SO2,0,Good,NA,NA
+2016-11-20,Lawrenceville 2,SO2,1,Good,NA,NA
+2016-03-12,North Braddock,PM10B,24,Good,NA,NA
+2021-10-27,South Fayette,OZONE,14,Good,NA,NA
+2017-06-22,Parkway East,CO,7,Good,NA,NA
+2019-04-29,South Fayette,OZONE,44,Good,NA,NA
+2018-09-28,Avalon,SO2,0,Good,NA,NA
+2020-01-31,Lawrenceville 2,CO,4,Good,NA,NA
+2018-01-18,Avalon,PM25T,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-11-03,Liberty,SO2,46,Good,NA,NA
+2016-05-10,Harrison Township,OZONE,22,Good,NA,NA
+2021-04-11,Harrison Township,OZONE,43,Good,NA,NA
+2019-04-24,South Fayette,OZONE,48,Good,NA,NA
+2017-07-26,Glassport High Street,PM10,18,Good,NA,NA
+2018-07-30,Parkway East,CO,4,Good,NA,NA
+2021-09-04,Parkway East,CO,7,Good,NA,NA
+2020-08-08,Parkway East,PM25T,39,Good,NA,NA
+2017-11-27,South Fayette,OZONE,31,Good,NA,NA
+2019-11-01,Harrison Township,NO2,17,Good,NA,NA
+2019-01-31,Lincoln,PM25,62,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-02-17,Glassport High Street,PM10,9,Good,NA,NA
+2021-09-28,South Fayette,OZONE,40,Good,NA,NA
+2018-05-14,Liberty 2,PM25T,45,Good,NA,NA
+2016-01-08,North Braddock,SO2,11,Good,NA,NA
+2019-10-07,Lawrenceville,PM25B,31,Good,NA,NA
+2020-12-16,North Braddock,PM10B,14,Good,NA,NA
+2017-06-20,Glassport High Street,PM10,6,Good,NA,NA
+2018-12-09,Glassport High Street,PM10,9,Good,NA,NA
+2019-07-05,Avalon,SO2,0,Good,NA,NA
+2018-12-28,North Braddock,SO2,3,Good,NA,NA
+2021-09-07,North Braddock,PM10B,41,Good,NA,NA
+2021-03-04,Harrison Township,NO2,11,Good,NA,NA
+2016-12-30,Flag Plaza,PM10,7,Good,NA,NA
+2018-03-02,Lawrenceville 2,CO,2,Good,NA,NA
+2018-03-07,North Braddock,SO2,1,Good,NA,NA
+2016-12-01,North Braddock,PM10B,15,Good,NA,NA
+2016-10-31,South Fayette,OZONE,28,Good,NA,NA
+2022-01-22,Lawrenceville 2,SO2,3,Good,NA,NA
+2017-06-22,Parkway East,PM25T,60,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-02-03,North Braddock,PM10B,19,Good,NA,NA
+2018-11-25,Lincoln,PM25,57,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2016-10-28,Lawrenceville,OZONE,31,Good,NA,NA
+2019-10-29,Lawrenceville,PM25B,52,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-02-17,Parkway East,CO,11,Good,NA,NA
+2018-03-07,Lawrenceville,PM25B,39,Good,NA,NA
+2018-03-01,Parkway East,PM25T,28,Good,NA,NA
+2019-10-13,Glassport High Street,PM10,17,Good,NA,NA
+2020-01-02,Liberty 2,PM10,24,Good,NA,NA
+2018-03-01,Lawrenceville 2,CO,4,Good,NA,NA
+2018-06-02,North Braddock,PM10B,26,Good,NA,NA
+2017-12-09,North Braddock,PM10B,22,Good,NA,NA
+2017-12-16,Avalon,SO2,3,Good,NA,NA
+2018-03-07,Liberty 2,PM25T,34,Good,NA,NA
+2018-05-05,Parkway East,CO,6,Good,NA,NA
+2022-01-31,Avalon,PM25T,76,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2021-06-08,Pittsburgh,PM25_640,44,Good,NA,NA
+2016-10-02,South Fayette,OZONE,37,Good,NA,NA
+2017-08-16,Lawrenceville 2,SO2,1,Good,NA,NA
+2018-07-13,North Braddock,SO2,10,Good,NA,NA
+2018-11-05,Liberty,SO2,4,Good,NA,NA
+2019-10-16,Glassport High Street,PM10,31,Good,NA,NA
+2016-10-26,North Braddock,PM10B,22,Good,NA,NA
+2021-01-24,South Fayette,SO2,9,Good,NA,NA
+2017-01-20,North Braddock,SO2,4,Good,NA,NA
+2016-03-24,Liberty 2,PM25(2),61,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-10-08,Harrison Township,NO2,13,Good,NA,NA
+2018-06-11,Lincoln,PM10,2,Good,NA,NA
+2019-09-07,Flag Plaza,CO,3,Good,NA,NA
+2017-06-06,Lawrenceville,PM25B,18,Good,NA,NA
+2021-11-26,Lawrenceville 2,CO,2,Good,NA,NA
+2018-05-30,Harrison Township,NO2,4,Good,NA,NA
+2017-11-05,North Braddock,PM10B,19,Good,NA,NA
+2022-02-10,North Braddock,CO,5,Good,NA,NA
+2018-10-19,Lincoln,PM10,27,Good,NA,NA
+2020-08-09,Flag Plaza,CO,5,Good,NA,NA
+2018-06-10,Lawrenceville 2,SO2,1,Good,NA,NA
+2021-05-20,South Fayette,OZONE,87,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2017-01-11,North Braddock,SO2,19,Good,NA,NA
+2020-01-24,Lawrenceville 2,CO,10,Good,NA,NA
+2016-01-11,North Braddock,SO2,6,Good,NA,NA
+2021-04-23,Pittsburgh,PM25_640,54,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-06-22,Parkway East,PM25T,51,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-05-10,Harrison Township,NO2,16,Good,NA,NA
+2019-07-24,South Fayette,SO2,0,Good,NA,NA
+2019-09-07,Harrison Township,NO2,7,Good,NA,NA
+2019-05-10,Clairton,SO2,4,Good,NA,NA
+2018-04-16,Harrison Township,NO2,5,Good,NA,NA
+2017-11-11,Flag Plaza,PM10,7,Good,NA,NA
+2021-05-01,Pittsburgh,PM10_640,10,Good,NA,NA
+2020-04-13,Harrison Township,OZONE,33,Good,NA,NA
+2016-06-12,Glassport High Street,PM10,23,Good,NA,NA
+2020-11-30,Harrison Township,NO2,14,Good,NA,NA
+2018-04-30,Flag Plaza,CO,0,Good,NA,NA
+2020-02-15,Lincoln,PM10,9,Good,NA,NA
+2020-08-11,Parkway East,PM25T,54,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2017-02-11,Lawrenceville,OZONE,30,Good,NA,NA
+2016-02-16,South Fayette,SO2,1,Good,NA,NA
+2017-06-01,Liberty 2,PM10,18,Good,NA,NA
+2019-07-25,Avalon,PM25T,49,Good,NA,NA
+2017-01-03,Flag Plaza,PM10,6,Good,NA,NA
+2020-03-12,South Fayette,SO2,3,Good,NA,NA
+2021-04-22,Liberty,SO2,0,Good,NA,NA
+2018-03-31,Liberty,SO2,17,Good,NA,NA
+2019-07-26,South Fayette,SO2,9,Good,NA,NA
+2019-05-18,West Mifflin,SO2,11,Good,NA,NA
+2020-02-19,Lawrenceville,PM25B,35,Good,NA,NA
+2021-08-12,Liberty 2,PM10,24,Good,NA,NA
+2019-08-22,South Fayette,SO2,1,Good,NA,NA
+2021-08-18,Glassport High Street,PM10,11,Good,NA,NA
+2018-02-07,North Braddock,SO2,1,Good,NA,NA
+2016-12-06,Parkway East,PM25T,24,Good,NA,NA
+2021-01-26,Avalon,PM25T,29,Good,NA,NA
+2020-02-24,North Braddock,PM10B,46,Good,NA,NA
+2018-11-20,Flag Plaza,PM10,8,Good,NA,NA
+2020-08-04,South Fayette,OZONE,40,Good,NA,NA
+2021-09-28,Harrison Township,NO2,11,Good,NA,NA
+2021-11-17,Parkway East,CO,8,Good,NA,NA
+2016-07-11,Glassport High Street,PM10,21,Good,NA,NA
+2021-11-11,Avalon,PM25T,49,Good,NA,NA
+2021-12-06,Lawrenceville,OZONE,27,Good,NA,NA
+2018-09-23,Glassport High Street,PM10,7,Good,NA,NA
+2018-03-09,Lawrenceville 2,SO2,1,Good,NA,NA
+2018-12-11,Flag Plaza,CO,0,Good,NA,NA
+2021-04-20,South Fayette,SO2,3,Good,NA,NA
+2019-06-03,Flag Plaza,PM10,11,Good,NA,NA
+2018-07-08,North Braddock,PM10B,18,Good,NA,NA
+2019-06-03,Flag Plaza,CO,0,Good,NA,NA
+2020-08-31,Parkway East,NO2,10,Good,NA,NA
+2019-05-04,Avalon,SO2,0,Good,NA,NA
+2018-02-14,South Fayette,OZONE,23,Good,NA,NA
+2017-06-17,Avalon,PM25T,40,Good,NA,NA
+2017-12-05,Harrison Township,NO2,29,Good,NA,NA
+2019-02-24,Parkway East,NO2,9,Good,NA,NA
+2021-10-20,Lawrenceville 2,CO,5,Good,NA,NA
+2021-12-12,North Braddock,CO,4,Good,NA,NA
+2019-11-10,Liberty 2,PM10,17,Good,NA,NA
+2021-01-22,Liberty,SO2,0,Good,NA,NA
+2017-02-19,Harrison Township,OZONE,43,Good,NA,NA
+2019-11-27,South Fayette,SO2,1,Good,NA,NA
+2021-12-13,Harrison Township,OZONE,27,Good,NA,NA
+2018-11-23,Lawrenceville,PM25B,41,Good,NA,NA
+2018-03-01,Harrison Township,NO2,14,Good,NA,NA
+2017-08-22,Lincoln,PM10,44,Good,NA,NA
+2020-09-25,Lincoln,PM10,36,Good,NA,NA
+2021-07-09,Avalon,PM25T,35,Good,NA,NA
+2019-05-19,Lincoln,PM10,34,Good,NA,NA
+2019-03-19,Glassport High Street,PM10,18,Good,NA,NA
+2019-03-21,Harrison Township,OZONE,44,Good,NA,NA
+2019-08-03,North Braddock,PM10B,31,Good,NA,NA
+2021-11-05,Liberty 2,PM10,37,Good,NA,NA
+2016-04-30,North Braddock,PM10B,13,Good,NA,NA
+2019-08-25,Harrison Township,OZONE,31,Good,NA,NA
+2016-02-13,Glassport High Street,PM10,13,Good,NA,NA
+2021-03-12,Liberty,SO2,4,Good,NA,NA
+2020-05-06,Liberty 2,PM10,6,Good,NA,NA
+2018-08-09,Liberty 2,PM10,20,Good,NA,NA
+2020-07-12,Glassport High Street,PM10,13,Good,NA,NA
+2016-10-17,Lawrenceville 2,CO,3,Good,NA,NA
+2019-02-02,Avalon,PM25T,74,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2017-04-16,North Braddock,PM10B,43,Good,NA,NA
+2016-04-12,South Fayette,SO2,0,Good,NA,NA
+2019-04-08,Parkway East,PM25T,37,Good,NA,NA
+2018-02-11,Parkway East,CO,9,Good,NA,NA
+2017-06-10,North Braddock,SO2,9,Good,NA,NA
+2017-12-28,South Fayette,OZONE,28,Good,NA,NA
+2020-08-12,Glassport High Street,PM10,19,Good,NA,NA
+2018-03-13,South Fayette,OZONE,43,Good,NA,NA
+2020-10-09,Avalon,SO2,1,Good,NA,NA
+2017-12-31,North Braddock,PM10B,19,Good,NA,NA
+2018-06-16,Liberty 2,PM10,44,Good,NA,NA
+2017-03-25,Liberty 2,PM10,35,Good,NA,NA
+2018-04-07,Lawrenceville 2,CO,3,Good,NA,NA
+2020-11-12,Lincoln,PM10,14,Good,NA,NA
+2016-04-10,Parkway East,PM25T,33,Good,NA,NA
+2018-03-30,Glassport High Street,PM10,9,Good,NA,NA
+2019-02-11,Avalon,PM25T,57,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-02-27,Lawrenceville 2,CO,3,Good,NA,NA
+2020-09-06,Avalon,PM25T,37,Good,NA,NA
+2020-11-27,Parkway East,PM25T,33,Good,NA,NA
+2019-10-13,Clairton,SO2,3,Good,NA,NA
+2020-11-29,Liberty 2,PM10,30,Good,NA,NA
+2018-10-09,Harrison Township,NO2,14,Good,NA,NA
+2018-11-09,Liberty 2,PM10,11,Good,NA,NA
+2017-10-12,Lawrenceville,PM25B,41,Good,NA,NA
+2021-10-15,North Braddock,PM10B,44,Good,NA,NA
+2019-01-22,Parkway East,CO,7,Good,NA,NA
+2021-01-19,Lawrenceville,OZONE,26,Good,NA,NA
+2020-08-01,Liberty 2,PM25T,31,Good,NA,NA
+2019-09-28,North Braddock,SO2,31,Good,NA,NA
+2022-01-21,North Braddock,CO,3,Good,NA,NA
+2021-11-25,Pittsburgh,PM25_640,5,Good,NA,NA
+2018-03-08,Parkway East,NO2,16,Good,NA,NA
+2018-10-30,Liberty 2,PM25T,48,Good,NA,NA
+2018-02-18,Flag Plaza,PM10,8,Good,NA,NA
+2017-08-03,Lincoln,PM25,58,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-07-29,Lawrenceville 2,SO2,2,Good,NA,NA
+2021-03-24,Glassport High Street,PM10,15,Good,NA,NA
+2020-06-01,Liberty 2,PM10,19,Good,NA,NA
+2016-06-28,Lincoln,PM10,22,Good,NA,NA
+2016-04-17,Flag Plaza,CO,0,Good,NA,NA
+2019-07-31,Harrison Township,NO2,7,Good,NA,NA
+2020-02-03,North Braddock,SO2,79,Moderate,NA,NA
+2019-08-13,West Mifflin,SO2,4,Good,NA,NA
+2018-07-19,North Braddock,PM10B,20,Good,NA,NA
+2020-12-03,Liberty,SO2,10,Good,NA,NA
+2021-05-16,South Fayette,OZONE,80,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2020-11-11,Parkway East,CO,8,Good,NA,NA
+2017-07-09,Avalon,SO2,3,Good,NA,NA
+2019-12-03,Lawrenceville 2,CO,2,Good,NA,NA
+2019-11-17,Avalon,SO2,1,Good,NA,NA
+2017-11-13,Harrison Township,NO2,16,Good,NA,NA
+2020-11-25,Parkway East,PM25T,39,Good,NA,NA
+2016-01-05,Lincoln,PM10,19,Good,NA,NA
+2016-05-01,Harrison Township,NO2,20,Good,NA,NA
+2019-11-25,Harrison Township,NO2,28,Good,NA,NA
+2016-01-27,Lincoln,PM10,14,Good,NA,NA
+2016-11-01,Parkway East,PM25T,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2021-06-27,North Braddock,PM10B,39,Good,NA,NA
+2019-09-10,South Fayette,OZONE,49,Good,NA,NA
+2019-10-05,North Braddock,SO2,1,Good,NA,NA
+2018-08-16,North Braddock,PM10B,50,Good,NA,NA
+2020-09-09,Parkway East,NO2,9,Good,NA,NA
+2018-01-15,Parkway East,PM25T,38,Good,NA,NA
+2017-02-25,Parkway East,CO,4,Good,NA,NA
+2021-02-25,North Braddock,SO2,1,Good,NA,NA
+2022-01-26,North Braddock,CO,5,Good,NA,NA
+2017-01-29,Avalon,PM25T,33,Good,NA,NA
+2019-02-02,Lawrenceville 2,SO2,6,Good,NA,NA
+2019-06-18,Liberty 2,PM10,11,Good,NA,NA
+2017-08-25,Harrison Township,OZONE,31,Good,NA,NA
+2020-12-09,Parkway East,CO,9,Good,NA,NA
+2016-09-13,Liberty 2,PM10,44,Good,NA,NA
+2016-08-16,Harrison Township,OZONE,38,Good,NA,NA
+2020-12-01,North Braddock,SO2,0,Good,NA,NA
+2017-04-08,Harrison Township,NO2,19,Good,NA,NA
+2021-08-05,Avalon,PM25T,55,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-05-10,Lawrenceville 2,SO2,1,Good,NA,NA
+2020-08-21,Avalon,PM25T,44,Good,NA,NA
+2016-08-13,Glassport High Street,PM10,15,Good,NA,NA
+2020-06-26,South Fayette,OZONE,49,Good,NA,NA
+2018-08-12,Avalon,SO2,0,Good,NA,NA
+2019-08-09,Harrison Township,OZONE,39,Good,NA,NA
+2017-08-22,Lawrenceville 2,CO,3,Good,NA,NA
+2021-04-21,North Braddock,PM10B,19,Good,NA,NA
+2016-01-02,Lincoln,PM25,52,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2021-09-23,Liberty 2,PM25T,18,Good,NA,NA
+2016-08-17,Harrison Township,NO2,7,Good,NA,NA
+2017-08-19,Parkway East,CO,10,Good,NA,NA
+2018-09-11,Harrison Township,OZONE,15,Good,NA,NA
+2016-02-13,North Braddock,SO2,1,Good,NA,NA
+2019-09-27,North Braddock,SO2,17,Good,NA,NA
+2018-05-24,Harrison Township,OZONE,47,Good,NA,NA
+2019-03-20,Flag Plaza,CO,0,Good,NA,NA
+2017-01-08,South Fayette,SO2,4,Good,NA,NA
+2020-06-28,Lawrenceville,OZONE,40,Good,NA,NA
+2020-05-21,Flag Plaza,CO,1,Good,NA,NA
+2019-10-27,West Mifflin,SO2,0,Good,NA,NA
+2020-02-09,North Braddock,SO2,4,Good,NA,NA
+2016-09-17,Parkway East,CO,5,Good,NA,NA
+2021-07-17,Glassport High Street,PM10,22,Good,NA,NA
+2019-04-06,Lawrenceville,PM25B,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-01-20,Lawrenceville 2,CO,5,Good,NA,NA
+2019-04-12,North Braddock,SO2,4,Good,NA,NA
+2018-08-04,Flag Plaza,CO,0,Good,NA,NA
+2018-07-05,Harrison Township,NO2,9,Good,NA,NA
+2020-03-14,Lawrenceville 2,SO2,0,Good,NA,NA
+2021-03-01,Parkway East,CO,7,Good,NA,NA
+2020-09-11,Glassport High Street,PM10,15,Good,NA,NA
+2019-08-01,Parkway East,NO2,23,Good,NA,NA
+2017-03-21,Parkway East,PM25T,48,Good,NA,NA
+2018-05-06,Flag Plaza,CO,0,Good,NA,NA
+2022-02-11,Harrison Township,OZONE,42,Good,NA,NA
+2016-12-24,Parkway East,NO2,23,Good,NA,NA
+2018-08-24,North Braddock,SO2,11,Good,NA,NA
+2018-10-12,Harrison Township,OZONE,25,Good,NA,NA
+2019-05-09,Lawrenceville 2,CO,3,Good,NA,NA
+2016-03-16,Liberty 2,PM25(2),27,Good,NA,NA
+2016-10-28,Lincoln,PM25,54,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2017-06-24,South Fayette,OZONE,46,Good,NA,NA
+2017-03-26,Lawrenceville,PM25B,59,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-12-07,Parkway East,CO,8,Good,NA,NA
+2017-08-09,Flag Plaza,CO,0,Good,NA,NA
+2017-01-13,Avalon,SO2,0,Good,NA,NA
+2020-10-30,Lincoln,PM25,16,Good,NA,NA
+2021-06-29,Glassport High Street,PM10,22,Good,NA,NA
+2019-05-12,Harrison Township,NO2,2,Good,NA,NA
+2021-01-12,Parkway East,NO2,19,Good,NA,NA
+2018-12-09,Lawrenceville 2,CO,5,Good,NA,NA
+2019-09-29,Avalon,PM25T,22,Good,NA,NA
+2019-05-07,Parkway East,NO2,24,Good,NA,NA
+2020-08-04,Flag Plaza,CO,3,Good,NA,NA
+2016-02-09,Harrison Township,OZONE,19,Good,NA,NA
+2020-09-27,Parkway East,PM25T,32,Good,NA,NA
+2022-02-21,Harrison Township,NO2,28,Good,NA,NA
+2019-06-13,Glassport High Street,PM10,10,Good,NA,NA
+2016-01-10,Harrison Township,NO2,10,Good,NA,NA
+2020-02-07,Lawrenceville 2,SO2,1,Good,NA,NA
+2019-04-15,Liberty,SO2,7,Good,NA,NA
+2018-05-28,Parkway East,NO2,16,Good,NA,NA
+2020-05-20,Avalon,PM25T,19,Good,NA,NA
+2016-11-19,Liberty 2,PM10,47,Good,NA,NA
+2017-10-30,Avalon,SO2,0,Good,NA,NA
+2020-09-29,South Fayette,OZONE,21,Good,NA,NA
+2017-09-27,Lawrenceville,PM25B,48,Good,NA,NA
+2017-02-24,North Braddock,PM10B,44,Good,NA,NA
+2016-12-04,Parkway East,NO2,16,Good,NA,NA
+2018-06-01,Avalon,PM25T,44,Good,NA,NA
+2018-02-03,North Braddock,PM10B,30,Good,NA,NA
+2016-12-14,Flag Plaza,CO,0,Good,NA,NA
+2017-10-22,South Fayette,OZONE,74,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2018-01-13,Lawrenceville 2,CO,2,Good,NA,NA
+2020-10-16,Lincoln,PM25,36,Good,NA,NA
+2018-01-23,Harrison Township,OZONE,28,Good,NA,NA
+2021-12-05,Avalon,PM25T,43,Good,NA,NA
+2018-04-19,Lawrenceville 2,SO2,1,Good,NA,NA
+2018-02-06,South Fayette,SO2,1,Good,NA,NA
+2017-05-04,Lincoln,PM25,24,Good,NA,NA
+2021-03-27,Liberty,SO2,34,Good,NA,NA
+2020-02-06,North Braddock,PM10B,13,Good,NA,NA
+2018-08-02,South Fayette,SO2,1,Good,NA,NA
+2018-02-09,South Fayette,OZONE,23,Good,NA,NA
+2017-03-20,Parkway East,PM25T,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2017-04-09,North Braddock,PM10B,31,Good,NA,NA
+2018-06-14,Harrison Township,NO2,10,Good,NA,NA
+2019-01-27,Avalon,PM25T,35,Good,NA,NA
+2022-01-29,South Fayette,OZONE,35,Good,NA,NA
+2018-09-18,Lawrenceville 2,CO,3,Good,NA,NA
+2017-10-13,Lawrenceville 2,CO,2,Good,NA,NA
+2016-09-10,Glassport High Street,PM10,16,Good,NA,NA
+2020-09-21,Glassport High Street,PM10,7,Good,NA,NA
+2019-01-27,Lawrenceville,PM25B,47,Good,NA,NA
+2021-08-18,Liberty 2,PM10,13,Good,NA,NA
+2021-04-04,Flag Plaza,PM10,18,Good,NA,NA
+2016-06-10,Harrison Township,OZONE,90,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2020-08-03,South Fayette,OZONE,44,Good,NA,NA
+2021-08-21,Liberty,SO2,26,Good,NA,NA
+2017-05-28,Liberty,SO2,17,Good,NA,NA
+2021-10-11,Liberty 2,PM25T,9,Good,NA,NA
+2019-02-17,South Fayette,SO2,14,Good,NA,NA
+2021-04-11,Pittsburgh,PM25_640,20,Good,NA,NA
+2020-03-02,Lincoln,PM10,22,Good,NA,NA
+2019-05-07,Lawrenceville,OZONE,74,Moderate,Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.,Unusually sensitive individuals may experience respiratory symptoms.
+2018-06-17,Lincoln,PM25,61,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2020-01-02,Flag Plaza,PM10,9,Good,NA,NA
+2017-07-30,Lawrenceville,PM25B,33,Good,NA,NA
+2019-08-03,Lawrenceville 2,SO2,1,Good,NA,NA
+2018-10-28,Liberty 2,PM10,6,Good,NA,NA
+2016-03-30,Harrison Township,OZONE,46,Good,NA,NA
+2019-07-11,North Braddock,PM10B,32,Good,NA,NA
+2019-08-16,Parkway East,NO2,17,Good,NA,NA
+2016-08-14,Liberty 2,PM25(2),25,Good,NA,NA
+2020-10-03,Lawrenceville,OZONE,23,Good,NA,NA
+2017-07-06,Lawrenceville,PM25B,42,Good,NA,NA
+2019-09-29,Parkway East,NO2,10,Good,NA,NA
+2019-02-21,North Braddock,PM10B,13,Good,NA,NA
+2018-10-26,North Braddock,PM10B,31,Good,NA,NA
+2016-01-21,Flag Plaza,CO,0,Good,NA,NA
+2019-11-05,North Braddock,SO2,46,Good,NA,NA
+2016-06-13,Parkway East,NO2,16,Good,NA,NA
+2021-09-24,Harrison Township,OZONE,36,Good,NA,NA
+2018-10-27,Avalon,PM25T,15,Good,NA,NA
+2016-07-05,Liberty 2,PM10,12,Good,NA,NA
+2019-06-21,Parkway East,NO2,14,Good,NA,NA
+2021-09-24,North Braddock,PM10B,24,Good,NA,NA
+2019-09-29,Flag Plaza,CO,3,Good,NA,NA
+2017-08-03,Lawrenceville 2,SO2,2,Good,NA,NA
+2020-09-03,Parkway East,CO,6,Good,NA,NA
+2016-06-22,Avalon,PM25T,40,Good,NA,NA
+2020-03-10,Liberty 2,PM25T,51,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2018-07-17,Lawrenceville,PM25B,57,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-04-12,Liberty 2,PM25T,56,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-07-05,North Braddock,SO2,6,Good,NA,NA
+2019-12-05,Flag Plaza,PM10,10,Good,NA,NA
+2017-05-17,Lawrenceville,PM25B,55,Moderate,Unusually sensitive people should consider reducing prolonged or heavy exertion.,"Respiratory symptoms possible in unusually sensitive individuals, possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults."
+2019-12-20,South Fayette,OZONE,18,Good,NA,NA
+2019-11-10,South Fayette,OZONE,33,Good,NA,NA
+2017-07-07,Avalon,SO2,0,Good,NA,NA
+2017-08-10,Lawrenceville,OZONE,44,Good,NA,NA
+2018-12-07,Liberty 2,PM25T,32,Good,NA,NA
+2017-03-24,Avalon,SO2,7,Good,NA,NA
+2016-08-30,Harrison Township,OZONE,47,Good,NA,NA
+2017-08-09,Harrison Township,NO2,16,Good,NA,NA
+2018-08-19,Avalon,PM25T,23,Good,NA,NA
+2017-10-06,Glassport High Street,PM10,16,Good,NA,NA
+2018-01-06,Lawrenceville 2,SO2,3,Good,NA,NA
+2016-08-07,Parkway East,CO,10,Good,NA,NA
+2017-08-29,Lincoln,PM10,13,Good,NA,NA

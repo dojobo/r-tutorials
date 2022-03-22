@@ -1,35 +1,30 @@
 ---
 title: "Getting Started in R and RStudio"
-output: 
+author: "Dominic Bordelon (djb190@pitt.edu)"
+date: "`r Sys.Date()`"
+output:
+  word_document:
+    toc: true
   html_notebook:
     toc: true
-editor_options: 
+    toc_float: true
+editor_options:
   chunk_output_type: inline
 ---
 
+```{r setup}
+library(tidyverse)
+```
+
 ## Agenda
 
-1.  Introductory stuff
-
-2.  What are R and RStudio?; RStudio orientation
-
-3.  Some things you can do in R(Studio)
-
-    1.  Clean up, transform, and analyze data; generate statistical models
-    2.  Visualize data for exploration or presentation
-    3.  Intermix code, output (plots), and narrative/explanatory text with R Notebooks
-
-4.  Where to go next; where to get answers
+1.  What are R and RStudio? What can you do with them?
+2.  RStudio orientation
+3.  Examining a dataset
+4.  Plotting
+5.  Where to go next; where to get answers
 
 ## Introductory stuff
-
-### Notes on presentation format
-
--   Feel free to follow along on your own computer, or simply watch
-
-    -   This notebook (including code) will be shared!
-
--   Due to time constraints, this is more of a *guided tour* than a *lesson* in R
 
 ### About the presenter
 
@@ -40,39 +35,150 @@ editor_options:
     -   humanities undergrad (History, Spanish, English (Writing & Culture)), MLIS
     -   web programmer in library settings 2014-2019
 
+### The Library's Digital Scholarship Services
+
+<https://pi.tt/dss>
+
+### Upcoming Events!
+
+[![](https://lovedatapgh.io/assets/love-data-week-2022-pitt.png "Love Data Week")](https://lovedatapgh.io/)
+
+![R events at Pitt, Feb-Mar 2022](images/r-events-spring-22_202202.png "R events at Pitt, Feb-Mar 2022")
+
+### License
+
+[![](images/by.png){width="91"}](https://creativecommons.org/licenses/by/4.0/ "CC BY license")\
+"Getting Started in R and RStudio" by Dominic Bordelon is licensed for reuse under a Creative Commons Attribution (CC BY) 4.0 International license (<https://creativecommons.org/licenses/by/4.0/>).
+
 ------------------------------------------------------------------------
 
-## What is R? What is RStudio?
+## What are R and RStudio?
 
 [**R**](https://www.r-project.org/) is:
 
--   an **application** for **working with data**
-
-    -   "working with" = viewing, calculating, transforming, analyzing, visualizing
-    -   "data" = tabular data is the usual, but there are tools for other kinds of data as well
-    -   accessible from the OS command line; commands are issued by typing code
-    -   in version 4.1.2 (12/2021)
-    -   also available as a server
+-   an **application** for **working with quantitative data**
 
 -   a **programming language** (for extending functionality and/or creating web applications)
-
-    -   the R application is an **interpreter** which understands and acts upon R code
-    -   a vibrant community has leveraged this feature to create many free, reusable **packages** (currently \~19k of them)
 
 -   multi-platform, free, open-source
 
 -   known formally as "[The R Project for Statistical Computing](https://www.r-project.org/about.html)," managed by [the R Foundation](https://www.r-project.org/foundation/)
 
-[**RStudio**](https://www.rstudio.com/) is:
-
--   an **integrated development environment (IDE)** with graphical interface for R, with some related tools
-
-    -   a minimal IDE would be a specialized text editor for writing code + interpreter; RStudio offers much more
-    -   in version 2021.09 (12/2021)
-
--   a public benefit corporation that develops software (>50% free and open source) and provides related services
+[**RStudio**](https://www.rstudio.com/) is an **integrated development environment (IDE)** with graphical interface for R, with some related tools.
 
 You need R installed in order to use RStudio. They work together, but are separate applications.
+
+## What can you do with R?
+
+### Data manipulation and cleaning
+
+Identifying and handling missing values and outliers
+
+Getting data to a "tidy" state (one observation per row, one variable per column)
+
+Combining relational data
+
+### Exploratory data analysis
+
+Quick summary statistics and plots
+
+### Statistical modeling
+
+![Source: Roback and Legler 2021, [Beyond Multiple Linear Regression](https://bookdown.org/roback/bookdown-BeyondMLR/)](images/poisson.png)
+
+![Source: Gelman et al. 2022, examples for [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/Golf/golf.html)](images/logistic.png)
+
+### Publication-ready, highly customizable visualization
+
+#### Small multiples
+
+```{r}
+# cylinder classes plotted together:
+mtcars
+ggplot( mtcars , aes(x=mpg, y=wt, color=as.factor(cyl) )) + 
+  geom_point(size=3) +  
+  theme(legend.position="none")
+
+# each cylinder class on its own plot:
+ggplot( mtcars , aes(x=mpg, y=wt, color=as.factor(cyl) )) + 
+  geom_point(size=3) +  
+  facet_wrap(~cyl) +
+  theme(legend.position="none")
+```
+
+#### Themes
+
+e.g., BBC-style using the `bbplot` package:
+
+![Source: [BBC Visual and Data Journalism cookbook for R graphics](https://bbc.github.io/rcookbook/)](images/bbc.png)
+
+### Specialized kinds of analysis
+
+#### Geospatial
+
+![Predicted archaeological sites using a sensitivity model. In the source, this example is layered on an OpenStreetMap and rendered in LeafletJS, an interactive map widget. Source: Ben Marwick 2017, [How to Do Archaeological Science Using R](https://benmarwick.github.io/How-To-Do-Archaeological-Science-Using-R/predicting-site-location-with-simple-additive-raster-sensitivity-analysis-using-r.html#clip-sites)](images/mapview.png)
+
+Work with a variety of projections; create chloropleth maps and a variety of cartograms.
+
+[![Source: Calvin Sievert 2019, \[Interactive web-based data visualization with R, plotly and shiny\](https://plotly-r.com/index.html)](images/projection.png){width="500"}](https://plotly-r.com/index.html)
+
+[![Source: Calvin Sievert 2019, \[Interactive web-based data visualization with R, plotly and shiny\](https://plotly-r.com/index.html)](images/cartogram.png){width="500"}](https://plotly-r.com/index.html)
+
+#### Text analysis, text mining
+
+An example using sentiment analysis:
+
+[![Source: filmicaesthetic / JaneAustenStreamgraphs on GitHub](images/austen.png)](https://github.com/filmicaesthetic/JaneAustenStreamgraphs)
+
+Machine Learning
+
+Network Analysis
+
+### Authoring documents
+
+Intermix narrative (hyper)text, images, code, and plots!
+
+```{r}
+result <- sqrt(16)
+```
+
+Can include $\LaTeX$ expressions (e.g., $H = -\sum^{S}_{i=1} p_i \ln p_i$) and HTML
+
+Automate bibliography with a bibtex file
+
+Many output formats with [pandoc](https://pandoc.org/)
+
+### Slides and posters for presentations
+
+Slides load in browser and can be printed to PDF. Example of a slide deck:
+
+![](images/slides.png){width="300"}
+
+<https://spcanelon.github.io/RLadies-xaringan-template/#1>
+
+### Programming, automation, scripting
+
+Including using web APIs
+
+### Web applications (Shiny)
+
+[Nutrition Calculator](https://yihanw.shinyapps.io/Recipe_Nutrition/)
+
+Many more examples at the [Shiny app gallery](https://shiny.rstudio.com/gallery/)
+
+### Web publishing: sites, online books, blogs
+
+Personal site of Mike Mahoney (PhD candidate, SUNY-ESF): <https://www.mm218.dev/>
+
+Faylab Lab Manual: <https://thefaylab.github.io/lab-manual/>
+
+### Generative art
+
+![](images/rtistry.png){width="500"}
+
+![](images/rtistry2.png){width="500"}
+
+[#Rtistry on twitter](https://twitter.com/hashtag/rtistry)
 
 ------------------------------------------------------------------------
 
@@ -107,8 +213,6 @@ You need R installed in order to use RStudio. They work together, but are separa
 
 -   Tools > Global Options...
 
-    -   Suggestion: General > Workspace > uncheck the .RData option and set the .RData dropdown to Never
-
 -   Many options can also be configured at project level
 
 -   Keyboard shortcuts are very handy! Tools > Keyboard Shortcuts Help
@@ -121,244 +225,117 @@ You need R installed in order to use RStudio. They work together, but are separa
 
 ------------------------------------------------------------------------
 
-## Prerequisite R basics: objects, functions, data structures
+## Our first steps in R
 
-At its most simple, we can use R as a calculator, with familiar mathematical operators:
+We're going to examine and visualize the `storms` dataset, a dataset included with the `dplyr` package, which describes several decades of hurricanes.
+
+R uses **objects** to store and work with values. Numeric objects as well as raw values can interact via mathematical operators. The **assignment operator**, written as **`<-`**, stores a value in an object.
+
+Beyond mathematical operators, **functions** provide the basic ways of working with objects. Each function has a *signature* dictating which *arguments* (parameters) it accepts.
 
 *Directly below is our first **code chunk***. *You can insert one anywhere in an R Notebook. Whatever you type inside it has to be valid R code, although comments can be preceded with `#`. You can execute an individual line or the whole chunk.*
 
 ```{r}
-7 + 2
-
-# here is a comment!
-# order of operations (PEMDAS):
-2 * ((1 + 2) / (9 - 3))^2
-```
-
-R uses **objects** to store and work with values. Numeric objects as well as raw values can interact via mathematical operators. The **assignment operator**, written as **`<-`**, stores a value in an object.
-
-```{r}
-# create object `length` and store the value 12 in it:
-length <- 10
-# typing just the object name tells us the value stored in it:
-length
-
-width <- 8
-
-# using objects with mathematical operators and numeric values:
-length + 2
-(2^2) / width
-
-# calculating area and storing it in a third object:
-area <- length * width
-area
-
-# assignment happens only once; changing length does not update area unless we reassign it.
-length <- 5 # length changes to 5
-area # area is still 80
-area <- length * width
-area # == 40
-```
-
-Beyond mathematical operators, **functions** provide the basic ways of working with objects. Each function has a *signature* dictating which *arguments* (parameters) it accepts. For example, the `sqrt()` function, which calculates the square root of an integer, accepts (and requires) one argument, `x`:
-
-```{r}
-# next line will produce an error; remove # to try it:
-#sqrt()
-
-# we can learn more about the sqrt() function in the Help system:
-?sqrt
-
-sqrt(x=16)
-# may also be written as:
-sqrt(16)
-
-# expressions are evaluated first:
-sqrt((2+1)^2)
-
-# using a function on an object:
-area <- 99
-sqrt(area)
-```
-
-For storing multiple values in one object, R has data structures like vectors, matrices, and data frames. Vectors and data frames, described below, are the most common types.
-
-A **vector** is a simple ordered collection, all items being of the same type (e.g., `num`). The **`c()`** ("combine") function creates a vector.
-
-```{r}
-my_vector <- c(13, 11.2, 6^2, 4.31e2, 0, -7)
-my_vector
-
-length(my_vector) # how many items in the vector?
-typeof(my_vector) # what type are they?
-
-# doing math on each item in the vector: ("itemwise")
-my_vector + 100
-my_vector^2
-
-# some functions operate on the data structure in aggregate, not just itemwise:
-min(my_vector)
-mean(my_vector)
-median(my_vector)
-sd(my_vector)
-max(my_vector)
-```
-
-A **data frame** is like a table or spreadsheet. Each column of information is a vector. Rows are called **observations** and columns are called **variables**. The example below uses a built-in dataset called `mtcars`. The **`head()`**, **`str()`** ("structure"), and **`View()`** functions give us a few ways to examine data frames. (`str()` is valuable for any type of object!)
-
-```{r}
-head(mtcars)
-str(mtcars)
-View(mtcars)
-
-# to reference a named column, use a $:
-mtcars$mpg
-```
-
-```{r eval=FALSE, include=FALSE}
-# code that i used to install the tweetrmd package and fetch the tweet that appears below:
-#install.packages("devtools")
-#devtools::install_github("gadenbuie/tweetrmd")
-library(tweetrmd)
-tweet_screenshot(
-  tweet_url = "https://twitter.com/SScottGraham_/status/1475931340247810054",
-  file = "eyeball.png"
-)
-```
-
-[![Eyeball your data. 👁️](eyeball.png "tweet by @SScottGraham_"){width="400"}](https://twitter.com/SScottGraham_/status/1475931340247810054)
-
-R's core functionality ("**base R**") can be extended with many community-authored **packages**. Once a package is installed, you can use its code in your current environment with the `library()` function. (Most packages are useful, but the example below is just for fun.)
-
-```{r}
-install.packages("cowsay")
-library(cowsay)
-
-# cowsay gives us a say() function
-say()
-# what arguments does say() accept? what are the defaults?
-```
-
-------------------------------------------------------------------------
-
-## Clean up and transform data
-
-The R community has developed a set of packages called [**the tidyverse**](https://www.tidyverse.org/) to enhance base R's experience for working with data. Using the tidyverse, below, we'll open a CSV file (spreadsheet) and perform a few transformations.
-
-A new syntax convention in the code below is the **pipe**, written as `%>%`. For `functionA() %>% functionB()`, you could read it as, "do functionA then use its output to do functionB."
-
-```{r}
 library(tidyverse)
-
-#read_csv
-#tibble
-#pipe
-#pivot?
-#missing values
-#filter
-#mutate
-
-#relational data
-
-#save_csv
-```
-
-### Summarize data
-
-We have a dataset we like; now we want to start understanding it. For a variable that interests us, we can apply statistical summary functions like `mean()` and `median()`. We can also use `group_by()` with categorical variables to easily summarize groups within the data.
-
-```{r}
-#group by, summarize
+# math:
+1+2^2
+# functions:
+sqrt(16)
+# objects:
+result <- sqrt(36)
+result = sqrt(36)
+print(result)
+print(paste("The time is", Sys.time()))
 ```
 
 ------------------------------------------------------------------------
 
-## Visualize data
+## Examining a dataset
 
-### For exploratory data analysis (EDA)
+Must-know functions:
 
-A next step in examining the data is to plot it. The most popular package for plotting in R is `ggplot2`, which is part of the tidyverse.
-
-```{r}
-# examining one variable (histograms, freq plots)
-# plotting 2 continuous variables
-# plotting continuous vs. categorical variables
-
-```
-
-### Generating and visualizing models
-
-Modelling is an extensive topic. For a quick and simple example, we will simply use `lm()` (part of base R's `stats` package) to fit a linear model.
+-   `summary()`
+-   `str()`
+-   `glimpse()`
+-   `View()`
 
 ```{r}
-# lm()
-# str(lm)
-# ggplot + geom_point + geom_abline
-```
+storms  # preview the data
+?storms  # (because this is a builtin, there is help documentation)
+str(storms)  # view STRucture of storms (works on many objects)
+glimpse(storms, width=70)  # another type of preview
+View(storms)  # open a view on the data, which you can explore
+# clicking on a dataset in the Environment pane does the same
 
-### For presentation and publication
+storms <- storms  # ran this to get storms listed in my Environment pane
+# when you open a CSV (or TSV or xlsx, etc.),
+# the dataset will appear in Environment.
 
-ggplot provides many facilities for enhancing the plots that you really want to focus on.
-
-```{r}
-# labels
-# emphasis
-# aesthetics
-# themes
-# saving plots
+summary(storms) # run this to get a summary all the columns
+summary(storms$wind) # a summary of just one column
 ```
 
 ------------------------------------------------------------------------
 
-## Intermix code, output, and narrative text with R Notebooks
-
--   The approach of mixing computer code with natural-language narrative is called "literate programming" ([Knuth 1992](https://pitt.primo.exlibrisgroup.com/permalink/01PITT_INST/e8h8hp/alma9911528493406236))
-
--   In addition to code chunks, you can also use $\LaTeX$ expressions (e.g., $H = -\sum^{S}_{i=1} p_i \ln p_i$) and generate your bibliography with a bibtex file
-
--   Convenience: tweak data, code, and visualizations and see immediate feedback; display/edit all three inline in one application
-
--   Reproducibility: if you share the data files and the notebook you use for analysis, a peer can easily rerun it
-
--   Incorporates separate conversion tool [pandoc](https://pandoc.org/) to generate a wealth of [output formats](https://bookdown.org/yihui/rmarkdown/output-formats.html "R Markdown: The Definitive Guide") (HTML notebook, Word doc, Powerpoint, HTML presentation, PDF, latex...)
-
--   Example papers/projects:
-
-    -   Chaudhry, Suparna, Marc Dotson, and Andrew Heiss. 2021. "Who Cares about Crackdowns? Exploring the Role of Trust in Individual Philanthropy." *Global Policy* 12 (S5): 45--58. <https://doi.org/10.1111/1758-5899.12984>. Analysis notebook: <https://stats.andrewheiss.com/who-cares-about-crackdowns/>
-
-    -   Kadauke, Stephan, Regina M. Myers, Yimei Li, Richard Aplenc, Diane Baniewicz, David M. Barrett, Allison Barz Leahy, et al. 2021. "Risk-Adapted Preemptive Tocilizumab to Prevent Severe Cytokine Release Syndrome After CTL019 for Pediatric B-Cell Acute Lymphoblastic Leukemia: A Prospective Clinical Trial." *Journal of Clinical Oncology* 39 (8): 920--30. <https://doi.org/10.1200/JCO.20.02477>. Reproducibility supplement: <https://skadauke.github.io/early-toci/>
-
-    -   NMFSReports package: [\<https://github.com/EmilyMarkowitz-NOAA/NMFSReports/blob/main/presentations/2021-06-05NMFSReports-RCascadiaConf.pdf>](https://github.com/EmilyMarkowitz-NOAA/NMFSReports/blob/main/presentations/2021-06-05NMFSReports-RCascadiaConf.pdf) (templating for NOAA reports/tech memos, developed by a NOAA fisheries biologist)
-
-    -   Faylab Lab Manual: <https://thefaylab.github.io/lab-manual/> (manual for an ecology lab written in [bookdown](https://bookdown.org/), Rmd for books)
-
-------------------------------------------------------------------------
-
-### Program in R
-
--   Extracting code as functions follows "the DRY Principle" (Don't Repeat Yourself); easier maintenance
--   Functions are important for modeling
--   Iteration (performing the same action many times)
--   Packages for reusability by yourself and others
+## Plotting
 
 ```{r}
-# writing functions
-# loops and maps
-```
+plot <- ggplot(data=storms)
+ggplot(storms)
+sqrt(16)
+sqrt(x=16)
 
-------------------------------------------------------------------------
+plot + geom_histogram(mapping=aes(x=year), binwidth = 1)
+plot + geom_freqpoly(mapping=aes(x=month))
+plot + geom_histogram(mapping=aes(x=pressure))
+plot + geom_bar(mapping=aes(x=category))
+plot + geom_bar(mapping=aes(x=status))
+
+plot + geom_point(mapping=aes(x=pressure, y=wind))
+# ^ not a good plot!
+# 1. very many points (11k), data should probably be further summarized/aggregated
+# 2. there is likely to be some overplotting, i.e. points of equivalent position stacked atop one another, making the distribution more difficult to discern.
+
+plot + geom_boxplot(mapping=aes(x=as.factor(month), y=pressure))
+plot + geom_violin(mapping=aes(x=as.factor(month), y=pressure))
+plot + geom_boxplot(mapping=aes(x=as.factor(month), y=wind))
+
+# check out the ggplot cheat sheet (Help menu > Cheat sheets > Data viz with ggplot2) for many more possible chart types!
+
+storms05 <- storms %>% 
+  filter(year==2005)
+
+katrina <- storms05 %>% 
+  filter(name=="Katrina")
+ggplot(katrina) + geom_point(mapping=aes(x=pressure, y=wind))
+# ^ better plot (reasonable subset)
+
+# reading a TSV file:
+emissions <- read_tsv("sdg_13_10.tsv")
+# however, this dataset is not quite ready for use, we would need to do a little work on it, especially with {tidyr}
+```
 
 ## Where to go next
 
 Here are some ways you can continue learning:
 
--   Upcoming 1-hour workshops for [data visualization](https://pitt.libcal.com/event/8671056) (2/2) and [data wrangling](https://pitt.libcal.com/event/8671368) (2/23)
--   [R for Data Science](https://r4ds.had.co.nz/), a free online book by community leader Hadley Wickham
+-   Upcoming 1-hour Library workshops for [data wrangling](https://pitt.libcal.com/event/8671368) (2/23), data visualization
+
+-   [R for Data Science](https://r4ds.had.co.nz/), or R4DS, a free online book by Wickham and Grolemund
+
+    -   Anecdotally, R4DS is the most popular resource I see recommended for starting in R, and it has spa
+    -   [Dr. Wickham](https://hadley.nz/) (Chief Scientist, RStudio & adjunct prof. of stats at U of Auckland, Stanford, and Rice) is also creator/lead developer of the tidyverse
+
 -   [LinkedIn Learning](https://www.technology.pitt.edu/services/ondemand-training-linkedin-learning), offered via Pitt IT, has video courses
+
 -   [PittCat ebooks](https://pitt.primo.exlibrisgroup.com/discovery/search?query=any,contains,r%20statistics&tab=Everything&search_scope=MyInst_and_CI&vid=01PITT_INST:01PITT_INST&lang=en&offset=0), access to thousands of online tech books
+
 -   [exercism R track](https://exercism.org/tracks/r), a platform for learning to code
+
 -   Or dive into packages and resources specific to your field (see [Big Book of R](https://www.bigbookofr.com/) for ideas)
--   Pitt students: STAT 1621 Principles of Data Science
+
+-   Pitt students: STAT 1621 Principles of Data Science teaches R from scratch (using R4DS) as well as getting you into the basics of data science (i.e., using lots of statistics on big data)
+
 -   We offer training for groups (labs, collaborations, etc.)
 
 ### Where to get answers; reference resources
@@ -371,9 +348,9 @@ Here are resources for solving specific questions/problems you have in R:
 
 Reference resources and ways to connect with the R user community:
 
--   The [Big Book of R](https://www.bigbookofr.com/) is an annotated bibliography of R resources, especially \[e\]books (many of them free).
+-   The [Big Book of R](https://www.bigbookofr.com/) is an annotated bibliography of R resources, especially (e-)books (many of them free).
 -   [/r/rstats community on reddit](https://www.reddit.com/r/rstats/)
 -   [RStudio Community](https://community.rstudio.com/) (forums)
 -   [#rstats](https://twitter.com/hashtag/rstats) on Twitter
 
-[![R and RStudio Open Office Hour, Spring 2022](images/r-open-office-hour_202201.png "R and RStudio Open Office Hour, Spring 2022")](https://bit.ly/pitt-r-22)
+[![R and RStudio Open Office Hour, Spring 2022](images/r-open-office-hour_202202.png "R and RStudio Open Office Hour, Spring 2022")](https://bit.ly/pitt-r-22)

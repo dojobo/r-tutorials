@@ -1,8 +1,483 @@
 ---
 title: "Data Wrangling with R"
-output: html_notebook
-editor_options: 
+author: "Dominic Bordelon (djb190@pitt.edu)"
+date: "`r Sys.Date()`"
+output:
+  word_document:
+    toc: true
+  html_notebook:
+    toc: true
+    toc_float: true
+editor_options:
   chunk_output_type: inline
 ---
 
-tweet: <https://twitter.com/jaimedatalatte/status/1473450860323684354?s=20>
+```{r setup}
+library(tidyverse)
+```
+
+![Artwork by [\@allison_horst](https://github.com/allisonhorst)](images/data_cowboy.png "A cowboy wrangling unruly data")
+
+## Agenda
+
+1.  What is meant by "data wrangling?"
+2.  Loading data files
+3.  The Tidy Data concept
+4.  Columns: rename, split, create
+5.  Handle missing values
+6.  Match values; use regular expressions
+7.  Reshape data (pivot)
+8.  Saving data
+9.  Where to go next; where to get answers
+
+## Introductory stuff
+
+### About the presenter
+
+-   Dominic Bordelon, Research Data Librarian, University Library System at Pitt
+
+-   Previous experience:
+
+    -   humanities undergrad (History, Spanish, English (Writing & Culture)), MLIS
+    -   web programmer in library settings 2014-2019
+    -   returning undergrad in Biology
+
+### The Library's Digital Scholarship Services
+
+<https://pi.tt/dss>
+
+### Upcoming Events!
+
+![R events at Pitt, Feb-Mar 2022](images/r-events-spring-22_202202.png "R events at Pitt, Feb-Mar 2022")
+
+### License
+
+[![](images/by.png){width="91"}](https://creativecommons.org/licenses/by/4.0/ "CC BY license")\
+"Data Wrangling with R" by Dominic Bordelon is licensed for reuse under a Creative Commons Attribution (CC BY) 4.0 International license (<https://creativecommons.org/licenses/by/4.0/>).
+
+------------------------------------------------------------------------
+
+## What is meant by "data wrangling?"
+
+In a *structured* data context, i.e., tabular and/or structured documents, e.g., XML or JSON, includes:
+
+-   getting a file from an external source open and properly loaded
+
+    -   extraction may be needed e.g. from a document format to a tabular format
+    -   missing values should be correctly recognized and recorded as `NA` in R objects
+    -   data types are always important in R; each imported column should be of the correct type (e.g., `col_integer()`, not `col_character()`, for a `birth_year` column)
+
+-   cleaning, i.e., correction of detectable errors, standardization of values, discarding incomplete observations
+
+-   creating new columns which compute their values from an existing column
+
+-   filtering rows to use only relevant data
+
+------------------------------------------------------------------------
+
+## Loading data files
+
+Using `{readr}` and `{readxl}` ([cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf))
+
+### Tabular data: CSV, TSV, XLSX
+
+While you may be most familiar with Excel files (`.xlsx` filenames) for spreadsheets, plain-text *delimited* files are often the format of choice. CSV (`.csv` filenames), comma-separated values, is the most popular.
+
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Pros of CSV vs. Excel                                                                       | Cons of CSV vs. Excel                                        |
++=============================================================================================+==============================================================+
+| $\bullet$ Open in any tabular data software, or even a text editor; non-proprietary format\ | $\bullet$ No formatting\                                     |
+| $\bullet$ Small file size (although there are smaller)\                                     | $\bullet$ No formulas, only their outputs\                   |
+| $\bullet$ Long-term preservation standard\                                                  | $\bullet$ No charts/graphics, pivot tables, etc.\            |
+| $\bullet$ No formulas or macros; nothing hidden\                                            | $\bullet$ Only one worksheet per file\                       |
+| $\bullet$ Less likely to "break" or become corrupted than an Excel file                     | $\bullet$ Excel can be annoying about opening them\          |
+|                                                                                             | $\bullet$ Occasionally, issues with improperly generated CSV |
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+Comma-separated values:
+
+```{csv}
+response_id,date,respondent_id,question_number,response
+1,2022-02-01,27,3,"B"
+1,2022-02-01,27,4,"C"
+```
+
+First row is typically header; comma (or other delimiter) for each column; newline for each row.
+
+Tab-separated values:
+
+```{tsv}
+response_id date  respondent_id question_number response
+1 2022-02-01  27  3 "B"
+1 2022-02-01  27  4 "C"
+```
+
+```{r}
+# a random sampling of Allegheny County air quality data, downloaded from wprdc.org:
+air_quality <- read_csv("data/air-quality2.csv")
+air_quality
+air_quality %>% 
+  mutate(description_f=as_factor(description))
+
+# important tweaks: header (none and/or supply your own); col_types; na
+
+emissions <- read_tsv("data/sdg_13_10.tsv")
+emissions
+#read_delim("file.dat", delim="|")
+
+#excel_sheets("file.xlsx") # list of sheets 
+#read_excel()
+
+#read_excel(sheets=c())
+
+```
+
+Other things you can configure in `{readr}` when importing data: provide your own header; skip lines; read a subset of lines; specify decimal marks; select only certain columns for import; read multiple files into a single table.
+
+### Looking around
+
+Here are some ways to superficially browse/examine a dataset:
+
+```{r}
+str(air_quality)  # examine structure of object
+
+air_quality  # preview data
+View(air_quality)
+head(air_quality)  # fetch first 6 rows
+tail(air_quality, n=20)  # fetch last 20 rows
+
+air_quality %>% 
+  slice_sample(n=20)  # extract ("slice") 20 random rows
+
+# sorting!
+# using the dplyr::arrange() function:
+air_quality %>% 
+  arrange(date)  # arrange by date, ascending
+air_quality %>% 
+  arrange(desc(date))  # descending (most recent first)
+air_quality %>% 
+  arrange(site, parameter)  # arrange first by site, then by parameter
+
+# see a summary of each variable in an object
+summary(air_quality)
+```
+
+### Other types of data
+
+Here are packages you can check out for other types of data:
+
+-   web APIs: `{httr}`
+-   web scraping: `{rvest}`
+-   google sheets: `{googlesheets4}`
+-   SPSS, Stata, SAS files: `{haven}`
+-   databases: `{DBI}`
+-   json: `{jsonlite}`
+-   XML: `{xml2}`
+-   plain text: `readr::read_lines()`
+
+------------------------------------------------------------------------
+
+## The Tidy Data concept
+
+![Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst](images/tidydata_1.jpg)
+
+![Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst](images/tidydata_2.jpg)
+
+![Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst](images/tidydata_3.jpg)
+
+------------------------------------------------------------------------
+
+### Important syntax sidebar: the pipe, `%>%`
+
+The **pipe** is typed as **`%>%`** or using the (Win) **Ctrl+Shift+M** or (macOS) **Cmd+Shift+M** keyboard shortcut. Provided by `{magrittr}` and used almost everywhere in the tidyverse.
+
+What does it do? `expressionA %>% functionB()` passes the output of `expressionA` as an implicit first argument of `functionB()`:
+
+```{r}
+storms
+names(storms)
+storms %>% 
+  select(c(name, year, wind))
+
+# writing the above without a pipe
+select(storms, c(name, year, wind))
+
+# so what? compare once we start chaining (piping) multiple functions:
+
+# sort by wind (descending) after selecting columns:
+storms %>% 
+  select(c(name, year, wind)) %>% 
+  arrange(desc(wind))
+
+# doing the same without the pipe:
+arrange(select(storms, c(name, year, wind)), desc(wind))
+
+# ^ increasingly illegible
+# another alternative is to write shorter lines of code without nesting, but then you'll have a lot of intermediate objects in your environment.
+```
+
+### and what about `<-` for object assignment? Can I use `=` instead?
+
+```{r}
+area <- 16 * 4
+area
+area = 16 * 4
+area
+area <- 16 * 4
+```
+
+**Yes, but** `<-` is recommended, because:
+
+1.  It is community convention, which is important when you read others' code
+2.  Besides object assignment, `=` in R is also used with *named arguments*; it can be visually helpful to separate these different functionalities with different symbols, `<-` and `=` respectively.
+
+Keyboard shortcuts to type **`<-`**: (Win) **Alt+-** or (macOS) **Option+-**
+
+## Columns: renaming, splitting, creating
+
+Using `{dplyr}` ([cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)) and `{tidyr}` ([cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf)).
+
+```{r}
+storms
+
+storms %>% 
+  select(name, year, wind) # retain only certain columns
+
+storms %>% 
+  relocate(status, .after=name) # move column
+
+storms %>% 
+  rename(type=status) # rename column, new_name=old_name
+
+# separate or unite columns:
+table3
+table3 %>% 
+  separate(col=rate, into=c("cases", "population"), sep="/", convert=TRUE)
+
+table5
+table5 %>% 
+  unite(col="year", century, year, sep="")
+
+# mutate (create a new column):
+table3 %>% 
+  separate(col=rate, 
+           into=c("cases", "population"), 
+           sep="/", 
+           convert=TRUE) %>%
+  mutate(per_capita=cases/population)
+```
+
+------------------------------------------------------------------------
+
+## Missing values
+
+Sometimes, missing values are no problem 👍
+
+But sometimes, you might want to:
+
+-   investigate which observations have missing values and verify them
+-   drop (delete) incomplete observations
+-   or, replace missing values with something else (e.g., `0`)
+
+```{r}
+storms
+# drop the rows that have NA in the hurricane_force_diameter column:
+storms %>% 
+  drop_na(hurricane_force_diameter)
+
+# replace NA with 0
+na_diam <- storms %>% 
+  filter(is.na(hurricane_force_diameter))
+na_diam
+na_diam %>% 
+  replace_na(list(hurricane_force_diameter=0))
+
+# functions often have to make assumptions about NA
+# examine docs for these assumptions, and configurability
+mean(storms$hurricane_force_diameter)  # returns NA
+# why? (5 + 10 + NA)/3 = NA
+?mean
+mean(storms$hurricane_force_diameter, na.rm=TRUE) # returns 18.14766
+```
+
+------------------------------------------------------------------------
+
+## Match values; regular expressions
+
+### Filter/subset by column contents
+
+```{r}
+# category 3 storm observations:
+storms %>% 
+  filter(category==3)
+# name matching a vector of strings:
+storms %>% 
+  filter(name %in% c("Amy", "Andrew"))
+
+```
+
+![Artwork by \@allison_horst](images/dplyr_filter.jpg)
+
+### Getting all distinct values in a column
+
+```{r}
+
+# distinct() gives unique values of a variable/column
+# all storm names in the set:
+storms %>% 
+  select(name) %>% 
+  distinct(name) %>% 
+  arrange(name)
+```
+
+### Grouping and summarizing
+
+```{r}
+# count how many observations are associated with each storm name:
+storms %>% 
+  group_by(name) %>% 
+  summarise(n())
+
+# summarize wind values after grouping by name:
+storms %>% 
+  group_by(name) %>% 
+  summarise(n(),
+            min(wind),
+            mean(wind),
+            median(wind),
+            max(wind),
+            sd(wind))
+```
+
+### Use regular expressions (regex)
+
+A widely used notation for precisely describing and matching patterns in text. Part of `{stringr}` ([cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/strings.pdf)), which has very many tools for working with strings.
+
+```{r}
+storms %>% 
+  filter(str_detect(name, "A.*"))  # get observations whose storm starts with A
+
+# replace all instances of a string with a replacement:
+storms %>% 
+  mutate(name = str_replace_all(name, "AL011993", "MyStorm")) %>% 
+  group_by(name) %>% 
+  summarise(n())
+```
+
+------------------------------------------------------------------------
+
+## Reshape data (pivot)
+
+When a dataset doesn't have one observation per row and/or one variable per column, we need to **reshape** it using `{tidyr}`.
+
+In `table2`, one column shows `type` (of measurement), either "cases" or "population."
+
+```{r}
+View(table2)
+```
+
+We can use the information in `type` to make two new columns, `cases` and `population`, which hold the value of `count`. We do this with `pivot_wider()`:
+
+```{r}
+table2 %>% 
+  pivot_wider(names_from=type, values_from=count)
+```
+
+In contrast, `table4a` has a column for each year; we would like to move year information into its own column, and reduce
+
+```{r}
+table4a
+
+table4a %>% 
+  pivot_longer(cols=c(`1999`, `2000`), names_to="year", values_to="cases")
+```
+
+Working with our hairy emissions example:
+
+```{r}
+emissions2 <- emissions %>% 
+  mutate(`1990`=as.double(`1990`), `1991`=as.double(`1991`),
+         `1992`=as.double(`1992`), `1993`=as.double(`1993`),
+         `1994`=as.double(`1994`), `1995`=as.double(`1995`),
+         `1996`=as.double(`1996`), `1997`=as.double(`1997`),
+         `1998`=as.double(`1998`), `1999`=as.double(`1999`),
+         `2000`=as.double(`2000`), `2001`=as.double(`2001`),
+         `2002`=as.double(`2002`), `2003`=as.double(`2003`),
+         `2004`=as.double(`2004`), `2005`=as.double(`2005`),
+         `2006`=as.double(`2006`), `2007`=as.double(`2007`),
+         `2008`=as.double(`2008`), `2009`=as.double(`2009`),
+         `2010`=as.double(`2010`), `2011`=as.double(`2011`),
+         `2012`=as.double(`2012`), `2013`=as.double(`2013`),
+         `2014`=as.double(`2014`), `2015`=as.double(`2015`),
+         `2016`=as.double(`2016`), `2017`=as.double(`2017`),
+         `2018`=as.double(`2018`), `2019`=as.double(`2019`),
+         )
+emissions
+emissions2
+emissions2 %>% 
+  pivot_longer(cols=c(`1990`,`1991`,`1992`,`1993`,`1994`,`1995`,`1996`,`1997`,`1998`,`1999`,`2000`,`2001`,`2002`,`2003`,`2004`,`2005`,`2006`,`2007`,`2008`,`2009`,`2010`,`2011`,`2012`,`2013`,`2014`,`2015`,`2016`,`2017`,`2018`,`2019`), names_to="year", values_to="index")
+
+# what else needs to be done to get this dataset tidy?
+
+```
+
+------------------------------------------------------------------------
+
+## Save data
+
+Using `{readr}`
+
+```{r}
+table3
+table3 %>% 
+  write_csv("table3.csv")
+```
+
+------------------------------------------------------------------------
+
+## Where to go next
+
+Here are some ways you can continue learning:
+
+-   Wrangling topics:
+
+    -   Learn about [factors](https://r4ds.had.co.nz/factors.html)! (`{base}`, `{forcats}`)
+    -   Summarizing data (`{dplyr}`)
+    -   Relational data (joins), binding rows/columns (`{dplyr}`)
+    -   Learn more about regex, if that's useful to you
+    -   Apply ad hoc functions to columns (`{purrr}`)
+    -   Explore other data/file types
+
+-   [R for Data Science](https://r4ds.had.co.nz/), or R4DS, a free online book by Wickham and Grolemund
+
+    -   Anecdotally, R4DS is the most popular resource I see recommended for starting in R
+    -   [Dr. Wickham](https://hadley.nz/) (Chief Scientist, RStudio & adjunct prof. of stats at U of Auckland, Stanford, and Rice) is also creator/lead developer of the tidyverse
+
+-   [LinkedIn Learning](https://www.technology.pitt.edu/services/ondemand-training-linkedin-learning), offered via Pitt IT, has video courses
+
+-   [PittCat ebooks](https://pitt.primo.exlibrisgroup.com/discovery/search?query=any,contains,r%20statistics&tab=Everything&search_scope=MyInst_and_CI&vid=01PITT_INST:01PITT_INST&lang=en&offset=0), access to thousands of online tech books
+
+-   [exercism R track](https://exercism.org/tracks/r), a platform for learning to code
+
+-   Or dive into packages and resources specific to your field (see [Big Book of R](https://www.bigbookofr.com/) for ideas)
+
+-   Pitt students: STAT 1621 Principles of Data Science teaches R from scratch (using R4DS) as well as getting you into the basics of data science (i.e., using lots of statistics on big data)
+
+-   We offer training for groups (labs, collaborations, etc.)
+
+### Where to get answers; reference resources
+
+Here are resources for solving specific questions/problems you have in R:
+
+-   Weekly Open Office Hour: Mondays 5--6pm (see flier below)
+-   Pitt ULS [AskUs](https://library.pitt.edu/ask-us): email responses for simple questions and/or book an appointment for in-person or Zoom help
+-   [StackOverflow (questions tagged R)](https://stackoverflow.com/questions/tagged/r) is a great place for tech questions (search before asking)
+
+Reference resources and ways to connect with the R user community:
+
+-   The [Big Book of R](https://www.bigbookofr.com/) is an annotated bibliography of R resources, especially (e-)books (many of them free).
+-   [/r/rstats community on reddit](https://www.reddit.com/r/rstats/)
+-   [RStudio Community](https://community.rstudio.com/) (forums)
+-   [#rstats](https://twitter.com/hashtag/rstats) on Twitter
+
+[![R and RStudio Open Office Hour, Spring 2022](images/r-open-office-hour_202202.png "R and RStudio Open Office Hour, Spring 2022")](https://bit.ly/pitt-r-22)
