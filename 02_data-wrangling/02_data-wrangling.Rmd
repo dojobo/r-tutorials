@@ -48,7 +48,9 @@ library(tidyverse)
 
 ### Upcoming Events!
 
-![R events at Pitt, Feb-Mar 2022](images/r-events-spring-22_202202.png "R events at Pitt, Feb-Mar 2022")
+[![Open Scholarship and Research Impact Challenge](images/ResearchImpactDigital(zoom).png)](https://hsls.libguides.com/impactchallenge)
+
+<https://hsls.libguides.com/impactchallenge>
 
 ### License
 
