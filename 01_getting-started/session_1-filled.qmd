@@ -157,8 +157,9 @@ $$
 
 #### Dashboards and other web apps
 
--   "Dashboard": in-browser interface with viz of live, refreshing data (e.g., from a database), often with some interactivity
+-   "Dashboard": in-browser interface with viz of live, refreshing data (e.g., from a database), often with some interactivity, like filtering, drilling down, highlighting based on mouse cursor, etc.
 -   Packages: [Shiny](https://shiny.rstudio.com/), [plotly](https://plotly.com/r/)
+-   For lots of examples, check out the [Shiny Gallery](https://shiny.rstudio.com/gallery/)
 
 ## RStudio Orientation
 
@@ -252,7 +253,6 @@ The Import Dataset feature generates code, which you can paste into a code chunk
 tg <- read_excel("data/tumorgrowth.xlsx", 
            sheet = "AnalysisData")
 
-cvdr <- read_csv("data/genoData.csv")
 ```
 
 This way, the file-loading step will be saved in your document, so that you can easily recreate your session.
@@ -335,14 +335,14 @@ A handy function is `help()`, which queries R's documentation system. Most commo
 Vectors are one-dimensional. For 2+ dimensions, we need a **matrix**. We won't use them very much in this course, but they are available for you to investigate further.
 
 ```{r}
-1:9     # the integer sequence 1 to 6, as a vector
+1:9     # the integer sequence 1 to 9, as a vector
 
 matrix(data = 1:9, nrow = 3, ncol = 3)
 ```
 
 ### Lists
 
-Lists are collections of items; unlike vectors, they are potentially heterogeneous. You can also give a name to each item in a list if desired. Many specialized data structures are lists with special attributes and functionality.
+Lists are collections of items; unlike vectors, they are potentially heterogeneous. You can also give a name to each item in a list if desired. Many specialized data structures are actually lists with special attributes and functionality.
 
 ```{r}
 list(sex = c("F", "M"),
@@ -355,9 +355,14 @@ list(sex = c("F", "M"),
 
 A **factor** is a vector which represents a categorical variable, i.e., that there are only a finite number of possible values. Examples of categorical variables:
 
--   assigned biological sex, gender
+-   type of thing
+-   which treatment group (or control group)
+-   which observation site (e.g., "Plot A"---but not geographic coordinates)
+-   biological sex (although note that \>2 categories may be coded)
+-   gender (although note that a binary is not necessarily presumed)
 -   month, day of week, week number of year
 -   shoe size, athletic weight class (but not: height, weight)
+-   Likert scale (e.g., "on a scale of 1 to 5, where 1 is strongly disaree and 5 is strongly agree...")
 
 The possible values of a factor are its **levels**. Levels may be **ordered** (e.g., month) or unordered (e.g., sex, eye color).
 
@@ -370,9 +375,9 @@ factor(c("Control", "Group 1", "Group 2"))
 Sometimes your dataset might have categorical data coded numerically (e.g., `1` for females and `2` for males), such that you will also want to have a way to store human-readable **labels**.
 
 ```{r}
-factor(c(1, 2, 1, 1, 2, 1, 2, 2, 2, 1, 2, 1, 1),
-       levels = c("1", "2"),
-       labels = c("F", "M"))
+factor(c(1, 2, 1, 3, 1, 2, 1, 2, 2, 3, 2, 1, 2, 3, 1, 1),
+       levels = c("1", "2", "3"),
+       labels = c("Control", "Group 1", "Group 2"))
 ```
 
 ## Objects and functions
@@ -426,6 +431,18 @@ my_new_function <- function(x, y) {
 my_new_function(2, 3)     #   == 2^3
 ```
 
+### An Example Plot
+
+```{r}
+library(palmerpenguins)
+data(penguins)
+penguins %>% 
+  ggplot(mapping=aes(x=body_mass_g, y=bill_length_mm)) +
+  geom_point() +
+  geom_smooth()
+  
+```
+
 ### Exercise 2
 
 1.  Consider:
@@ -447,25 +464,7 @@ bases <- factor(c("A", "C", "G", "A", "T", "G", "U", "C"),
 bases
 ```
 
-3.  Write `bmi()` and `bmi_imperial()` functions. There is some template code below to get you started. (To calculate BMI: divide weight (kg) by height (m) squared. For Imperial units (lb/in), also multiply the result by 703.) Try to apply it with some numbers and see if it gives expected results.
-
-```{r}
-bmi <- function(weight_kg, height_m) {
-  
-}
-
-bmi_imperial <- function(weight_lb, height_in) {
-  
-}
-
-
-test_weights <- c()
-test_heights <- c()
-bmi(test_weights, test_heights)
-
-```
-
-## Wrapping up
+## Next Steps
 
 Today we learned about:
 
@@ -474,6 +473,14 @@ Today we learned about:
 -   Data structures: data frames, vectors, matrices, lists, factors
 -   Object and functions
 
-Expect Problem Set 1 later today, due 24 hrs before next session
+Upcoming events:
 
-Next time, we'll do useful work with data frames!
+![](images/r-drop-in-hour_202208.png){fig-align="center"}
+
+-   R & RStudio Drop-In Hour (weekly, Tuesdays, 5--6pm)
+-   Workshops in data wrangling and data visualization: <http://pi.tt/ds-workshops>
+
+Keep learning on your own:
+
+-   Check out the free ebook R for Data Science, or the Big Book of R
+-   LinkedIn Learning is a Pitt-subscribed resource
