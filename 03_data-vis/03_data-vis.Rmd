@@ -35,7 +35,7 @@ Digital Scholarship Services: <https://pi.tt/dss>
 
 `ggplot2` is the name of an R package. (A *package* in R terms is "the fundamental unit of shareable code." You can read more about them in the [R Packages book](https://r-pkgs.org/intro.html) by Wickham and Bryan.) ggplot2 is probably the most popular R package and is useful to a broad number of R users. ggplot2 is also part of "[the tidyverse](https://www.tidyverse.org/)," a collection of packages that all work well together because they use shared data structures, they try to make the same assumptions, etc.
 
-1.  To install ggplot2: run `install.packages("ggplot2")` or, in the bottom right pane, click the Packages tab > Install button at left.
+1.  To install ggplot2: run `install.packages("ggplot2")` or, in the bottom right pane, click the Packages tab \> Install button at left.
 2.  To include ggplot2 in your project: run `library(ggplot2)`.
 3.  Alternatively, you can install and use tidyverse: `install.packages("tidyverse")` and `library(tidyverse)`. This will take just a little longer when you first run it, but I think the tidyverse is the best way to use R anyway.
 
@@ -49,9 +49,7 @@ Wickham, Hadley. 2010. "A Layered Grammar of Graphics." Journal of Computational
 
 Minimal:
 
-```{ggplot(data = <DATA>) +}
-  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
-```
+`{ggplot(data = <DATA>) +}   <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))`
 
 `<DATA>` is a dataframe or tibble.
 
@@ -59,14 +57,7 @@ Mappings take the format `aesthetic = variable`, e.g., `x = time_elapsed` (the c
 
 More:
 
-```{ggplot(data = <DATA>) +}
-  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>)) +
-  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>), stat=<STAT>, position=<POSITION>) +
-  <COORDINATE_FUNCTION> +
-  <FACET_FUNCTION> +
-  <SCALE_FUNCTION> +
-  <THEME_FUNCTION>
-```
+`{ggplot(data = <DATA>) +}   <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>)) +   <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>), stat=<STAT>, position=<POSITION>) +   <COORDINATE_FUNCTION> +   <FACET_FUNCTION> +   <SCALE_FUNCTION> +   <THEME_FUNCTION>`
 
 ## Example data sets
 
