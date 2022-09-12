@@ -3,7 +3,7 @@ title: "Session 1"
 subtitle: "RStudio orientation and R basics"
 author: "Dominic Bordelon, Research Data Librarian, University of Pittsburgh Library System"
 date: "June 14, 2022"
-format: docx
+format: gfm
 editor: visual
 execute:
   eval: false
