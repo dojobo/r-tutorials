@@ -1,15 +1,14 @@
 ---
-title: "Session 1"
-subtitle: "RStudio orientation and R basics"
+title: "Getting Started with R and RStudio"
 author: "Dominic Bordelon, Research Data Librarian, University of Pittsburgh Library System"
-date: "June 14, 2022"
+date: "September 12, 2022"
 format: gfm
 editor: visual
 execute:
   eval: false
 ---
 
-# Session 1: **RStudio orientation and R basics**
+# Getting Started with R and RStudio
 
 Welcome!
 

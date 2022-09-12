@@ -1,10 +1,10 @@
-Session 1
+Getting Started with R and RStudio
 ================
 Dominic Bordelon, Research Data Librarian, University of Pittsburgh
 Library System
-June 14, 2022
+September 12, 2022
 
-# Session 1: **RStudio orientation and R basics**
+# Getting Started with R and RStudio
 
 Welcome!
 
