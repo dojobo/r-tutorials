@@ -240,6 +240,7 @@ You will need to reactivate the package every time you start a new R session.
 install.packages("tidyverse")
 install.packages("readxl")
 library(readxl)
+library(tidyverse)
 ```
 
 ## Import a spreadsheet as an R data frame
@@ -252,6 +253,7 @@ The Import Dataset feature generates code, which you can paste into a code chunk
 tg <- read_excel("data/tumorgrowth.xlsx", 
            sheet = "AnalysisData")
 
+tg
 ```
 
 This way, the file-loading step will be saved in your document, so that you can easily recreate your session.
@@ -265,11 +267,14 @@ A **data frame** is structured in rows ("observations") and columns ("variables"
 Let's use the `View()` and `str()` functions to examine the data frame:
 
 ```{r}
+View(tg)
+str(tg)
 ```
 
 You can refer to one variable (column) in a data frame with the **`$`** (dollar sign):
 
 ```{r}
+tg$Size
 ```
 
 Data frames are the most typical structure we'll encounter.
@@ -279,18 +284,19 @@ Data frames are the most typical structure we'll encounter.
 On a more basic level than a data frame, a **vector** is R's way to handle multiple items. We create a vector using the `c()` function. For example, suppose I observe the measurements `41.8`, `85.0`, and `114.0`:
 
 ```{r}
-
+my_vector <- c(41.8, 85.0, 114.0)
 # we can write comments with the pound sign;
 # these are ignored by R
 
 # to save a vector as an object:
-
+my_number <- 1
+my_number
 ```
 
 Vectors are designed to work efficiently with many repetitive or setwise operations, for example, applying a mathematical operator or function to every item in a vector. We also say these functions/operations are **vectorized**.
 
 ```{r}
-
+my_vector*2
 ```
 
 A limitation of vectors is that every item must be of the same data type (e.g., character or numeric). But they're sort of R's default data structure. They're also the foundation of data frames: each column is actually a vector, which means we'll be working with them a lot.
@@ -328,7 +334,8 @@ A handy function is `help()`, which queries R's documentation system. Most commo
 Vectors are one-dimensional. For 2+ dimensions, we need a **matrix**. We won't use them very much in this course, but they are available for you to investigate further.
 
 ```{r}
-
+1:9
+matrix(data=1:9, nrow=3, ncol=3)
 ```
 
 ### Lists

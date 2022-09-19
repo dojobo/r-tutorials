@@ -1,0 +1,418 @@
+---
+title: "Data Visualization in R"
+author: "Dominic Bordelon, Research Data Librarian, University of Pittsburgh Library System"
+date: "September 19, 2022"
+format: docx
+editor: visual
+execute:
+  eval: false
+---
+
+# Data Visualization in R
+
+## Agenda
+
+1.  About the presenter
+2.  ggplot2 and the grammar of graphics
+3.  Scatter plots (x-y relationships)
+4.  Histograms (distributions)
+5.  Visualizing amounts and proportions
+6.  Line graphs
+7.  Labeling your plot
+8.  Themes
+9.  Saving your work
+10. Resources to keep learning
+
+Today we are using the following packages:
+
+```{r}
+#install.packages(c("tidyverse", "naniar", "palmerpenguins", "RColorBrewer", "ggthemes"))
+library(tidyverse)       # includes ggplot2
+library(naniar)          # visualize missingness
+library(palmerpenguins)  # penguin data
+library(RColorBrewer)    # ColorBrewer palettes
+library(ggthemes)        # extra themes
+```
+
+Valuable cheat sheets: [ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf) by RStudio, [ggplot2 Theme Elements](https://henrywang.nl/wp-content/uploads/2020/04/ggplot2-themes.pdf) by Henry Wang
+
+## About the presenter
+
+### Services
+
+-   Consultations
+-   Presentations
+-   Skills workshops
+
+### Areas of Support
+
+-   data management planning for research projects
+-   making sense of and navigating software tools related to research: R, python, git and GitHub
+-   advising on Open (Science, Access, Source, etc.)
+
+### Interests
+
+-   computer programming education
+-   computer programming for research; research software engineering (RSE)
+-   science and technology studies (STS)
+-   ecology (I am a part-time returning undergraduate)
+
+## "But I don't use R..."
+
+If you do your analysis in Python or Excel (for example), you can still plot the results in R. Simply save your results as an .xlsx or .csv file.
+
+Alternatively, data viz can be your entry to learning more about R!
+
+## ggplot2 and the grammar of graphics
+
+ggplot2 is conceptually based in a "layered grammar of graphics" as described in Hadley 2010:
+
+![](images/hadley2010.png){fig-align="center"}
+
+Wickham, Hadley. 2010. "A Layered Grammar of Graphics." Journal of Computational and Graphical Statistics 19 (1): 3--28. <https://doi.org/10.1198/jcgs.2009.07098.>
+
+### The "tidy" data assumption
+
+ggplot2 assumes that your data are "tidy," meaning:
+
+-   one observation per row
+-   one variable per column
+-   one value per cell
+
+The data we're using today are already tidy. If you'd like to learn more about this concept, you can join me for [Data Wrangling](https://pitt.libcal.com/calendar/today/rdatawrangling) next week, or check out [Wickham (2014)](https://doi.org/10.18637/jss.v059.i10).
+
+### The "code template" for a plot
+
+Minimal:
+
+```{r}
+# ggplot(data = DATA) +
+#   GEOM_FUNCTION(mapping = aes(MAPPINGS))
+```
+
+The `ggplot()` function creates a basic plot object. `DATA` is a data frame whose contents you want to plot. Then we add one or more layer functions, using the `+` operator. You need at least one `geom_` layer in order to see a result. Examples of geoms are `geom_histogram()` and `geom_point()` (for points, e.g. scatter plots).
+
+The `aes()` function creates one or more aesthetic mappings, i.e., a relation between a variable in the data (e.g., time elapsed) and a visual feature/property of the plot (e.g., the x axis). Mappings take the format `aesthetic = variable`, e.g., `x = time_elapsed` or `color = species` (the categorical variable `species` is indicated using different colors).
+
+A more complete template:
+
+```{r}
+# ggplot(data = DATA, mapping = aes(MAPPINGS)) +
+#   GEOM_FUNCTION(mapping = aes(MAPPINGS),
+#                 stat = STAT,
+#                 position = POSITION)
+#   COORD_FUNCTION() +
+#   FACET_FUNCTION() + 
+#   SCALE_FUNCTION() +
+#   THEME_FUNCTION()
+```
+
+Now let's take a look at some popular types of plots and how to create them in ggplot.
+
+## Scatter plots (x-y relationships)
+
+```{r}
+data(penguins)  # load the "penguins" dataset into our session
+
+glimpse(penguins)  # what does our data frame look like?
+# you can also read more at: 
+?penguins
+```
+
+```{r}
+ggplot(data = penguins) +
+  geom_point(aes(x=body_mass_g, y=bill_length_mm))
+
+ggplot(data = penguins) +
+  geom_miss_point(aes(x=body_mass_g, y=bill_length_mm))
+```
+
+### Adding a z variable
+
+```{r}
+# discrete, color:
+ggplot(penguins, aes(body_mass_g, bill_length_mm, color=species)) +
+  geom_point()
+
+# discrete, shape:
+ggplot(penguins, aes(body_mass_g, bill_length_mm, shape=species)) +
+  geom_point()
+
+# continuous, bubble:
+ggplot(penguins, aes(body_mass_g, bill_length_mm, size=bill_depth_mm)) +
+  geom_point()
+```
+
+### Handling overplotting
+
+```{r}
+glimpse(diamonds)
+
+ggplot(diamonds, aes(x, price)) + geom_point()
+
+# modifying alpha (opacity):
+ggplot(penguins, aes(body_mass_g, bill_length_mm)) + geom_point(alpha=0.5)
+ggplot(diamonds, aes(x, price)) + 
+  geom_point(alpha=0.3)
+
+# adding a regression line with confidence interval:
+ggplot(penguins, aes(body_mass_g, bill_length_mm)) + 
+  geom_point() +
+  geom_smooth()
+ggplot(diamonds, aes(x, price)) +
+  geom_point() +
+  geom_smooth()
+
+# hex bins:
+ggplot(penguins, aes(body_mass_g, bill_length_mm)) +
+  geom_hex()
+ggplot(diamonds, aes(x, price)) +
+  geom_hex()
+```
+
+## Histograms (distributions)
+
+```{r}
+# histogram:
+ggplot(penguins, aes(x=bill_length_mm)) +
+  geom_histogram()
+
+# density plot:
+ggplot(penguins, aes(x=bill_length_mm)) +
+  geom_density()
+
+# histogram and density together:
+ggplot(penguins, aes(x=bill_length_mm)) +
+  geom_histogram(aes(y=..density..)) +
+  geom_density()
+```
+
+### Grouped distributions: violins, boxplots, overlapping densities
+
+```{r}
+# overlapping density plots:
+ggplot(penguins, aes(x=bill_length_mm, fill=species)) +
+  geom_density(alpha=0.2)
+
+# violin plot:
+ggplot(penguins, aes(y=bill_length_mm, x=species)) +
+  geom_violin()
+
+# box plot:
+ggplot(penguins, aes(y=bill_length_mm, x=species)) +
+  geom_boxplot()
+
+# comparison using faceting:
+ggplot(penguins, aes(y=bill_length_mm)) +
+  geom_histogram() +
+  facet_wrap(vars(species))
+```
+
+## Visualizing amounts and proportions
+
+Bars: counts of cases
+
+```{r}
+ggplot(penguins, aes(x=species)) +
+  geom_bar()
+
+ggplot(penguins, aes(y=species)) +
+  geom_bar()
+ggplot(diamonds, aes(y=clarity)) +
+  geom_bar()
+```
+
+Bars of summary statistics
+
+```{r}
+ggplot(penguins, aes(x=species, y=bill_length_mm)) +
+  geom_bar(stat="summary", fun="mean") 
+ggplot(diamonds, aes(x=price, y=clarity)) +
+  geom_bar(stat="summary", fun="mean")
+
+ggplot(penguins, aes(y=species, x=bill_length_mm)) +
+  geom_bar(stat="summary", fun="mean") +
+  scale_y_discrete(limits=c("Chinstrap", "Gentoo", "Adelie"))
+```
+
+### Adding error bars
+
+Although geoms are available for error bars, you must perform the calculations yourself. This means that you need to modify the data frame---adding appropriate variables (columns) for mean, standard deviation, etc.---prior to plotting. We haven't learned how to do that yet, but we will next week.
+
+When you manually calculate summary statistics, such as the mean, rather than asking ggplot to do it, you will also need to change `geom_bar`'s `stat` argument to `"identity"` instead of `"summary"`. You are telling ggplot, "please plot the exact numbers I give you, rather than a summary of them."
+
+```{r}
+penguins %>% 
+  drop_na(bill_length_mm) %>% 
+  group_by(species) %>% 
+  summarize(bill_mean = mean(bill_length_mm),
+            bill_sd = sd(bill_length_mm)) %>% 
+  ggplot(aes(x=species, y=bill_mean)) +
+  geom_bar(stat="identity") +
+  geom_errorbar(mapping=aes(ymax=bill_mean+bill_sd, 
+                            ymin=bill_mean-bill_sd), 
+                width=0.2)
+
+diamonds %>% 
+  drop_na(price, clarity) %>% 
+  group_by(clarity) %>% 
+  summarize(n=n(),
+            price_mean = mean(price),
+            price_sd = sd(price),
+            price_se = price_sd/sqrt(n)) %>% 
+  ggplot(aes(x=price_mean, y=clarity)) +
+  geom_bar(stat="identity") +
+  geom_errorbarh(aes(xmin=price_mean-price_se, 
+                     xmax=price_mean+price_se), 
+                 height=0.2)
+```
+
+### Grouped bars
+
+Choose an additional variable, to see and compare subgroups.
+
+```{r}
+ggplot(penguins, aes(x=species, y=bill_length_mm, fill=island)) +
+  geom_bar(stat="summary", fun="mean", position="dodge")
+
+ggplot(diamonds, aes(x=cut, fill=clarity, y=price)) +
+  geom_bar(stat="summary", fun="mean", position="dodge")
+```
+
+### Stacked bars and pies
+
+Stacked bars show each group's relative proportion in the whole. You can also opt to standardize bars to the same height. To make a stacked bar, add a variable mapped to the `fill` aesthetic, with a `position` of `stack`.
+
+```{r}
+# stacked bar chart
+ggplot(penguins, aes(x=island, fill=species)) +
+  geom_bar()
+  
+ggplot(diamonds, aes(y=clarity, fill=cut)) +
+  geom_bar()
+```
+
+The familiar pie chart, in ggplot2 terms, is a stacked bar chart with polar coordinates.
+
+```{r}
+ggplot(penguins, aes(x="", fill=species)) +
+  geom_bar(width=1, color="white") +
+  coord_polar(theta="y", start=0, direction=-1) +
+  theme_void()
+
+ggplot(diamonds, aes(x="", fill=clarity)) +
+  geom_bar(width=1, color="white") +
+  coord_polar(theta="y", start=0, direction=-1) +
+  theme_void()
+```
+
+## Line graphs
+
+Line graphs tend to work best with `identity` data.
+
+```{r}
+ggplot(economics, aes(x=date, y=unemploy)) +
+  geom_line()
+
+penguins %>% 
+  drop_na(body_mass_g) %>% 
+  group_by(species, year) %>% 
+  summarize(mass_mean=mean(body_mass_g)) %>% 
+  ggplot(aes(x=year, y=mass_mean, color=species)) +
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks=2007:2009)
+
+storms %>% 
+  drop_na(wind) %>% 
+  group_by(year) %>% 
+  summarize(n=n(),
+            wind_mean=mean(wind), 
+            wind_sd=sd(wind), 
+            wind_se=wind_sd/sqrt(n)) %>% 
+  ggplot(aes(x=year, y=wind_mean)) +
+  geom_line() +
+  geom_point() 
+# + geom_errorbar(aes(ymin=wind_mean-wind_se,
+#                     ymax=wind_mean+wind_se),
+#                 width=0.75)
+```
+
+## Labeling your plot
+
+```{r}
+penguins %>% 
+  drop_na(body_mass_g, bill_length_mm, species) %>% 
+  ggplot(aes(x=body_mass_g, 
+                 y=bill_length_mm, 
+                 color=species)) +
+  geom_point() +
+  geom_smooth(method="lm") +
+  labs(title="Penguin bill length correlates with body mass",
+       x="Body mass (g)",
+       y="Bill length (mm)",
+       color="Species")
+```
+
+## Themes
+
+Themes style the plot overall. A theme will always be a function. To use a theme with your plot, use `+` and the function call, for example, `...geom_point() + theme_bw()` . Here are some sources of themes:
+
+-   themes included with ggplot2, e.g., `theme_minimal()`
+-   the [ggthemes](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/) package
+
+```{r}
+penguins %>% 
+  drop_na(body_mass_g, bill_length_mm, species) %>% 
+  ggplot(aes(x=body_mass_g, 
+                 y=bill_length_mm, 
+                 color=species)) +
+  geom_point() +
+  geom_smooth(method="lm", se=FALSE) +
+  labs(title="Penguin bill length correlates with body mass",
+       x="Body mass (g)",
+       y="Bill length (mm)",
+       color="Species") +
+  theme_bw() +
+  scale_color_brewer(type="qual")
+
+ggplot(diamonds, aes(y=clarity, fill=cut)) +
+  geom_bar() +
+  theme_bw() +
+  scale_fill_brewer(type="seq")
+```
+
+## Saving your work
+
+-   Using notebooks (.Rmd or .qmd files) is highly recommended!
+-   You can save plots as image files (PNG, SVG, PDF, etc.) using `ggsave()`
+-   Any R data structure (plot object, data frame...) can also be saved to a file using `saveRDS()`
+
+```{r}
+pens_plot <- penguins %>% 
+  drop_na(body_mass_g, bill_length_mm, species) %>% 
+  ggplot(aes(x=body_mass_g, 
+                 y=bill_length_mm, 
+                 color=species)) +
+  geom_point() +
+  geom_smooth(method="lm", se=FALSE) +
+  labs(title="Penguin bill length correlates with body mass",
+       x="Body mass (g)",
+       y="Bill length (mm)",
+       color="Species") +
+  theme_bw() +
+  scale_color_brewer(type="qual")
+
+ggsave("penguins.png", pens_plot)
+```
+
+## Resources to continue learning
+
+-   Next week: [Data Wrangling in R](https://pitt.libcal.com/calendar/today/rdatawrangling?hs=a)
+-   [O'Reilly ebooks](https://learning.oreilly.com/library/view/temporary-access/)
+-   [The Big Book of R](https://www.bigbookofr.com/)
+-   Check out [#TidyTuesday](https://twitter.com/search?q=%23tidytuesday) on Twitter
+
+![](images/r-drop-in-hour_202208.png)
+
+[dbordelon\@pitt.edu](mailto:dbordelon@pitt.edu)
