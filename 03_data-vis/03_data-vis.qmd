@@ -38,6 +38,9 @@ Valuable cheat sheets: [ggplot2](https://raw.githubusercontent.com/rstudio/cheat
 
 ## About the presenter
 
+Dominic Bordelon, Research Data Librarian\
+University Library System, University of Pittsburgh
+
 ### Services
 
 -   Consultations
@@ -112,11 +115,18 @@ Now let's take a look at some popular types of plots and how to create them in g
 ## Scatter plots (x-y relationships)
 
 ```{r}
+data(penguins)
   # load the "penguins" dataset into our session
 
-  # what does our data frame look like?
+glimpse(penguins)  # what does our data frame look like?
 # you can also read more at: 
+?penguins
 
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x=body_mass_g, y=bill_length_mm))
+
+ggplot(penguins) +
+  geom_miss_point(mapping=aes(x=body_mass_g, y=bill_length_mm))
 ```
 
 ```{r}
@@ -127,50 +137,82 @@ Now let's take a look at some popular types of plots and how to create them in g
 
 ```{r}
 # discrete, color:
-
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x=body_mass_g, 
+                           y=bill_length_mm,
+                           color=species))
 
 # discrete, shape:
-
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x=body_mass_g, 
+                           y=bill_length_mm,
+                           shape=species))
 
 # continuous, bubble:
-
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x=body_mass_g, 
+                           y=bill_length_mm,
+                           size=flipper_length_mm))
 ```
 
 ### Handling overplotting
 
 ```{r}
-
-
+glimpse(diamonds)
+data(diamonds)
+ggplot(diamonds) + geom_point(aes(x=x, y=price))
 # modifying alpha (opacity):
-
+ggplot(diamonds) + 
+  geom_point(aes(x=x, y=price),
+             alpha = 0.1)
 # adding a regression line with confidence interval:
+ggplot(diamonds, aes(x=x, y=price)) +
+  geom_point() +
+  geom_smooth()
 
+ggplot(penguins, aes(x=body_mass_g, 
+                           y=bill_length_mm)) + 
+  geom_point() +
+  geom_smooth(method="lm", se=FALSE)
 # hex bins:
-
+ggplot(penguins, aes(body_mass_g, bill_length_mm)) +
+  geom_hex()
+ggplot(diamonds, aes(x=x, y=price)) + geom_hex()
 ```
 
 ## Histograms (distributions)
 
 ```{r}
 # histogram:
+ggplot(penguins, aes(x=bill_length_mm)) +
+  geom_histogram(binwidth=1)
 
 # density plot:
-
+ggplot(penguins, aes(x=bill_length_mm)) +
+  geom_density()
 # histogram and density together:
-
+ggplot(penguins, aes(x=bill_length_mm)) +
+  geom_histogram(aes(y=..density..)) +
+  geom_density()
 ```
 
 ### Grouped distributions: violins, boxplots, overlapping densities
 
 ```{r}
 # overlapping density plots:
+ggplot(penguins, aes(x=bill_length_mm, fill=species)) +
+  geom_density(alpha=0.2)
 
 # violin plot:
-
+ggplot(penguins, aes(x=species, y=bill_length_mm)) +
+  geom_violin()
 # box plot:
-
+ggplot(penguins, aes(x=species, y=bill_length_mm)) +
+  geom_boxplot()
 # comparison using faceting:
-
+ggplot(penguins, aes(y=bill_length_mm)) +
+  geom_histogram(binwidth=1) +
+  facet_wrap(vars(species))
 ```
 
 ## Visualizing amounts and proportions
@@ -178,13 +220,25 @@ Now let's take a look at some popular types of plots and how to create them in g
 Bars: counts of cases
 
 ```{r}
+ggplot(penguins, aes(x=species)) +
+  geom_bar()
 
+ggplot(penguins, aes(y=species)) +
+  geom_bar()
+ggplot(diamonds, aes(y=clarity)) + geom_bar()
 ```
 
 Bars of summary statistics
 
 ```{r}
+ggplot(penguins, aes(x=species, y=bill_length_mm)) +
+  geom_bar(stat="summary", fun="mean")
+ggplot(diamonds, aes(x=clarity, y=price)) +
+  geom_bar(stat="summary", fun="mean")
 
+ggplot(penguins, aes(x=species, y=bill_length_mm)) +
+  geom_bar(stat="summary", fun="mean") +
+  scale_x_discrete(limits=c("Chinstrap", "Gentoo", "Adelie"))
 ```
 
 ### Adding error bars

@@ -1,0 +1,676 @@
+---
+title: "Data Wrangling in R"
+subtitle: "Data wrangling"
+author: "Dominic Bordelon, Research Data Librarian, University of Pittsburgh Library System"
+date: "September 26, 2022"
+format: 
+  html: default
+editor: visual
+---
+
+```{r}
+#| output: false
+
+install.packages(c("tidyverse", "readxl", "writexl", "palmerpenguins", "janitor"))
+library(tidyverse)
+library(readxl)
+library(writexl)
+library(palmerpenguins)
+library(janitor)
+```
+
+# Data Wrangling in R
+
+![Artwork by \@allison_horst](images/data_cowboy.png){fig-alt="A green fuzzy monster in a cowboy hat and mustache, lassoing a group of unruly data tables while riding a blue fuzzy monster." fig-align="center"}
+
+## Agenda
+
+1.  What is meant by "data wrangling?"
+2.  Loading data files
+3.  The Tidy Data concept
+4.  Columns: rename, split, create
+5.  Handle missing values
+6.  Filtering and summarizing
+7.  Reshape data (pivot)
+
+Most of what we are doing today is in the {dplyr} and {tidyr} packages. These PDF cheat sheets are a handy reference: [dplyr](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf), [tidyr](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf)
+
+## About the Presenter
+
+## What is meant by "data wrangling?"
+
+In a *structured* data context, i.e., tabular and/or structured documents, e.g., XML or JSON, includes:
+
+-   getting a file from an external source open and properly loaded
+
+    -   extraction may be needed e.g. from a document format to a tabular format
+    -   missing values should be correctly recognized and recorded as `NA` in R objects
+    -   data types are always important in R; each imported column should be of the correct type (e.g., `col_integer()`, not `col_character()`, for a `birth_year` column)
+
+-   cleaning
+
+    -   Investigate/correct data entry
+    -   Incomplete observations may need to be dropped (if missing completely at random, or not meeting the experimental protocol) or filled with imputed values (e.g., mean)
+
+-   creating new columns which compute their values from an existing column
+
+-   filtering rows to use only relevant data
+
+## Loading data files
+
+Using `{readr}` and `{readxl}` ([cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf))
+
+### Tabular data: CSV, TSV, XLSX
+
+While you may be most familiar with Excel files (`.xlsx` filenames) for spreadsheets, plain-text *delimited* files are often the format of choice. CSV (`.csv` filenames), comma-separated values, is the most popular.
+
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+| Pros of CSV vs. Excel                                                                       | Cons of CSV vs. Excel                                        |
++=============================================================================================+==============================================================+
+| $\bullet$ Open in any tabular data software, or even a text editor; non-proprietary format\ | $\bullet$ No formatting\                                     |
+| $\bullet$ Small file size (although there are smaller)\                                     | $\bullet$ No formulas, only their outputs\                   |
+| $\bullet$ Long-term preservation standard\                                                  | $\bullet$ No charts/graphics, pivot tables, etc.\            |
+| $\bullet$ No formulas or macros; nothing hidden\                                            | $\bullet$ Only one worksheet per file\                       |
+| $\bullet$ Less likely to "break" or become corrupted than an Excel file                     | $\bullet$ Excel can be annoying about opening them\          |
+|                                                                                             | $\bullet$ Occasionally, issues with improperly generated CSV |
++---------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+Comma-separated values:
+
+```{csv}
+response_id,date,respondent_id,question_number,response
+1,2022-02-01,27,3,"B"
+1,2022-02-01,27,4,"C"
+```
+
+First row is typically header; comma (or other delimiter) for each column; newline for each row.
+
+Tab-separated values:
+
+```{tsv}
+response_id date  respondent_id question_number response
+1 2022-02-01  27  3 "B"
+1 2022-02-01  27  4 "C"
+```
+
+```{r}
+# a random sampling of Allegheny County air quality data, downloaded from wprdc.org:
+air_quality <- read_csv("data/air-quality2.csv")
+air_quality
+
+# important tweaks: header (none and/or supply your own); col_types; na
+
+emissions <- read_tsv("data/sdg_13_10.tsv")
+emissions
+
+#excel_sheets("file.xlsx") # list of sheets 
+#read_excel()
+
+#read_excel(sheets=c())
+
+```
+
+Other things you can configure in `{readr}` when importing data: provide your own header; skip lines; read a subset of lines; specify decimal marks; select only certain columns for import; read multiple files into a single table.
+
+### Reading Excel files
+
+You can use the `{readxl}` package to read `.xlsx` files. Because there are potentially many parameters, I like to use RStudio's Import Dataset feature for a graphical interface, which generates the code I need. Then I paste that code into my notebook and run it.
+
+```{r}
+messy_bp <- read_excel("02_data-wrangling/data/messy_bp.xlsx", 
+                       range = "A4:M24")
+View(messy_bp)
+```
+
+### Looking around
+
+Our messy data today are [messy_bp from the {medicaldata} package](https://github.com/higgi13425/medicaldata#available-messy-datasets-beta). Our clean data are penguins from [{palmerpenguins}](https://allisonhorst.github.io/palmerpenguins/).
+
+Here are some ways to superficially browse/examine a dataset:
+
+```{r}
+data(penguins)
+# str() is a generic function, to examine the structure of any object
+str(messy_bp)
+str(penguins)
+# glimpse() is a tidyverse variation specific for dataframes
+glimpse(messy_bp)
+glimpse(penguins)
+
+# calling an object prints some representation of it
+messy_bp 
+penguins
+View(messy_bp)  # Excel-like view (note interactive features)
+View(penguins)
+
+head(penguins)  # fetch first 6 rows
+tail(messy_bp, n=20)  # fetch last 20 rows
+
+penguins %>% 
+  slice_sample(n=20)  # extract ("slice") 20 random rows
+
+# sorting!
+# using the dplyr::arrange() function:
+penguins %>% 
+  arrange(bill_length_mm)  # arrange by bill length, ascending
+penguins %>% 
+  arrange(desc(body_mass_g))  # body mass descending (heaviest first)
+penguins %>% 
+  arrange(island, species)  # arrange first by island, then by species
+
+# see a summary of each variable in an object
+summary(penguins)
+
+# note that similar to str(), summary() is a generic function which may have different implementation for different types of objects
+```
+
+### Other types of data
+
+Here are packages you can check out for other types of data:
+
+-   web APIs: `{httr}`
+-   web scraping: `{rvest}`
+-   google sheets: `{googlesheets4}`
+-   SPSS, Stata, SAS files: `{haven}`
+-   databases: `{DBI}`
+-   json: `{jsonlite}`
+-   XML: `{xml2}`
+-   plain text: `readr::read_lines()`
+-   geospatial data (e.g., shapefiles): `{sf}, {terra}`
+
+------------------------------------------------------------------------
+
+## The Tidy Data concept
+
+![Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst](images/tidydata_1.jpg)
+
+![Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst](images/tidydata_2.jpg)
+
+![Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst](images/tidydata_3.jpg)
+
+------------------------------------------------------------------------
+
+### Important syntax sidebar: the pipe, `%>%`
+
+The **pipe** is typed as **`%>%`** or using the (Win) **Ctrl+Shift+M** or (macOS) **Cmd+Shift+M** keyboard shortcut. Provided by `{magrittr}` and used almost everywhere in the tidyverse.
+
+What does it do? `expressionA %>% functionB()` passes the output of `expressionA` as an implicit first argument of `functionB()`:
+
+```{r}
+penguins %>% 
+  select(species, body_mass_g, sex)
+
+# writing the above without a pipe
+select(penguins, species, body_mass_g, sex)
+
+# so what? compare once we start chaining (piping) multiple functions:
+
+# sort by body_mass_g (descending) after selecting columns:
+penguins %>% 
+  select(species, body_mass_g, sex) %>% 
+  arrange(desc(body_mass_g))
+
+# doing the same without the pipe:
+arrange(select(penguins, species, body_mass_g, sex), desc(body_mass_g))
+
+# ^ increasingly illegible
+# another alternative is to write shorter lines of code without nesting, but then you'll have a lot of intermediate objects in your environment.
+```
+
+### and what about `<-` for object assignment? Can I use `=` instead?
+
+```{r}
+area <- 16 * 4
+area
+area = 16 * 4
+area
+```
+
+**Yes, but** `<-` is recommended, because:
+
+1.  It is community convention, which is important when you read others' code
+2.  Besides object assignment, `=` in R is also used with *named arguments*; it can be visually helpful to separate these different functionalities with different symbols, `<-` and `=` respectively.
+
+Keyboard shortcuts to type **`<-`**: (Win) **Alt+-** or (macOS) **Option+-**
+
+## Columns: renaming, splitting, creating
+
+Using `{dplyr}` ([cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)) and `{tidyr}` ([cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf)).
+
+```{r}
+stop <- read_excel("data/messy_bp.xlsx", 
+    range = "A4:M24")
+study_date <- as.Date("2020-10-20")
+
+stop <- stop %>% 
+  clean_names() 
+
+stop %>% 
+  select(pat_id, year_of_birth, bp_8) # retain only certain columns
+
+stop %>% 
+  relocate(sex, .after=pat_id) # move column
+
+stop <- stop %>% 
+  rename(v1_bp = bp_8, v2_bp = bp_10, v3_bp = bp_12) # rename column, new_name=old_name
+
+# separate or unite columns:
+stop %>% 
+  separate(col=bp_8, into=c("v1_sbp", "v1_dbp"), sep="/", convert=TRUE)
+
+stop %>% 
+  unite(col="birth_date", year_birth, month_of_birth, day_birth, sep="-")
+
+# mutate (create a new column):
+stop %>% 
+  mutate(birth_date = 
+           make_date(year=year_birth,
+                     month=month_of_birth,
+                     day=day_birth), 
+         .after=pat_id) %>% 
+  mutate(age = 
+           trunc((birth_date %--% study_date)/years(1)), 
+         .after=birth_date) 
+```
+
+------------------------------------------------------------------------
+
+## Missing values
+
+Sometimes, missing values are no problem 👍
+
+But sometimes, you might want to:
+
+-   investigate which observations have missing values and verify them
+-   drop (delete) incomplete observations
+-   or, replace missing values with something else (an imputed value)
+
+```{r}
+# drop the rows that have NA in the sex column:
+penguins %>% 
+  drop_na(sex)
+
+# replace NA with 0
+na_diam <- storms %>% 
+  filter(is.na(hurricane_force_diameter))
+na_diam
+na_diam %>% 
+  replace_na(list(hurricane_force_diameter=0))
+
+# functions often have to make assumptions about NA
+# examine docs for these assumptions, and configurability
+mean(storms$hurricane_force_diameter)  # returns NA
+# why? (5 + 10 + NA)/3 = NA
+?mean
+mean(storms$hurricane_force_diameter, na.rm=TRUE) # returns 18.14766
+```
+
+------------------------------------------------------------------------
+
+## Match values; regular expressions
+
+### Filter/subset by column contents
+
+```{r}
+# Adelie observations:
+penguins %>% 
+  filter(species=="Adelie")
+# name matching a vector of strings:
+penguins %>% 
+  filter(island %in% c("Biscoe", "Torgersen"))
+
+```
+
+![Artwork by \@allison_horst](images/dplyr_filter.jpg)
+
+### Getting all distinct values in a column
+
+```{r}
+
+# distinct() gives unique values of a variable/column
+# all storm names in the set:
+storms %>% 
+  select(name) %>% 
+  distinct(name) %>% 
+  arrange(name)
+```
+
+### Grouping and summarizing
+
+```{r}
+# count how many observations are associated with each species:
+penguins %>% 
+  group_by(species) %>% 
+  summarise(n())
+
+# summarize body mass values after grouping by species:
+penguins %>% 
+  drop_na(body_mass_g) %>% 
+  group_by(species) %>% 
+  summarise(n(),
+            min(body_mass_g),
+            mean(body_mass_g),
+            median(body_mass_g),
+            max(body_mass_g),
+            sd(body_mass_g))
+```
+
+------------------------------------------------------------------------
+
+## Reshape data (pivot)
+
+When a dataset doesn't have one observation per row and/or one variable per column, we need to **reshape** it using `{tidyr}`.
+
+In `table2`, one column shows `type` (of measurement), either "cases" or "population."
+
+```{r}
+View(table2)
+```
+
+We can use the information in `type` to make two new columns, `cases` and `population`, which hold the value of `count`. We do this with `pivot_wider()`:
+
+```{r}
+table2 %>% 
+  pivot_wider(names_from=type, values_from=count)
+```
+
+In contrast, `table4a` has a column for each year; we would like to move year information into its own column, and reduce
+
+```{r}
+table4a
+
+table4a %>% 
+  pivot_longer(cols=c(`1999`, `2000`), names_to="year", values_to="cases")
+```
+
+------------------------------------------------------------------------
+
+## Save data
+
+Using `{readr}`
+
+```{r}
+table3
+table3 %>% 
+  write_csv("table3.csv")
+```
+
+## \-\-\-\-\-\-\-\-\-\--
+
+## Pipes in R
+
+The **pipe** is an operator, written **`%>%`**, that enables us to pass the output from one function, into another function. Consider:
+
+```{r}
+my_values <- -1:-10    # -1 to -10, as a vector
+my_values
+
+# below i take the absolute value, then the square root, 
+# then round to 3 decimal places, then calculate the mean
+mean(round(sqrt(abs(my_values)), 3))
+
+# with a pipe, this can be rewritten as:
+my_values %>% 
+  abs() %>% 
+  sqrt() %>% 
+  round(3) %>%
+  mean()
+
+# more readable, right?
+```
+
+The keyboard shortcut for `%>%` is **Ctrl+Shift+M** (Windows) or **Cmd+Shift+M** (macOS).
+
+You might also see a newer notation for the pipe, `|>`. It works the same way:
+
+```{r}
+my_values |>
+  abs() |>
+  sqrt() |>
+  round(3) |>
+  mean()
+```
+
+We'll be using the first pipe, also called "the magrittr pipe" after the package it comes from.
+
+![magrittr logo](assets/magrittr.png){fig-alt="magrittr logo" fig-align="center"}
+
+## Looking at data frames
+
+`print()`, str()`,`View()`,`summary()\`
+
+```{r}
+cvdrisk <- read_csv("data/genoData.csv")
+cvdrisk %>% print()
+```
+
+Get a histogram of a variable
+
+```{r}
+ggplot(cvdrisk, aes(sbp)) + geom_histogram()
+```
+
+## Selecting columns; filtering and sorting rows
+
+### `select()`: which columns?
+
+```{r}
+cvdrisk
+str(cvdrisk)    # 17 variables (columns)
+
+cvdrisk %>% 
+  select(numAge, gender, bmi, treat)
+
+# how many columns do we have? how many rows?
+# notice that the column order is also different
+
+# you can also select using index numbers:
+cvdrisk %>%
+  select(3:7)
+
+```
+
+### `filter()`: which rows?
+
+![Artwork by \@allison_horst](assets/dplyr_filter.jpg){fig-alt="Cartoon showing three fuzzy monsters either selecting or crossing out rows of a data table. If the type of animal in the table is “otter” and the site is “bay”, a monster is drawing a purple rectangle around the row. If those conditions are not met, another monster is putting a line through the column indicating it will be excluded. Stylized text reads “dplyr::filter() - keep rows that satisfy your conditions.”" fig-align="center"}
+
+```{r}
+cvdrisk %>%
+  filter(numAge == 19) %>% 
+  select(patientID, numAge, smoking)
+
+cvdrisk %>%
+  filter(tchol > 200)
+
+# comparisons: > >= < <= == !=
+
+
+# check multiple values with the %in% operator, and a vector:
+cvdrisk %>%
+  filter(race %in% c("Black/AfAm", "AmInd"))
+cvdrisk %>% 
+  distinct(race)
+# BMI is between 25 and 30 (inclusive):
+cvdrisk %>%
+  filter(between(bmi, 25, 30))
+```
+
+Multiple conditions can be combined with the symbols `&` (ampersand, "AND") and `|` (vertical pipe, "OR").
+
+```{r}
+cvdrisk %>% 
+  filter(between(numAge, 19, 24) & smoking == "Y")
+
+cvdrisk %>% 
+  filter(between(numAge, 19, 24) | smoking == "Y")
+```
+
+### `arrange()`: in what order should the rows appear?
+
+```{r}
+# sort by numAge:
+cvdrisk %>% 
+  filter(between(bmi, 25, 26)) %>% 
+  arrange(numAge)
+
+# sort by numAge, descending (oldest first):
+cvdrisk %>% 
+  filter(between(bmi, 25, 26)) %>% 
+  arrange(desc(numAge))
+
+# sort by multiple columns:
+cvdrisk %>% 
+  arrange(numAge, desc(bmi))
+```
+
+## Exercise 1
+
+1.  Using `filter()`, get patients aged 30+ whose systolic blood pressure is greater than 135. Store this set as an object called `high_bp`.
+
+```{r}
+high_bp <- cvdrisk %>% filter(numAge >= 30 & sbp > 135)
+```
+
+2.  Sort `high_bp` according to numeric age and systolic blood pressure.
+
+```{r}
+high_bp %>% 
+  arrange(numAge, sbp) %>% View()
+```
+
+3.  Why doesn't the code below work? Can you fix it?
+
+```{r}
+#| eval: false
+
+cvdrisk %>% 
+  select(age, htn, treat, smoking, race, t2d, gender, bmi) %>% 
+  filter(t2d == "Y") %>% 
+  arrange(numAge)
+```
+
+## `mutate()`: Creating new columns
+
+![Artwork by \@allison_horst](assets/dplyr_mutate.png){fig-alt="Cartoon of cute fuzzy monsters dressed up as different X-men characters, working together to add a new column to an existing data frame. Stylized title text reads “dplyr::mutate - add columns, keep existing.”" fig-align="center"}
+
+Example using the `smartpill` dataset:
+
+```{r}
+str(smartpill)
+smartpill %>% 
+  select(1:6) %>% 
+  mutate(BMI = Height / Weight^2)
+```
+
+## Grouping and summarizing
+
+Often, our observations can be arranged into interesting *groups*, typically based on a categorical variable (e.g., gender, race, age group, treatment). Our next step is usually to *summarize* those groups: how many observations in each group? What are the median and mean values, standard deviation, etc.?
+
+Available summarizing functions:
+
+-   `n()`, `n_distinct()`
+-   `mean()`, `median()`, `sum()`
+-   `quantile()`, `min()`, `max()`, `IQR()`, `sd()`, `var()`
+
+```{r}
+cvdrisk %>%
+  group_by(smoking) %>%
+  summarize(n(), mean(numAge), mean(bmi), mean(sbp), mean(tchol))
+
+# pause here for students to try
+
+```
+
+```{r}
+# or to apply the same summary function across() columns:
+cvdrisk %>%
+  group_by(smoking) %>%
+  summarize(n(), across(c(numAge, bmi, sbp, tchol), mean))
+```
+
+![Artwork by \@allison_horst](assets/dplyr_across.png){fig-alt="A cute round fuzzy monster with fairy wings and a wand, with a party hat on reading “mean”, bouncing across the top of a data table applying the function to each column. Stylized text reads: “dplyr::across() - use within mutate() or summarize() to apply function(s) to a selection of columns!” An example shows the use within summarize: summarize(across(where(is.numeric), mean))."}
+
+## `slice_sample()`: Random sampling of rows
+
+meaning of "slice"
+
+```{r}
+cvdrisk %>% 
+  slice_sample(prop=0.2)
+
+```
+
+## Data cleaning: tidy data, missing values
+
+When a dataset doesn't have one observation per row and/or one variable per column, we need to **reshape** it using `{tidyr}`.
+
+![Artwork by \@allison_horst](assets/tidydata_1.jpg){fig-alt="Stylized text providing an overview of Tidy Data. The top reads “Tidy data is a standard way of mapping the meaning of a dataset to its structure. - Hadley Wickham.” On the left reads “In tidy data: each variable forms a column; each observation forms a row; each cell is a single measurement.” There is an example table on the lower right with columns ‘id’, ‘name’ and ‘color’ with observations for different cats, illustrating tidy data structure."}
+
+In `table2`, one column shows `type` (of measurement), either "cases" or "population."
+
+```{r}
+View(table2)
+```
+
+We can use the information in `type` to make two new columns, `cases` and `population`, which hold the value of `count`. We do this with `pivot_wider()`:
+
+```{r}
+table2 %>% 
+  pivot_wider(names_from=type, values_from=count)
+```
+
+In contrast, `table4a` has a column for each year; we would like to move year information into its own column, and reduce the overall number of columns to make the table "longer"---`pivot_longer()`.
+
+```{r}
+table4a
+
+table4a %>% 
+  pivot_longer(cols=c(`1999`, `2000`), names_to="year", values_to="cases")
+```
+
+## Exporting data from R
+
+### Saving as CSV (readr)
+
+```{r}
+write_csv(high_bp, "high-bp.csv")
+```
+
+### Saving as XLSX
+
+```{r}
+write_xlsx(high_bp, "high-bp.xlsx")
+```
+
+### Saving as RDS and RData
+
+.RDS and .RData are two file formats specific to R.
+
+-   **RDS**, "R data structure" (I think), is for saving an R *object* (e.g., data frame) to disk. This file will be smaller than a CSV or XLSX and faster to load/save in R. This makes it a good choice for saving a dataset you're working on.
+-   **RData** is for saving your R *session* (Environment pane) to disk. Upon starting a session, this can be a faster way to restore your workspace than running your entire notebook again.
+
+To save an object as RDS:
+
+```{r}
+saveRDS(cvdrisk, "data/cvdrisk.RDS")
+```
+
+To load an RDS file into an R object:
+
+```{r}
+loaded_cvdrisk <- readRDS("data/cvdrisk.RDS")
+
+# what does this loaded RDS look like?
+str(loaded_cvdrisk)
+```
+
+To work with .RData files, the easiest way is to use the load/save icons at top left of the Environment pane .
+
+There is also an RStudio save-on-exit feature which preserves your session (as a .RData), so that next time you open RStudio, you can pick up where you left off. This is convenient, but requires diligent notebook accounting.
+
+![Tools \> Global Options... \> General](assets/config-rdata.png){fig-alt="Cropped screenshot of RStudio's global option. The selection is titled Workspace. There is a checkbox labeled \"Restore .RData into workspace at startup\". The box is unchecked. There is a drop-down menu reading \"Save workspace to .RData on exit:\". The option \"Never\" is selected." fig-align="center"}
+
+## Next steps
+
+-   Problem Set 2
+-   Next time: data visualization!
